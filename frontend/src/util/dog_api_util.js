@@ -16,6 +16,6 @@ export const updateDog = (data, dogId) => {
     return axios.patch(`/api/dogs/${dogId}`, data)
 };
 
-export const removeDog = (dogId) => {
+export const deleteDog = (dogId) => {
     return axios.patch(`/api/dogs/${dogId}`)
 };

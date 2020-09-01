@@ -11,8 +11,7 @@ class Profile extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props.currentUser.id);
-    this.props.fetchUserdogs(this.props.currentUser.id);
+    this.props.fetchUserDogs(this.props.currentUser.id);
   }
 
   componentWillReceiveProps(newState) {
@@ -28,14 +27,14 @@ class Profile extends React.Component {
           <h2>All of This User's Dogs</h2>
           {this.state.dogs.map((dog) => (
             <DogBox
-              key={dog._id}
-              breed={this.props.breed}
-              description={this.props.description}
-              birthDate={this.props.birthDate}
-              size={this.props.size}
-              gender={this.props.gender}
-              activeness={this.props.activeness}
-              personality={this.props.personality}
+              name={dog.name}
+              description={dog.description}
+              breed={dog.breed}
+              birthDate={dog.birthDate}
+              size={dog.size}
+              gender={dog.gender}
+              activeness={dog.activeness}
+              personality={dog.personality}
             />
           ))}
         </div>
