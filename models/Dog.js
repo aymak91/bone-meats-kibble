@@ -46,7 +46,12 @@ const DogSchema = new Schema({
     type: Date,
     default: null,
   },
+  //MATCH ALGORITHM
+  possibleMatches: [], //array of ALL MATCHES where matched = false
+  matches: [], //array of dog_ids
+  requestingMatches: [], //array of dog_ids who liked you
+  requestedMatches: [], //array of dog_ids who you liked
 });
 
-const Dog = mongoose.model('dog', DogSchema);
+const Dog = mongoose.model('dogs', DogSchema);
 module.exports = Dog;
