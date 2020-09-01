@@ -1,7 +1,7 @@
 import {
   RECEIVE_DOGS,
   RECEIVE_USER_DOGS,
-  RECEIVE_DOG,
+  RECEIVE_NEW_DOG,
   REMOVE_DOG
 } from "../actions/dog_actions";
 
@@ -18,7 +18,7 @@ const DogsReducer = (
     case RECEIVE_USER_DOGS:
       newState.user = action.dogs.data;
       return newState;
-    case RECEIVE_DOG:
+    case RECEIVE_NEW_DOG:
       newState.new = action.dog.data;
       return newState;
     case REMOVE_DOG:
