@@ -1,11 +1,12 @@
 import React from "react";
+// import './main_page.css';
 
 class MainPage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>A Twitter Clone</h1>
-        <footer>Copyright &copy; 2019 Chirper</footer>
+      <div className="main">
+        <h1>BoneMeatsKibble</h1>
+        <footer>Copyright &copy; 2020 BoneMeatsKibble</footer>
       </div>
     );
   }

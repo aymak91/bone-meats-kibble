@@ -1,0 +1,14 @@
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.nav-list > li {
+    display: inline-block;
+    padding-right: 10px;
+    width: auto;
+    text-align: right;
+
+}
