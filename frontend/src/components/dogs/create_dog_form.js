@@ -20,9 +20,6 @@ class DogForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //   componentWillReceiveProps(nextProps) {
-  //     this.setState({ newDog: nextProps.newDog.text });
-  //   }
   componentDidMount() {
     return (
       <div>Dog profile successfully created</div>
@@ -30,15 +27,7 @@ class DogForm extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    // const dog = {
-    //   breed: this.state.breed,
-    //   description: this.state.description,
-    //   birthDate: this.state.birthDate,
-    //   size: this.state.size,
-    //   gender: this.state.gender,
-    //   activeness: this.state.activeness,
-    //   personality: this.state.personality
-    // };
+
     const dog = Object.assign({}, this.state);
     this.props.createDog(dog);
     this.props.closeModal();
