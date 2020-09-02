@@ -1,7 +1,7 @@
 {
-  "name": "mern-twitter",
+  "name": "bone-meats-kibble",
   "version": "1.0.0",
-  "description": "A Twitter clone built with the MERN stack",
+  "description": "Dog matching app built with the MERN stack",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
