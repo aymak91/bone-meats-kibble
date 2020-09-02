@@ -23,7 +23,11 @@ class DogForm extends React.Component {
   //   componentWillReceiveProps(nextProps) {
   //     this.setState({ newDog: nextProps.newDog.text });
   //   }
-
+  componentDidMount() {
+    return (
+      <div>Dog profile successfully created</div>
+    )
+  }
   handleSubmit(e) {
     e.preventDefault();
     // const dog = {
@@ -37,6 +41,7 @@ class DogForm extends React.Component {
     // };
     const dog = Object.assign({}, this.state);
     this.props.createDog(dog);
+    this.props.closeModal();
   }
 
   update(field) {

@@ -1,18 +1,17 @@
 import { connect } from "react-redux";
-import { patchDog, destroyDog } from "../../actions/dog_actions";
+import { patchDog } from "../../actions/dog_actions";
 import UpdateDogForm from "./update_dog_form";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const dogId = ownProps.dogId
   return {
-    // currentDog: state.dogs.all[],
-    newDog: state.dogs.new,
+    dogId: dogId
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     patchDog: (data, dogId) => dispatch(patchDog(data, dogId)),
-    destroyDog: (dogId) => dispatch(destroyDog(dogId)),
   };
 };
 

@@ -27,16 +27,17 @@ class Dogs extends React.Component {
         <div>
           <h2>All Dogs</h2>
           {this.state.dogs.map((dog) => (
-            <DogBox key={dog._id} 
-                name = {dog.name}
-                description = {dog.description} 
-                breed = {dog.breed} 
-                birthDate = {dog.birthDate} 
-                size = {dog.size} 
-                gender = {dog.gender} 
-                activeness = {dog.activeness} 
-                personality = {dog.personality} 
-            />
+            // <DogBox key={dog._id} dog={dog} />
+            <ul>
+              <li>{dog.name}</li>
+              <li>{dog.breed}</li>
+              <li>{dog.description}</li>
+              <li>{dog.birthDate}</li>
+              <li>{dog.size}</li>
+              <li>{dog.gender}</li>
+              <li>{dog.activeness}</li>
+              <li>{dog.personality}</li>
+            </ul>
           ))}
         </div>
       );
