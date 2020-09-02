@@ -28,7 +28,8 @@ class UpdateDogForm extends React.Component {
     e.preventDefault();
 
     const dog = Object.assign({}, this.state);
-    this.props.patchDog(dog, this.props.user);
+    this.props.patchDog(dog, this.props.dogId);
+    this.props.closeModal();
   }
 
   update(field) {

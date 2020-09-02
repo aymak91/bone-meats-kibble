@@ -1,7 +1,6 @@
 import React from "react";
 import DogBox from "../dogs/dog_box";
-import Modal from "react-modal";
-import UpdateDogFormContainer from "./update_dog_container";
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -9,12 +8,11 @@ class Profile extends React.Component {
 
     this.state = {
       dogs: [],
-      showUpdateModal: false,
     };
-    this.toggleUpdateModal = this.toggleUpdateModal(this);
-    this.annihilateDog = this.annihilateDog(this);
   }
-
+  componentDidUpdate() {
+    this.props.fetchUserDogs(this.props.currentUser.id);
+  }
   componentWillMount() {
     this.props.fetchUserDogs(this.props.currentUser.id);
   }
@@ -22,17 +20,6 @@ class Profile extends React.Component {
   componentWillReceiveProps(newState) {
     this.setState({ dogs: newState.dogs });
   }
-
-  annihilateDog(dogId) {
-    this.props.destroyDog(dogId);
-  }
-
-  toggleUpdateModal() {
-    this.setState({
-      showUpdateModal: !this.state.showUpdateModal,
-    });
-  }
-
 
 
   render() {
@@ -45,46 +32,11 @@ class Profile extends React.Component {
           {this.state.dogs.map((dog) => (
             <div>
               <DogBox
-                name={dog.name}
-                description={dog.description}
-                breed={dog.breed}
-                birthDate={dog.birthDate}
-                size={dog.size}
-                gender={dog.gender}
-                activeness={dog.activeness}
-                personality={dog.personality}
+                  key={dog.id}
+                  dog={dog}
+                  destroyDog={this.props.destroyDog}
               />
-              <button onClick={() => this.toggleUpdateModal}>Update Dog</button>
-              <button onClick={this.annihilateDog(dog._id)}>Delete Dog</button>
 
-              <Modal
-                className=""
-                isOpen={this.state.showUpdateModal}
-                onRequestClose={this.toggleUpdateModal}
-                ariaHideApp={false}
-                style={{
-                  content: {
-                    top: "50%",
-                    left: "50%",
-                    right: "0",
-                    bottom: "0",
-                    overflow: "hidden",
-                    width: "490px",
-                    height: "350px",
-                    background: "rgb(255, 255, 255)",
-                  },
-                  overlay: {
-                    position: "fixed",
-                    backgroundColor: "rgba(0,0,0,0.7)",
-                    zIndex: "50",
-                  },
-                }}
-              >
-                <UpdateDogFormContainer dogId={dog.id} closeModal={this.toggleUpdateModal} />
-                <label onClick={this.toggleUpdateModal}>
-                  BACK
-                </label>
-              </Modal>
             </div>
           ))}
         </div>
