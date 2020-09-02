@@ -1,0 +1,24 @@
+.outer-map-container {
+    width: 00px !important;
+    height: 800px !important;
+    /* margin-top: 200px; */
+    display: flex;
+    /* align-content: center; */
+    align-items: column;
+    /* justify-content: center; */
+}
+
+.mapboxgl-map {
+    overflow: visible !important;
+}
+
+.map-container mapboxgl-map {
+    width: 200px !important;
+    height: 200px !important; 
+}
+
+
+.mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate {
+    height: 100% !important;
+    width: 100% !important;
+}

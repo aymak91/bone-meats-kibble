@@ -43,10 +43,11 @@ const ParkMap = (props) => {
   // Add zoom and rotation controls to the map.
 
   return (
-    <div>
+    <div className="outer-map-container" >
+      <div> Nearby Parks </div>
       <div
         ref={(el) => (mapContainer.current = el)}
-        className="map_container"
+        className="map-container"
       />
     </div>
   );
