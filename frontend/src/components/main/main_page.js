@@ -6,7 +6,7 @@ class MainPage extends React.Component {
     return (
       <div className="main">
         <h1>BoneMeatsKibble</h1>
-        <footer>Copyright &copy; 2020 BoneMeatsKibble</footer>
+        <footer className="footer">Copyright &copy; 2020 BoneMeatsKibble</footer>
       </div>
     );
   }

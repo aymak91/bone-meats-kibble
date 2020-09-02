@@ -37,10 +37,10 @@ class NavBar extends React.Component {
       return (
         <ul className="nav-links">
           <li>
-           <Link to={"/signup"}>Signup</Link>
+           <Link className="login-button" to={"/signup"}>Signup</Link>
           </li>
           <li>
-            <Link to={"/login"}>Login</Link>
+            <Link className="login-button" to={"/login"}>Login</Link>
           </li>
         </ul>
       );
@@ -49,12 +49,14 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>BoneMeatsKibble</h1>
+      <div className="nav">
+        <h1 className="title">BoneMeatsKibble</h1>
           {this.getLinks()}
       </div>
     );
   }
 }
+
+
 
 export default NavBar;
