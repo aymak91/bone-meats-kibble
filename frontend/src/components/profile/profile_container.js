@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchUserDogs } from "../../actions/dog_actions";
+import { fetchUserDogs, destroyDog } from "../../actions/dog_actions";
 import Profile from "./profile";
 
 const mapStateToProps = (state) => {
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUserDogs: (id) => dispatch(fetchUserDogs(id)),
+    destroyDog: (dogId) => dispatch(destroyDog(dogId)),
   };
 };
 
