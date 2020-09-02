@@ -14,8 +14,8 @@ const ParkMap = (props) => {
   useEffect(() => {
     mapboxgl.accessToken = mapBoxToken;
     const bounds = [
-      [-122.54, 37.6], // [west, south]
-      [-122.34, 37.9], // [east, north]
+      [-122.54, 37.43], // [west, south]
+      [-122.15, 37.9], // [east, north]
     ];
 
     const initializeMap = ({ setMap, mapContainer }) => {
@@ -46,7 +46,7 @@ const ParkMap = (props) => {
     <div>
       <div
         ref={(el) => (mapContainer.current = el)}
-        className="map_container"
+        id="map-container"
       />
     </div>
   );
