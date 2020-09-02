@@ -5,7 +5,6 @@ const passport = require("passport");
 
 const MatchModel = require("../../models/Match");
 const DogModel = require("../../models/Dog");
-const Dog = require("../../models/Dog");
 
 
 router.get("/", (req, res) => {
