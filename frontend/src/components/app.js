@@ -9,9 +9,11 @@ import ProfileContainer from './profile/profile_container';
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+// import ParkMap from "./maps/maps"
+
 
 const App = () => (
-  <div>
+  <div className="test">
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
@@ -22,6 +24,7 @@ const App = () => (
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/new_dog"component={DogCreateContainer}/>
     </Switch>
+    {/* <ParkMap /> */}
   </div>
 );
 

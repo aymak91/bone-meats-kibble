@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import DogBox from "./dog_box";
 
-class Dog extends React.Component {
+class Dogs extends React.Component {
   constructor(props) {
     super(props);
 
@@ -27,15 +27,17 @@ class Dog extends React.Component {
         <div>
           <h2>All Dogs</h2>
           {this.state.dogs.map((dog) => (
-            <DogBox key={dog._id} 
-                breed = {this.props.breed} 
-                description = {this.props.description} 
-                birthDate = {this.props.birthDate} 
-                size = {this.props.size} 
-                gender = {this.props.gender} 
-                activeness = {this.props.activeness} 
-                personality = {this.props.personality} 
-            />
+            // <DogBox key={dog._id} dog={dog} />
+            <ul>
+              <li>{dog.name}</li>
+              <li>{dog.breed}</li>
+              <li>{dog.description}</li>
+              <li>{dog.birthDate}</li>
+              <li>{dog.size}</li>
+              <li>{dog.gender}</li>
+              <li>{dog.activeness}</li>
+              <li>{dog.personality}</li>
+            </ul>
           ))}
         </div>
       );
@@ -43,4 +45,4 @@ class Dog extends React.Component {
   }
 }
 
-export default withRouter(Dog);
+export default withRouter(Dogs);

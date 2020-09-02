@@ -1,7 +1,7 @@
 import React from "react";
-import DogBox from "./dog_box";
 
-class DogForm extends React.Component {
+
+class UpdateDogForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +14,7 @@ class DogForm extends React.Component {
       gender: "",
       activeness: "",
       personality: "",
-      newDog: ""
+      newDog: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,24 +23,12 @@ class DogForm extends React.Component {
   //   componentWillReceiveProps(nextProps) {
   //     this.setState({ newDog: nextProps.newDog.text });
   //   }
-  componentDidMount() {
-    return (
-      <div>Dog profile successfully created</div>
-    )
-  }
+
   handleSubmit(e) {
     e.preventDefault();
-    // const dog = {
-    //   breed: this.state.breed,
-    //   description: this.state.description,
-    //   birthDate: this.state.birthDate,
-    //   size: this.state.size,
-    //   gender: this.state.gender,
-    //   activeness: this.state.activeness,
-    //   personality: this.state.personality
-    // };
+
     const dog = Object.assign({}, this.state);
-    this.props.createDog(dog);
+    this.props.patchDog(dog, this.props.dogId);
     this.props.closeModal();
   }
 
@@ -122,4 +110,4 @@ class DogForm extends React.Component {
   }
 }
 
-export default DogForm;
+export default UpdateDogForm;

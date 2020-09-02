@@ -4,7 +4,13 @@ const validText = require('./valid-text');
 module.exports = function validateDogInput(data) {
   let errors = {};
 
-  data.text = validText(data.text) ? data.text : "";
+  data.name = validText(data.name) ? data.name : "";
+  data.description = validText(data.description) ? data.description : "";
+  data.breed = validText(data.breed) ? data.breed : "";
+  data.size = validText(data.size) ? data.size : "";
+  data.gender = validText(data.gender) ? data.gender : "";
+  data.activeness = validText(data.activeness) ? data.activeness : "";
+  data.personality = validText(data.personality) ? data.personality : "";
 
   //name
   if (!Validator.isLength(data.name, { min: 1, max: 140 })) {
@@ -61,8 +67,8 @@ module.exports = function validateDogInput(data) {
   }
 
   // activeness
-  if (!Validator.isLength(data.activeness, { min: 3, max: 7 })) {
-    errors.activeness = "Tweet must be between 3 and 7 characters";
+  if (!Validator.isLength(data.activeness, { min: 3, max: 140 })) {
+    errors.activeness = "Activeness must be between 3 and 140 characters";
   }
 
   if (Validator.isEmpty(data.activeness)) {

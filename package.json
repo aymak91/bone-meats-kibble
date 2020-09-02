@@ -1,7 +1,7 @@
 {
-  "name": "mern-twitter",
+  "name": "bone-meats-kibble",
   "version": "1.0.0",
-  "description": "A Twitter clone built with the MERN stack",
+  "description": "Dog matching app built with the MERN stack",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -15,16 +15,20 @@
   "author": "Alexander Mak",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.745.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.2",
+    "multer": "^1.4.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
+    "uuid": "^8.3.0",
     "validator": "^13.1.1"
   },
   "devDependencies": {
