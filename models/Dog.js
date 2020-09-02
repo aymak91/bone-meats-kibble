@@ -38,6 +38,10 @@ const DogSchema = new Schema({
     type: String,
     required: true,
   },
+  imageURL: {
+    type: String,
+    required: false
+  },
   createdAt: {
     type: Date,
     default: Date.now,

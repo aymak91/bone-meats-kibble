@@ -1,6 +1,7 @@
 import React from "react";
 import DogBox from "../dogs/dog_box";
 
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,9 @@ class Profile extends React.Component {
       dogs: [],
     };
   }
-
+  componentDidUpdate() {
+    this.props.fetchUserDogs(this.props.currentUser.id);
+  }
   componentWillMount() {
     this.props.fetchUserDogs(this.props.currentUser.id);
   }
@@ -17,6 +20,7 @@ class Profile extends React.Component {
   componentWillReceiveProps(newState) {
     this.setState({ dogs: newState.dogs });
   }
+
 
   render() {
     if (this.state.dogs.length === 0) {
@@ -26,16 +30,14 @@ class Profile extends React.Component {
         <div>
           <h2>All of This User's Dogs</h2>
           {this.state.dogs.map((dog) => (
-            <DogBox
-              name={dog.name}
-              description={dog.description}
-              breed={dog.breed}
-              birthDate={dog.birthDate}
-              size={dog.size}
-              gender={dog.gender}
-              activeness={dog.activeness}
-              personality={dog.personality}
-            />
+            <div>
+              <DogBox
+                  key={dog.id}
+                  dog={dog}
+                  destroyDog={this.props.destroyDog}
+              />
+
+            </div>
           ))}
         </div>
       );

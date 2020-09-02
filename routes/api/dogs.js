@@ -2,10 +2,37 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const AWS = require('aws-sdk');
+const keys = require('../../config/keys');
+const uuidv4 = require("uuid").v4;
 
 const Dog = require('../../models/Dog');
 const validateDogInput = require('../../validation/dogs');
 
+// These are for Middleware for Postman Form-Data
+const multer = require("multer")
+const upload = multer();
+
+
+// AWS S3 Setup which allows you access to AWS
+const s3 = new AWS.S3({
+  accessKeyId: keys.awsAccessID,
+  secretAccessKey: keys.awsSecretAccessKey,
+});
+
+const uploadImage = (file) => {
+  const params = {
+    Bucket: keys.s3Bucket,
+    Key: uuidv4(),
+    Body: file.buffer,
+    ContentType: file.mimetype,
+    ACL: "public-read"
+  };
+
+  const uploadPhoto = s3.upload(params).promise();
+
+  return uploadPhoto;
+};
 
 router.get("/test", (req, res) => {
   res.json({ msg: "This is the dogs route" })
@@ -33,15 +60,23 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ nodogfound: 'No dog found with that ID' }));
 });
 
-router.post('/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-      const { errors, isValid } = validateDogInput(req.body);
-        
-      if (!isValid) {
-        return res.status(400).json(errors);
-      }
-  
+//post takes in a second argument here which is upload.single("file"). file is the name of the field that is going to be uploaded
+
+router.post('/', upload.single("file"), //middleware
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateDogInput(req.body);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    // Waits for file to upload, get URL, and then creates a Dog object
+    console.log(req.file)
+
+    uploadImage(req.file).then(data => {                                   //file comes from upload.single("file")
+      const uploadedFileURL = data.Location;                                    //data.Location is url of aws image
+
       const newDog = new Dog({
         user: req.user.id,
         name: req.body.name,
@@ -51,14 +86,17 @@ router.post('/',
         size: req.body.size,
         gender: req.body.gender,
         activeness: req.body.activeness,
-        personality: req.body.personality
+        personality: req.body.personality,
+        imageURL: uploadedFileURL
       });
-  
+
       newDog
         .save()
         .then(dog => res.json(dog));
-    }
+    });
+  }
 );
+
 
 router.patch(
   "/:id",
