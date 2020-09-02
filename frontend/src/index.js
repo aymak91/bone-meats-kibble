@@ -16,7 +16,7 @@ import { setAuthToken } from "./util/session_api_util";
 // We have not created this action yet, but will do so in the next step
 import { logout } from "./actions/session_actions";
 
-import { fetchDogs, fetchUserDogs, createDog, updateDog, deleteDog } from "./actions/dog_actions"
+import { fetchDogs, fetchUserDogs, createDog, updateDog, destroyDog } from "./actions/dog_actions"
 import { logoutUser, signup, login } from "./actions/session_actions"
 import { getUserDogs, writeDog } from "./util/dog_api_util";
 
@@ -24,6 +24,7 @@ window.getUserDogs = getUserDogs;
 window.fetchDogs = fetchDogs;
 window.fetchUserDogs = fetchUserDogs;
 window.createDog = createDog;
+window.destroyDog = destroyDog;
 
 window.logoutUser = logoutUser;
 window.signup = signup;
@@ -64,5 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render our root component and pass in the store as a prop
   const root = document.getElementById("root");
   window.dispatch = store.dispatch;
+  window.getState = store.getState;
   ReactDOM.render(<Root store={store} />, root);
 });
