@@ -47,7 +47,7 @@ const DogSchema = new Schema({
     default: null,
   },
   //MATCH ALGORITHM
-  possibleMatches: [], //array of ALL MATCHES where matched = false
+  possibleMatches: [{type: Schema.Types.ObjectId, ref: 'matches'}], //array of ALL MATCHES where matched = false
   matches: [], //array of dog_ids
   requestingMatches: [], //array of dog_ids who liked you
   requestedMatches: [], //array of dog_ids who you liked

@@ -67,8 +67,8 @@ module.exports = function validateDogInput(data) {
   }
 
   // activeness
-  if (!Validator.isLength(data.activeness, { min: 3, max: 7 })) {
-    errors.activeness = "Activeness must be between 3 and 7 characters";
+  if (!Validator.isLength(data.activeness, { min: 3, max: 140 })) {
+    errors.activeness = "Activeness must be between 3 and 140 characters";
   }
 
   if (Validator.isEmpty(data.activeness)) {

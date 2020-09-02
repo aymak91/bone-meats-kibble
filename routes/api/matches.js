@@ -3,20 +3,22 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
 
-const Match = require("../../models/Match");
+const MatchModel = require("../../models/Match");
+const DogModel = require("../../models/Dog");
 const Dog = require("../../models/Dog");
 
 
-
 router.get("/", (req, res) => {
-  Match
+  MatchModel
     .find()
     .then((matches) => res.json(matches))
-    .catch((err) => res.status(404).json({ nomatchesfound: "No matches found" }));
+    .catch((err) =>
+      res.status(404).json({ nomatchesfound: "No matches found" })
+    );
 });
 
 router.get("/dog/:dog_id", (req, res) => {
-  Match
+  MatchModel
     .find({ dog: req.params.dog_id })
     .sort({ date: -1 })
     .then((matches) => res.json(matches))
@@ -26,7 +28,16 @@ router.get("/dog/:dog_id", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Match.findById(req.params.id)
+  MatchModel
+    .findById(req.params.id)
+    .populate({
+        path: 'dog',
+        select: 'name'
+    })
+    .populate({
+        path: 'requestedDog',
+        select: 'name'
+    })
     .then((match) => res.json(match))
     .catch((err) =>
       res.status(404).json({ nomatchfound: "No match found with that ID" })
@@ -35,27 +46,23 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
 
-    const newMatch = new Match({
+    const newMatch = new MatchModel({
       dog: req.body.dog,
       requestedDog: req.body.requestedDog,
       isMatched: req.body.isMatched,
     });
 
-    // console.log(newMatch.dog)
-    // console.log(newMatch.requestedDog)
+    //need to restrict matches from being created for the dogs of the same owner
 
-    // dog = Dog.findOne(newMatch.dog);
-
-    // console.log(dog);
-    // console.log(requestedDog.user);
-
-    newMatch.save().then((match) => res.json(match));
-
-    // if (dog.user !== requestedDog.user)  {
-    //     newMatch.save().then((match) => res.json(match));
-    // } else {
-    //     res.status(404).json( {matchnotcreated: "cannot match two dogs of the same owner"})
-    // }
+    newMatch
+        .save()
+        .then(function (result) {
+            return DogModel.findOneAndUpdate(
+                {_id: req.body.dog},
+                {$push: {possibleMatches: result.id}}
+            )
+        })
+        .then((match) => res.json(match));
 
   }
 );
