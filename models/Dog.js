@@ -40,7 +40,7 @@ const DogSchema = new Schema({
   },
   imageURL: {
     type: String,
-    required: true
+    required: false
   },
   createdAt: {
     type: Date,
