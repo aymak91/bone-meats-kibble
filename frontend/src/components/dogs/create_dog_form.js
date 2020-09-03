@@ -203,7 +203,7 @@ class DogForm extends React.Component {
               <option value=""> - </option>
               <option value="Smol"> smol </option>
               <option value="Small"> small </option>
-              <option value="Median"> Median </option>
+              <option value="Medium"> Medium </option>
               <option value="Large"> Large </option>
               <option value="Big Boi"> Big Boi </option>
             </select>
