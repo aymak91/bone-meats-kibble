@@ -40,7 +40,8 @@ const DogSchema = new Schema({
   },
   imageURL: {
     type: String,
-    required: false
+    required: false,
+    default: "https://bonemeatskibble-pro.s3.amazonaws.com/a130c200-4967-453a-89c1-d9b87d4818e1"
   },
   createdAt: {
     type: Date,
