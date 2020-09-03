@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import UpdateDogFormContainer from "../profile/update_dog_container";
+import { Link } from "react-router-dom";
 
 class DogBox extends React.Component {
   constructor(props) {
@@ -30,6 +31,8 @@ class DogBox extends React.Component {
         </ul>
         <span onClick={this.toggleUpdateModal}>Update Dog</span>
         <button onClick={() => this.props.destroyDog(this.props.dog._id)}>Delete Dog</button>
+        <Link to={`/${this.props.dog._id}/possible_matches`} dog={this.props.dog}>Start Matching</Link>
+        {/* <Link to>Start Matching</Link> */}
         <Modal
           className=""
           isOpen={this.state.showUpdateModal}

@@ -37,11 +37,6 @@ class DogForm extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-<<<<<<< HEAD
-
-    const dog = Object.assign({}, this.state);
-    this.props.createDog(dog);
-=======
     // const dog = {
     //   breed: this.state.breed,
     //   description: this.state.description,
@@ -83,7 +78,6 @@ class DogForm extends React.Component {
         .catch(errors => this.setState({ errors: errors }));
     };
     
->>>>>>> master
     this.props.closeModal();
   }
 

@@ -5,7 +5,7 @@ import {
   removePossibleMatches,
   curvePossibleMatches,
   curvePossibleMatches2
-} from "../util/matches/possible_matches_api_util";
+} from "../../util/matches/possible_matches_api_util";
 
 export const RECEIVE_POSSIBLE_MATCHES = "RECEIVE_POSSIBLE_MATCHES";
 
