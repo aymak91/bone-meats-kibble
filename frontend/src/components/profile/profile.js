@@ -10,10 +10,15 @@ class Profile extends React.Component {
       dogs: [],
     };
   }
-  componentDidUpdate() {
-    this.props.fetchUserDogs(this.props.currentUser.id);
-  }
-  componentWillMount() {
+
+  // componentDidUpdate(prevState) {
+  //     if ((this.prevState.dogs.length) !== (this.state.dogs.length)) {
+  //         this.props.fetchUserDogs(this.props.currentUser.id);
+  //     }
+  // }
+
+
+  componentDidMount() {
     this.props.fetchUserDogs(this.props.currentUser.id);
   }
 

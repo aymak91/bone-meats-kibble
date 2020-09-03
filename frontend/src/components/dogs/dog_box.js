@@ -19,6 +19,7 @@ class DogBox extends React.Component {
     return (
       <div>
         <ul>
+          <li>{this.props.dog.name}</li>
           <li>{this.props.dog.breed}</li>
           <li>{this.props.dog.description}</li>
           <li>{this.props.dog.birthDate}</li>

@@ -16,7 +16,7 @@ import { setAuthToken } from "./util/session_api_util";
 // We have not created this action yet, but will do so in the next step
 import { logout } from "./actions/session_actions";
 
-import { fetchDogs, fetchUserDogs, createDog, updateDog, destroyDog } from "./actions/dog_actions"
+import { fetchDogs, fetchUserDogs, createDog, destroyDog } from "./actions/dog_actions"
 import { logoutUser, signup, login } from "./actions/session_actions"
 import { getUserDogs, writeDog } from "./util/dog_api_util";
 
