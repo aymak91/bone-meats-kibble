@@ -9,6 +9,7 @@ const uuidv4 = require("uuid").v4;
 const Dog = require('../../models/Dog');
 const validateDogInput = require('../../validation/dogs');
 
+
 // These are for Middleware for Postman Form-Data
 const multer = require("multer")
 const upload = multer();
@@ -39,26 +40,27 @@ router.get("/test", (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    Dog.find()
-        // .sort({ date: -1 })
-        .then(dogs => res.json(dogs))
-        .catch(err => res.status(404).json({ nodogsfound: 'No dogs found' }));
+  Dog.find()
+    // .sort({ date: -1 })
+    .then(dogs => res.json(dogs))
+    .catch(err => res.status(404).json({ notweetsfound: 'No dogs found' }));
 });
 
 router.get('/user/:user_id', (req, res) => {
-    Dog.find({user: req.params.user_id})
-        .sort({ date: -1 })
-        .then(dogs => res.json(dogs))
-        .catch(err =>
-            res.status(404).json({ nodogsfound: 'No dogs found from that user' }));
+  Dog.find({ user: req.params.user_id })
+    .sort({ date: -1 })
+    .then(dogs => res.json(dogs))
+    .catch(err =>
+      res.status(404).json({ nodogsfound: 'No dogs found from that user' }));
 });
 
 router.get('/:id', (req, res) => {
-    Dog.findById(req.params.id)
-        .then(dog => res.json(dog))
-        .catch(err =>
-            res.status(404).json({ nodogfound: 'No dog found with that ID' }));
+  Dog.findById(req.params.id)
+    .then(dog => res.json(dog))
+    .catch(err =>
+      res.status(404).json({ nodogfound: 'No dog found with that ID' }));
 });
+
 
 //post takes in a second argument here which is upload.single("file"). file is the name of the field that is going to be uploaded
 
@@ -97,12 +99,11 @@ router.post('/', upload.single("file"), //middleware
   }
 );
 
-
 router.patch(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { 
+    const {
       name,
       description,
       breed,
@@ -140,7 +141,7 @@ router.delete(
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
     Dog.findByIdAndRemove(
-      req.params.id, 
+      req.params.id,
       function (err, dog) {
         if (err) return next(err);
         res.json(dog);
@@ -150,4 +151,3 @@ router.delete(
 );
 
 module.exports = router;
-
