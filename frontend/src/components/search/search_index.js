@@ -159,8 +159,8 @@ class SearchIndex extends React.Component {
               onChange={this.switchOptions("size")}
             >
               <option value=""> - </option>
-              <option value="smol"> smol </option>
-              <option value="small"> small </option>
+              <option value="Smol"> smol </option>
+              <option value="Small"> small </option>
               <option value="Median"> Median </option>
               <option value="Large"> Large </option>
               <option value="Big Boi"> Big Boi </option>
@@ -186,6 +186,7 @@ class SearchIndex extends React.Component {
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
+              <option value="bashful"> Bashful </option>
               <option value="Naughty"> Naughty </option>
               <option value="Bold"> Bold </option>
               <option value="Relaxed"> Relaxed </option>
