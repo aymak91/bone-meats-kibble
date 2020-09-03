@@ -9,6 +9,7 @@ import ProfileContainer from './profile/profile_container';
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+import PossibleMatchesContainer from "./matches/possible_matches_container";
 import SearchIndexContainer from "./search/search_index_container"
 // import ParkMap from "./maps/maps"
 
@@ -23,7 +24,8 @@ const App = () => (
 
       <ProtectedRoute exact path="/dogs" component={DogsContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-      <ProtectedRoute exact path="/new_dog" component={DogCreateContainer} />
+      <ProtectedRoute exact path="/new_dog"component={DogCreateContainer}/>
+      <ProtectedRoute exact path="/:dog_id/possible_matches/" component={PossibleMatchesContainer}/>
       <ProtectedRoute exact path="/search" component={SearchIndexContainer} />
     </Switch>
     {/* <ParkMap /> */}

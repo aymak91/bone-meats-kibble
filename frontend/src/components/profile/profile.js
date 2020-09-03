@@ -3,6 +3,8 @@ import DogBox from "../dogs/dog_box";
 
 
 class Profile extends React.Component {
+  // _isMounted = false;
+  
   constructor(props) {
     super(props);
 
@@ -10,12 +12,26 @@ class Profile extends React.Component {
       dogs: [],
     };
   }
-  componentDidUpdate() {
+
+  // componentDidUpdate(prevState) {
+    
+  //     if (((prevState.dogs.length) !== (this.state.dogs.length))) {
+  //         this.props.fetchUserDogs(this.props.currentUser.id);
+  //     }
+  // }
+
+  // shouldComponentUpdate() {
+  //   this.props.fetchUserDogs(this.props.currentUser.id);
+  // }
+
+  componentDidMount() {
+    // this._isMounted = true;
     this.props.fetchUserDogs(this.props.currentUser.id);
   }
-  componentWillMount() {
-    this.props.fetchUserDogs(this.props.currentUser.id);
-  }
+
+  // componentWillUnmount() {
+  //   this._isMounted = false;
+  // }
 
   componentWillReceiveProps(newState) {
     this.setState({ dogs: newState.dogs });
@@ -24,7 +40,7 @@ class Profile extends React.Component {
 
   render() {
     if (this.state.dogs.length === 0) {
-      return <div>This user has no dogs</div>;
+      return null;
     } else {
       return (
         <div>

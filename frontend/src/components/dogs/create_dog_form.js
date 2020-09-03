@@ -34,9 +34,10 @@ class DogForm extends React.Component {
     }
   }
 
-  //   componentWillReceiveProps(nextProps) {
-  //     this.setState({ newDog: nextProps.newDog.text });
-  //   }
+    // componentWillReceiveProps(nextProps) {
+    //   this.setState({ newDog: nextProps.newDog.text });
+    // }
+
   componentDidMount() {
     return (
       <div>Dog profile successfully created</div>
