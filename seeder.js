@@ -5,10 +5,15 @@ const PossibleMatchesModel = require("./models/matches/PossibleMatches");
 const PendingMatchesModel = require("./models/matches/PendingMatches");
 const RequestedMatchesModel = require("./models/matches/RequestedMatches");
 const MatchesModel = require("./models/matches/Matches");
+// const bcrypt = require('bcryptjs');
+
+
 
 const seed = async () => {
-    // Users
+    //Users
+    // await User.collection.deleteMany({})
     User.collection.deleteMany({})
+
     const demoUser = new User({
         handle: 'demoUser',
         email: 'demoUser@doge.com',
@@ -20,8 +25,36 @@ const seed = async () => {
         handle: 'alexUser',
         email: 'demoUser1@doge.com',
         password: 'password'
-    })
+    });
     user1.save();
+
+    // bcrypt.genSalt(10, (err, salt) => {
+    //     bcrypt.hash(user1.password, salt, (err, hash) => {
+    //         if (err) throw err;
+    //         user1.password = hash;
+    //         user1.save()
+    //             .then(user => res.json(user))
+    //             .catch(err => res.console.log(err));
+    //     })
+    // })
+
+    // const testUser = await new User({
+    //     handle: 'alexUser',
+    //     email: 'demoUser@doge.com',
+    //     password: 'password'
+    // })
+    // bcrypt.genSalt(10, (err, salt) => {
+    //     bcrypt.hash(testUser.password, salt, async (err, hash) => {
+    //         if (err) throw err;
+    //         testUser.password = hash;
+    //         const savedUser = await testUser.save()
+    //         res.json(savedUser)
+    //     })
+    // })
+
+
+
+
     const user2 = new User({
         handle: 'danielUser',
         email: 'demoUser2@doge.com',
