@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Matches extends React.Component {
     constructor(props) {
@@ -75,6 +76,7 @@ class Matches extends React.Component {
                     >
                     Delete Match
                     </button>
+                    <Link to={`/messages/${currentDogId}/${match._id}/`}>Start Chatting</Link>
                 </div>
                 ))}
           </div>

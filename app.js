@@ -13,6 +13,8 @@ const possibleMatches = require("./routes/api/matches/possible_matches")
 const pendingMatches = require("./routes/api/matches/pending_matches")
 const requestedMatches = require("./routes/api/matches/requested_matches")
 const matches = require("./routes/api/matches/matches")
+
+const messages = require("./routes/api/messages")
 // const seed = require("./seeder")
 
 
@@ -50,6 +52,7 @@ app.use("/api/possible_matches", possibleMatches);
 app.use("/api/matches", matches);
 app.use("/api/pending_matches", pendingMatches);
 app.use("/api/requested_matches", requestedMatches);
+app.use("/api/messages", messages);
 
 const port = process.env.PORT || 5000;
 
