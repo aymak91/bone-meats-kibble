@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
 class LoginForm extends React.Component {
@@ -58,27 +59,48 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
+      <div className="login-page">
+        <div className="login-form-container">
+          <div className="login-form">
+
+            <h1 className="logo">BoneMeatsKibble</h1>
+            <form className="login-form-form" onSubmit={this.handleSubmit}>
+              <div className="form">
+                Email
+                <br /> 
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  className="email-box"
+                />
+                <br />
+                Password
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="password-box"
+                />
+                <br />
+                <input className="login-button" type="submit" value="Login" />
+                {this.renderErrors()}
+              </div>
+            </form>
+            <div className="registration">
+              Don't have an account?   
+              <Link to={"/signup"}>  Signup</Link>
+            </div>
+
           </div>
-        </form>
+        </div>
+        <div className="login-form-background">
+          <span className="motto">
+            Happy Birthday Jaron!!
+          </span>
+          
+        </div>
+
       </div>
     );
   }

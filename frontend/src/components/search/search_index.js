@@ -117,9 +117,7 @@ class SearchIndex extends React.Component {
               <option value="Border Collie">Border Collie</option>
               <option value="Boxer">Boxer</option>
               <option value="Bulldog">Bulldog</option>
-              <option value="Cavalier King Charles Spaniel">
-                Cavalier King Charles Spaniel
-              </option>
+              <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
               <option value="Collie">Collie</option>
