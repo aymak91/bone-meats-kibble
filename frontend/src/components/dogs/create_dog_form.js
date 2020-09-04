@@ -134,25 +134,24 @@ class DogForm extends React.Component {
               onChange={this.update("breed")}
               placeholder="Write your dog breed..."
             /> */}
-            Breed: 
             <select
               // className="breed"
               value={this.state.breed}
               onChange={this.switchOptions("breed")}
             >
-              <option value=""> - </option>
+              <option value=""> Breed </option>
               <option value="Akita">Akita</option>
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
               <option value="American Pitbull">American Pitbull</option>
+              <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
               <option value="Austrialian Sheperd">Austrialian Shepherd</option>
               <option value="Beagle">Beagle</option>
+              <option value="Blue Heeler Mix">Blue Heeler Mix</option>
               <option value="Border Collie">Border Collie</option>
               <option value="Boxer">Boxer</option>
               <option value="Bulldog">Bulldog</option>
-              <option value="Cavalier King Charles Spaniel">
-                Cavalier King Charles Spaniel
-              </option>
+              <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
               <option value="Corgi">Corgi</option>
@@ -175,6 +174,7 @@ class DogForm extends React.Component {
               <option value="maltese poodle">maltese poodle</option>
               <option value="Mutt">Mutt</option>
               <option value="Papillion">Papillion</option>
+              <option value="Persian Yellow Mongrel">Persian Yellow Mongrel</option>
               <option value="Pomeranian">Pomeranian</option>
               <option value="Pomsky">Pomsky</option>
               <option value="Poodle">Poodle</option>
@@ -196,13 +196,12 @@ class DogForm extends React.Component {
               placeholder="Write your dog birthdate..."
             />
             <br />
-            Size
             <select
               // className="size"
               value={this.state.size}
               onChange={this.switchOptions("size")}
             >
-              <option value=""> - </option>
+              <option value=""> Size </option>
               <option value="Smol"> smol </option>
               <option value="Small"> small </option>
               <option value="Medium"> Medium </option>
@@ -210,24 +209,22 @@ class DogForm extends React.Component {
               <option value="Big Boi"> Big Boi </option>
             </select>
             <br />
-            Gender: 
             <select
               className="gender"
               value={this.state.gender}
               onChange={this.switchOptions("gender")}
             >
-              <option value=""> - </option>
+              <option value=""> Gender </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
             <br />
-            Activeness: 
             <select
               className="activeness"
               value={this.state.activeness}
               onChange={this.switchOptions("activeness")}
             >
-              <option value=""> - </option>
+              <option value=""> Activeness </option>
               <option value="Lazy">Lazy</option>
               <option value="Low">Low</option>
               <option value="Normal"> Normal </option>
@@ -241,12 +238,11 @@ class DogForm extends React.Component {
               onChange={this.update("personality")}
               placeholder="Write your dog personality..."
             /> */}
-            Personality:  
             <select
               value={this.state.personality}
               onChange={this.switchOptions("personality")}
             > 
-              <option value=""> - </option>
+              <option value=""> Personality </option>
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
