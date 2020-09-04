@@ -155,6 +155,7 @@ class DogForm extends React.Component {
               </option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
+              <option value="Corgi">Corgi</option>
               <option value="Collie">Collie</option>
               <option value="Dachshund">Dachshund</option>
               <option value="Dalmatian">Dalmatian</option>
@@ -216,8 +217,8 @@ class DogForm extends React.Component {
               onChange={this.switchOptions("gender")}
             >
               <option value=""> - </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
             <br />
             Activeness: 
@@ -228,7 +229,7 @@ class DogForm extends React.Component {
             >
               <option value=""> - </option>
               <option value="Lazy">Lazy</option>
-              <option value="low">Low</option>
+              <option value="Low">Low</option>
               <option value="Normal"> Normal </option>
               <option value="High"> High </option>
               <option value="Hyperactive"> Hyperactive</option>
@@ -244,13 +245,12 @@ class DogForm extends React.Component {
             <select
               value={this.state.personality}
               onChange={this.switchOptions("personality")}
-
             > 
               <option value=""> - </option>
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
-              <option value="bashful"> Bashful </option>
+              <option value="Bashful"> Bashful </option>
               <option value="Naughty"> Naughty </option>
               <option value="Bold"> Bold </option>
               <option value="Relaxed"> Relaxed </option>

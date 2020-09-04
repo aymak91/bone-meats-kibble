@@ -56,7 +56,7 @@ class DogBox extends React.Component {
             },
           }}
         >
-          <UpdateDogFormContainer dogId={this.props.dog._id} closeModal={this.toggleUpdateModal} />
+          <UpdateDogFormContainer dog={this.props.dog} dogId={this.props.dog._id} closeModal={this.toggleUpdateModal} />
           <label onClick={this.toggleUpdateModal}>BACK</label>
         </Modal>
       </div>
