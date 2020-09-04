@@ -6,14 +6,14 @@ class UpdateDogForm extends React.Component {
     super(props);
 
     this.state = {
-      name: "",
-      description: "",
-      breed: "",
-      birthDate: "",
-      size: "",
-      gender: "",
-      activeness: "",
-      personality: "",
+      name: this.props.dog.name,
+      description: this.props.dog.description,
+      breed: this.props.dog.breed,
+      birthDate: this.props.dog.birthDate,
+      size: this.props.dog.size,
+      gender: this.props.dog.gender,
+      activeness: this.props.dog.activeness,
+      personality: this.props.dog.personality,
       newDog: "",
     };
 
@@ -40,30 +40,32 @@ class UpdateDogForm extends React.Component {
   }
 
   render() {
+    console.log(this.state)
+    // console.log(this.props)
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div>        
+        <form onSubmit={this.handleSubmit} >
           <div>
             <input
               type="textarea"
-              value={this.state.name}
+              value={this.state.name }
               onChange={this.update("name")}
-              placeholder="Write your dog name..."
+              // placeholder={this.props.dog.name}
             />
             <br />
             <input
               type="textarea"
-              value={this.state.description}
+              value={this.state.description }
               onChange={this.update("description")}
-              placeholder="Write your dog description..."
+              // placeholder={this.props.dog.description}
             />
             <br />
             <select
               className="breed"
-              value={this.state.breed}
+              value={this.state.breed }
               onChange={this.update("breed")}
             >
-              <option value=""> Breed </option>
+              <option value={this.props.dog.breed}> {this.props.dog.breed} </option>
               <option value="Akita">Akita</option>
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
@@ -76,6 +78,7 @@ class UpdateDogForm extends React.Component {
               <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel </option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
+              <option value="Corgi">Corgi</option>
               <option value="Collie">Collie</option>
               <option value="Dachshund">Dachshund</option>
               <option value="Dalmatian">Dalmatian</option>
@@ -110,20 +113,20 @@ class UpdateDogForm extends React.Component {
             <br />
             <input
               type="textarea"
-              value={this.state.birthDate}
+              value={this.state.birthDate }
               onChange={this.update("birthDate")}
-              placeholder="Write your dog birthdate..."
+              // placeholder={`${this.props.dog.birthDate}`}
             />
             <br />
             <select
               className="size"
-              value={this.state.size}
+              value={this.state.size }
               onChange={this.update("size")}
               >
-              <option value=""> Size </option>
+              <option value={`${this.props.dog.size}`}> {`${this.props.dog.size}`} </option>
               <option value="Smol"> smol </option>
               <option value="Small"> small </option>
-              <option value="Median"> Median </option>
+              <option value="Medium"> Medium </option>
               <option value="Large"> Large </option>
               <option value="Big Boi"> Big Boi </option>
             </select>            
@@ -133,9 +136,9 @@ class UpdateDogForm extends React.Component {
               value={this.state.gender}
               onChange={this.update("gender")}
             >
-              <option value=""> Gender </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value={this.props}> Gender </option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>            
             <br />
             <select
@@ -143,9 +146,9 @@ class UpdateDogForm extends React.Component {
               value={this.state.activeness}
               onChange={this.update("activeness")}
             >
-              <option value=""> Activeness </option>
+              <option value={this.props.dog.activeness}> { this.props.dog.activeness } </option>
               <option value="Lazy">Lazy</option>
-              <option value="low">Low</option>
+              <option value="Low">Low</option>
               <option value="Normal"> Normal </option>
               <option value="High"> High </option>
               <option value="Hyperactive"> Hyperactive</option>
@@ -153,10 +156,10 @@ class UpdateDogForm extends React.Component {
             <br />
             <select
               className="personality"
-              value={this.state.personality}
+              value={this.state.personality }
               onChange={this.update("personality")}
             >
-              <option value=""> Personality </option>
+              <option value={this.props.dog.personality}> {this.props.dog.personality} </option>
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
