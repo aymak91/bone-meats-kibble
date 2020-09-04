@@ -39,7 +39,7 @@ class PossibleMatches extends React.Component {
     if (await prevProps.possibleMatches.length !== this.props.possibleMatches.length) {
           await this.props.fetchPossibleMatches();
           this.setState({possibleMatches: this.props.possibleMatches})
-          this.setState({ possibleMatchesExtracted: this.props.possibleMatchesExtracted })
+          this.setState({ possibleMatchesExtracted: this.state.possibleMatches[0].possibleMatches })
 
     }
   }
@@ -116,10 +116,17 @@ class PossibleMatches extends React.Component {
       })
     }
 
+    let compat_dogs = [];
+    Object.keys(filtered_personality).forEach((key) => {
+      if (filtered_personality[key].user !== this.props.currentUser) {
+        compat_dogs.push(filtered_personality[key]);
+      }
+    });
+
 
     return (
       <div>
-<div>
+          <div className="search-bar">
             <select
               className="gender"
               value={this.state.gender}
@@ -139,16 +146,17 @@ class PossibleMatches extends React.Component {
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
               <option value="American Pitbull">American Pitbull</option>
+              <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
               <option value="Austrialian Sheperd">Austrialian Shepherd</option>
               <option value="Beagle">Beagle</option>
+              <option value="Blue Heeler Mix">Blue Heeler Mix</option>
               <option value="Border Collie">Border Collie</option>
               <option value="Boxer">Boxer</option>
               <option value="Bulldog">Bulldog</option>
-              <option value="Cavalier King Charles Spaniel">
-                Cavalier King Charles Spaniel
-              </option>
+              <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
+              <option value="Corgi">Corgi</option>
               <option value="Collie">Collie</option>
               <option value="Dachshund">Dachshund</option>
               <option value="Dalmatian">Dalmatian</option>
@@ -168,6 +176,7 @@ class PossibleMatches extends React.Component {
               <option value="maltese poodle">maltese poodle</option>
               <option value="Mutt">Mutt</option>
               <option value="Papillion">Papillion</option>
+              <option value="Persian Yellow Mongrel">Persian Yellow Mongrel</option>
               <option value="Pomeranian">Pomeranian</option>
               <option value="Pomsky">Pomsky</option>
               <option value="Poodle">Poodle</option>
@@ -213,7 +222,7 @@ class PossibleMatches extends React.Component {
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
-              <option value="bashful"> Bashful </option>
+              <option value="Bashful"> Bashful </option>
               <option value="Naughty"> Naughty </option>
               <option value="Bold"> Bold </option>
               <option value="Relaxed"> Relaxed </option>
@@ -237,12 +246,13 @@ class PossibleMatches extends React.Component {
         <Link to={`/${this.props.currentDogId}/pending_matches`}>View Pending Matches</Link>
         <h1>Find a match for {currentDog.name}</h1>
         {/* <img src={`${currentDog.imageURL}`}/> */}
-        <ul>
-          <h1>Dogs near you</h1>
-          {filtered_personality.map((dog) => (
-            <li>
-              <ul>
-              <img src={`${dog.imageURL}`} />
+          <h1 className="dog-search-header">Dogs near you</h1>
+        <ul className="dog-index" >
+          {compat_dogs.map((dog) => (
+            <div className="dog-index-item-container">
+              <li className="dog-index-item-sub-container" >
+                <ul className="dog-index-item">
+                  <img className="match-image" src={`${dog.imageURL}`} />
                   <li>{dog.name}</li>
                   <li>{dog.breed}</li>
                   <li>{dog.description}</li>
@@ -252,12 +262,11 @@ class PossibleMatches extends React.Component {
                   <li>{dog.activeness}</li>
                   
                   <br />
-                <li><button onClick={() => this.handleRequest(dog._id)}>Request Match</button></li>
-                  <li><button onClick={() => this.handleReject(dog._id)}>
-                    Not interested
-                  </button></li>
+                  <li><button onClick={() => this.handleRequest(dog._id)}> Request Match </button></li>
+                  <li><button onClick={() => this.handleReject(dog._id)}> Not interested </button></li>
               </ul>
             </li>
+            </div>
           ))}
         </ul>
         <br />

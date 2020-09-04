@@ -65,22 +65,28 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
-        </div>
+        <ul className="nav-links">
+          <li>
+           <Link className="login-button" to={"/signup"}>Signup</Link>
+          </li>
+          <li>
+            <Link className="login-button" to={"/login"}>Login</Link>
+          </li>
+        </ul>
       );
     }
   }
 
   render() {
     return (
-      <div>
-        <h1>BoneMeatsKibble</h1>
-        {this.getLinks()}
+      <div className="nav">
+        <h1 className="title">BoneMeatsKibble</h1>
+          {this.getLinks()}
       </div>
     );
   }
 }
+
+
 
 export default NavBar;
