@@ -8,7 +8,8 @@ class PossibleMatches extends React.Component {
     super(props);
 
     this.state = {
-      possibleMatches: [],
+      possibleMatches: [], //returns mongodb array that we can only key into when it is set to state
+      possibleMatchesExtracted: [], //possible matches array that is rendered
       currentDog: {},
     };
 
@@ -20,6 +21,7 @@ class PossibleMatches extends React.Component {
     await this.props.fetchPossibleMatches();
     await this.props.fetchCurrentDog();
     await this.setState({possibleMatches: this.props.possibleMatches})
+    await this.setState({ possibleMatchesExtracted: this.state.possibleMatches[0].possibleMatches})
     await this.setState({currentDog: this.props.currentDog })
   }
 
@@ -48,7 +50,9 @@ class PossibleMatches extends React.Component {
     if (!this.props.possibleMatches) return null;
     if (this.state.possibleMatches.length === 0) return null;
 
-    const possibleMatches = this.state.possibleMatches[0].possibleMatches;
+    // console.log(this.state.possibleMatchesExtracted)
+
+    const possibleMatches = this.state.possibleMatchesExtracted
     const currentDog = this.state.currentDog;
     
     return (
