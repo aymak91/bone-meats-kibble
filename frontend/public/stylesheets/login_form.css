@@ -1,6 +1,68 @@
-.form {
-  margin: 500px;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+.login-page {
+  display: flex;
+  flex-direction: row;
+}
+.login-form-container {
+  background-color: rgb(10, 10, 37);
+  width: 20%;
+}
+.login-form {
+  padding: 30px;
+}
+
+.login-form-background {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/login-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10% 10%;
+    display: flex;
+    flex-direction: column;
+
+}
+.motto {
+    text-align: right;
+    font-family: 'Mukta Vaani', sans-serif;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+}
+.registration {
+    font-family: 'Mukta Vaani', sans-serif;
+    color: white;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.login-button {
+  font-family: 'Mukta Vaani', sans-serif;
+  width: 40%;
+}
+.logo {
+  font-family: 'Mukta Vaani', sans-serif;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.email-box {
+    width: 95%;
+    height: 80%;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+.password-box {
+    width: 95%;
+    height: 80%;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+.login-form-form {
+  font-family: 'Mukta Vaani', sans-serif;
+  color: white;
 }

@@ -67,10 +67,10 @@ class NavBar extends React.Component {
       return (
         <ul className="nav-links">
           <li>
-           <Link className="login-button" to={"/signup"}>Signup</Link>
+           <Link to={"/signup"}>Signup</Link>
           </li>
           <li>
-            <Link className="login-button" to={"/login"}>Login</Link>
+            <Link to={"/login"}>Login</Link>
           </li>
         </ul>
       );
