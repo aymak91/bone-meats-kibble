@@ -15,6 +15,9 @@ router.get("/:dog_id", (req, res, next) => {
       path: 'dogId',
       select: 'name'
     })
+    .populate({
+      path: 'possibleMatches',
+    })
     // .find({ dogId: req.params.dog_id }, 'possibleMatches') //return just array
     .then((possibleMatches) => res.json(possibleMatches))
     .catch((err) =>

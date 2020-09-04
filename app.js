@@ -13,10 +13,11 @@ const possibleMatches = require("./routes/api/matches/possible_matches")
 const pendingMatches = require("./routes/api/matches/pending_matches")
 const requestedMatches = require("./routes/api/matches/requested_matches")
 const matches = require("./routes/api/matches/matches")
+// const seed = require("./seeder")
 
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('frontend / build'));
+  app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
 });
@@ -51,4 +52,8 @@ app.use("/api/pending_matches", pendingMatches);
 app.use("/api/requested_matches", requestedMatches);
 
 const port = process.env.PORT || 5000;
+
+//seed mongo database
+// seed();
+
 app.listen(port, () => console.log(`Server is running on port ${port}`));

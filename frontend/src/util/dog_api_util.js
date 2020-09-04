@@ -1,5 +1,9 @@
 import axios from "axios";
 
+export const getDog = (dogId) => {
+  return axios.get(`/api/dogs/${dogId}`);
+};
+
 export const getDogs = () => {
   return axios.get("/api/dogs");
 };

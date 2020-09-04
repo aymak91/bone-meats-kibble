@@ -32,6 +32,7 @@ class NavBar extends React.Component {
           <Link to={"/dogs"}>All Dogs</Link>
           <Link to={"/profile"}>Profile</Link>
           <span onClick={this.toggleCreateModal}>Write a Dog</span>
+          <Link to={"/search"}>Search</Link>
           <button onClick={this.logoutUser}>Logout</button>
 
           <Modal
