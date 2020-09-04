@@ -136,6 +136,47 @@ router.patch(
   }
 );
 
+//backend route to also edit photo of dog. However, this currently breaks the frontend so this is edited out for now.
+// router.patch(
+//   "/:id", upload.single("file"),
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     const {
+//       name,
+//       description,
+//       breed,
+//       birthDate,
+//       size,
+//       gender,
+//       activeness,
+//       personality
+//     } = req.body;
+
+//     const user = req.user.id;
+//     uploadImage(req.file).then(data => {
+//       const uploadedFileURL = data.Location;
+
+//       Dog.findOne(req.params._id).then((dog) => {
+//         dog.user = user;
+//         dog.name = name;
+//         dog.description = description;
+//         dog.breed = breed;
+//         dog.birthDate = birthDate;
+//         dog.size = size;
+//         dog.gender = gender;
+//         dog.activeness = activeness;
+//         dog.personality = personality;
+//         dog.imageURL = uploadedFileURL;
+//         dog
+//           .save()
+//           .then((savedDog) => res.json(savedDog))
+//           .catch((err) => res.json(err));
+//       });
+//       return res;
+//     })
+//   }
+// );
+
 router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
