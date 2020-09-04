@@ -139,16 +139,17 @@ class PossibleMatches extends React.Component {
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
               <option value="American Pitbull">American Pitbull</option>
+              <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
               <option value="Austrialian Sheperd">Austrialian Shepherd</option>
               <option value="Beagle">Beagle</option>
+              <option value="Blue Heeler Mix">Blue Heeler Mix</option>
               <option value="Border Collie">Border Collie</option>
               <option value="Boxer">Boxer</option>
               <option value="Bulldog">Bulldog</option>
-              <option value="Cavalier King Charles Spaniel">
-                Cavalier King Charles Spaniel
-              </option>
+              <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
+              <option value="Corgi">Corgi</option>
               <option value="Collie">Collie</option>
               <option value="Dachshund">Dachshund</option>
               <option value="Dalmatian">Dalmatian</option>
@@ -168,6 +169,7 @@ class PossibleMatches extends React.Component {
               <option value="maltese poodle">maltese poodle</option>
               <option value="Mutt">Mutt</option>
               <option value="Papillion">Papillion</option>
+              <option value="Persian Yellow Mongrel">Persian Yellow Mongrel</option>
               <option value="Pomeranian">Pomeranian</option>
               <option value="Pomsky">Pomsky</option>
               <option value="Poodle">Poodle</option>
