@@ -13,25 +13,10 @@ class Profile extends React.Component {
     };
   }
 
-  // componentDidUpdate(prevState) {
-    
-  //     if (((prevState.dogs.length) !== (this.state.dogs.length))) {
-  //         this.props.fetchUserDogs(this.props.currentUser.id);
-  //     }
-  // }
-
-  // shouldComponentUpdate() {
-  //   this.props.fetchUserDogs(this.props.currentUser.id);
-  // }
-
   componentDidMount() {
     // this._isMounted = true;
     this.props.fetchUserDogs(this.props.currentUser.id);
   }
-
-  // componentWillUnmount() {
-  //   this._isMounted = false;
-  // }
 
   componentWillReceiveProps(newState) {
     this.setState({ dogs: newState.dogs });
@@ -52,7 +37,6 @@ class Profile extends React.Component {
                   dog={dog}
                   destroyDog={this.props.destroyDog}
               />
-
             </div>
           ))}
         </div>

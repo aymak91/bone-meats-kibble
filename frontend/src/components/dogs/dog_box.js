@@ -31,7 +31,8 @@ class DogBox extends React.Component {
         </ul>
         <span onClick={this.toggleUpdateModal}>Update Dog</span>
         <button onClick={() => this.props.destroyDog(this.props.dog._id)}>Delete Dog</button>
-        <Link to={`/${this.props.dog._id}/possible_matches`} dog={this.props.dog}>Start Matching</Link>
+        <Link to={`/${this.props.dog._id}/possible_matches`}>Start Matching</Link>
+        <Link to={`/${this.props.dog._id}/matches`}>Matches</Link>
         {/* <Link to>Start Matching</Link> */}
         <Modal
           className=""

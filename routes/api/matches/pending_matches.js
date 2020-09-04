@@ -12,6 +12,9 @@ router.get("/:dog_id", (req, res, next) => {
             path: 'dogId',
             select: 'name'
         })
+        .populate({        
+            path: 'pendingMatches',
+        })
         // .find({ dogId: req.params.dog_id }, 'matches') //return just array
         .then((pendingMatches) => res.json(pendingMatches))
         .catch((err) =>
@@ -19,7 +22,7 @@ router.get("/:dog_id", (req, res, next) => {
         );
 });
 
-//creates matches document
+//creates pending_matches document
 router.post("/:dog_id", (req, res) => {
 
     const newPendingMatches = new PendingMatchesModel({
@@ -33,7 +36,7 @@ router.post("/:dog_id", (req, res) => {
 });
 
 
-//add new dog_id to the matches array
+//add new dog_id to the pending_matches array
 router.patch("/:dog_id/add/:new_dog_id", (req, res) => {
 
     PendingMatchesModel.findOneAndUpdate(
@@ -44,7 +47,7 @@ router.patch("/:dog_id/add/:new_dog_id", (req, res) => {
 
 });
 
-//remove dog from matches array
+//remove dog from pending_matches array
 router.patch("/:dog_id/remove/:removed_dog_id", (req, res) => {
 
     PendingMatchesModel.findOneAndUpdate(
