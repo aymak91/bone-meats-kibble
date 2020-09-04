@@ -12,6 +12,9 @@ router.get("/:dog_id", (req, res, next) => {
       path: 'dogId',
       select: 'name'
     })
+    .populate({        
+      path: 'matches',
+    })
     // .find({ dogId: req.params.dog_id }, 'matches') //return just array
     .then((matches) => res.json(matches))
     .catch((err) =>
