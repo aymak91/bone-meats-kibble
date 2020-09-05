@@ -5,80 +5,136 @@ const PossibleMatchesModel = require("./models/matches/PossibleMatches");
 const PendingMatchesModel = require("./models/matches/PendingMatches");
 const RequestedMatchesModel = require("./models/matches/RequestedMatches");
 const MatchesModel = require("./models/matches/Matches");
-// const bcrypt = require('bcryptjs');
-
+const bcrypt = require('bcryptjs');
 
 
 const seed = async () => {
     //Users
-    // await User.collection.deleteMany({})
     User.collection.deleteMany({})
 
-    const demoUser = new User({
+    const demoUser = await new User({
         handle: 'demoUser',
         email: 'demoUser@doge.com',
         password: 'password'
-    });
-    demoUser.save();
+    })
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(demoUser.password, salt, async (err, hash) => {
+            if (err) throw err;
+            demoUser.password = hash;
+            const savedUser = await demoUser.save()
+            res.json(savedUser)
+        })
+    })
 
-    const user1 = new User({
+    const user1 = await new User({
         handle: 'alexUser',
         email: 'demoUser1@doge.com',
         password: 'password'
-    });
-    user1.save();
+    })
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user1.password, salt, async (err, hash) => {
+            if (err) throw err;
+            user1.password = hash;
+            const savedUser1 = await user1.save()
+            res.json(savedUser1)
+        })
+    })
 
-    // bcrypt.genSalt(10, (err, salt) => {
-    //     bcrypt.hash(user1.password, salt, (err, hash) => {
-    //         if (err) throw err;
-    //         user1.password = hash;
-    //         user1.save()
-    //             .then(user => res.json(user))
-    //             .catch(err => res.console.log(err));
-    //     })
-    // })
-
-    // const testUser = await new User({
-    //     handle: 'alexUser',
-    //     email: 'demoUser@doge.com',
-    //     password: 'password'
-    // })
-    // bcrypt.genSalt(10, (err, salt) => {
-    //     bcrypt.hash(testUser.password, salt, async (err, hash) => {
-    //         if (err) throw err;
-    //         testUser.password = hash;
-    //         const savedUser = await testUser.save()
-    //         res.json(savedUser)
-    //     })
-    // })
-
-
-
-
-    const user2 = new User({
+    const user2 = await new User({
         handle: 'danielUser',
         email: 'demoUser2@doge.com',
         password: 'password'
     })
-    user2.save();
-    const user3 = new User({
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user2.password, salt, async (err, hash) => {
+            if (err) throw err;
+            user2.password = hash;
+            const savedUser2 = await user2.save()
+            res.json(savedUser2)
+        })
+    })
+
+    const user3 = await new User({
         handle: 'jaronUser',
         email: 'demoUser3@doge.com',
         password: 'password'
     })
-    user3.save();
-    const user4 = new User({
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user3.password, salt, async (err, hash) => {
+            if (err) throw err;
+            user3.password = hash;
+            const savedUser3 = await user3.save()
+            res.json(savedUser3)
+        })
+    })
+
+    const user4 = await new User({
         handle: 'jordanUser',
         email: 'demoUser4@doge.com',
         password: 'password'
     })
-    user4.save();
-    const user5 = new User({
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user4.password, salt, async (err, hash) => {
+            if (err) throw err;
+            user4.password = hash;
+            const savedUser4 = await user4.save()
+            res.json(savedUser4)
+        })
+    })
+
+    const user5 = await new User({
         handle: 'kennethUser',
         email: 'demoUser5@doge.com',
         password: 'password'
     })
-    user5.save();
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(user5.password, salt, async (err, hash) => {
+            if (err) throw err;
+            user5.password = hash;
+            const savedUser5 = await user5.save()
+            res.json(savedUser5)
+        })
+    })
+
+
+    // const demoUser = new User({
+    //     handle: 'demoUser',
+    //     email: 'demoUser@doge.com',
+    //     password: 'password'
+    // });
+    // demoUser.save();
+
+    // const user1 = new User({
+    //     handle: 'alexUser',
+    //     email: 'demoUser1@doge.com',
+    //     password: 'password'
+    // });
+    // user1.save();
+
+    // const user2 = new User({
+    //     handle: 'danielUser',
+    //     email: 'demoUser2@doge.com',
+    //     password: 'password'
+    // })
+    // user2.save();
+    // const user3 = new User({
+    //     handle: 'jaronUser',
+    //     email: 'demoUser3@doge.com',
+    //     password: 'password'
+    // })
+    // user3.save();
+    // const user4 = new User({
+    //     handle: 'jordanUser',
+    //     email: 'demoUser4@doge.com',
+    //     password: 'password'
+    // })
+    // user4.save();
+    // const user5 = new User({
+    //     handle: 'kennethUser',
+    //     email: 'demoUser5@doge.com',
+    //     password: 'password'
+    // })
+    // user5.save();
 
 
 
@@ -272,7 +328,7 @@ const seed = async () => {
         gender: "Female",
         activeness: "High",
         personality: "Impish",
-        imageURL: ""
+        imageURL: "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/Pomeranian.jpeg"
     })
     const savedDog6 = await dog6.save();
     //CREATE PENDING MATCHES ARRAY
@@ -809,7 +865,7 @@ const seed = async () => {
         user: user4._id,
         name: "Akamaru",
         description: "Spirit bomb! Wait wrong reference. Nvm.",
-        breed: "",
+        breed: "Mutt",
         birthDate: 2015-07-07,
         size: "Smol",
         gender: "Male",
