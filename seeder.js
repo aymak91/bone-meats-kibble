@@ -2,22 +2,35 @@
 const Dog = require('./models/Dog');
 const User = require('./models/User');
 
-const seed = () => {
+const seed = async () => {
     // Users
-    User.collection.deleteMany({})
-    const demoUser = new User({
-        handle: 'demoUser',
-        email: 'demoUser@doge.com',
-        password: 'password'
-    });
-    demoUser.save();
+    await User.collection.deleteMany({})
+    // const demoUser = new User({
+    //     handle: 'demoUser',
+    //     email: 'demoUser@doge.com',
+    //     password: 'password'
+    // });
 
-    const user1 = new User({
+
+    // demoUser.save();
+
+    const testUser = await new User({
         handle: 'alexUser',
         email: 'demoUser@doge.com',
         password: 'password'
     })
-    user1.save();
+
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(testUser.password, salt, async (err, hash) => {
+
+            if (err) throw err;
+            testUser.password = hash;
+            const savedUser = await testUser.save()
+            res.json(savedUser)
+        })
+    })
+
+
     const user2 = new User({
         handle: 'danielUser',
         email: 'demoUser@doge.com',
