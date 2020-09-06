@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -57,6 +58,43 @@ class LoginForm extends React.Component {
     );
   }
 
+  handleDemo(e) {
+    e.preventDefault();
+    let email = 'demoUser@doge.com';
+    let password = 'password'
+
+    let interval = 150;
+    let login = () => {
+      this.props.login(this.state);
+      this.props.history.push("/")
+    };
+    if (this.state.email !== email) {
+      let inputEmail = setInterval(() => {
+        if (this.state.email !== email) {
+          let tempEmail = email.slice(0, this.state.email.length + 1);
+          this.setState({ email: tempEmail });
+        } else {
+          clearInterval(inputEmail);
+          fillPassword();
+        }
+      }, interval);
+    }
+    let fillPassword = () => {
+      let inputPassword = setInterval(() => {
+        if (this.state.password !== password) {
+          let tempPassword = password.slice(0, this.state.password.length + 1);
+          this.setState({ password: tempPassword });
+        } else {
+          clearInterval(inputPassword);
+          login();
+        }
+      }, interval);
+    };
+  }
+
+
+  
+
   render() {
     return (
       <div className="login-page">
@@ -91,7 +129,7 @@ class LoginForm extends React.Component {
               Don't have an account?   
               <Link to={"/signup"}>  Signup</Link>
             </div>
-
+            <button onClick={this.handleDemo} > Demo Login</button>
           </div>
         </div>
         <div className="login-form-background">
