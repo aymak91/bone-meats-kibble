@@ -1,0 +1,23 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 1px solid lightgray;
+    padding: 10px 20px;
+    
+}
+.navbar-title {
+    font-family: 'Kalam', cursive;
+    font-size: 20px;
+}
+.navbar-links {
+    /* background-color: pink; */
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.profile-icon {
+
+}
