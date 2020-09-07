@@ -25,7 +25,7 @@
     justify-content: center;
     margin: 0% 20% 0% 20%;
     color: white;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
@@ -42,9 +42,12 @@
 
 .chat-message {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    flex-direction: column;
     padding: 20px 5px 20px 5px;
     margin: 0% 20% 0% 20%;
+    border-bottom: 1px solid white;
+    
 }
 
 .enter-chat-input {
@@ -52,21 +55,35 @@
     justify-content: space-between;
     /* padding: 5px 0px 5px 0px; */
     margin: 0% 20% 0% 20%;
+    /* width: 100%; */
+    padding: 20px 0px;
 }
 
+.chat-input {
+    width: 350px;
+}
+
+
 .chat-message > * {
-    border: 2px solid white;
+    /* border: 2px solid white; */
     width: 50px;
     border-radius: 4px;
-    color: black;
-    background: white;
+    color: white;
+    /* background: white; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.message-body {
+    padding-top: 20px;
+    display: flex;
+    justify-content: right;
+
+}
 .message-name {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 }
+
 
 
