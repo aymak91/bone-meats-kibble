@@ -1,5 +1,5 @@
 .search-bgd {
-    background-image: url("https://images.unsplash.com/photo-1446037909474-e2bff6697533?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-color: rgb(39, 39, 66);
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -18,10 +18,10 @@
     align-items: center;
     border: 1px solid black;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Mukta Vaani', sans-serif;
     font-size: 30px;
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-    background-image: url("https://images.unsplash.com/photo-1492741428243-892c600f7dbc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80");
+    background-image: url("/login-background.jpg");
     background-position: 100px 100px;
 
     border-radius: 10px;
@@ -33,7 +33,7 @@
     align-content: center;
     justify-content: center;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Mukta Vaani', sans-serif;
     font-size: 25px;
     border: 2px solid black;
     background-color: grey;
@@ -72,8 +72,6 @@
     height: 250px;
     width: 250px;
     object-fit: cover;
-    border: 1px solid black;
-    background-color: black;
     border-radius: 20px;
 }
 
@@ -130,7 +128,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Mukta Vaani', sans-serif;
 }
 
 .dog-index-item > * {
@@ -150,13 +148,17 @@
 
 }
 
-.match-buttons {
-    /* display: flex;
-    justify-content: space-between; */
-    padding: 10px;
-    display: inline-block;
-    /* position: absolute; */
-    /* bottom: 0; */
+.possible-match-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 30px;
+}
+.possible-match-buttons :first-child:hover {
+    color: red;
+}
+.possible-match-buttons :last-child:hover {
+    color: rgb(54, 54, 54);
 }
 
 
