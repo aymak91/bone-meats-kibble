@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from 'moment'
 
 class Messages extends React.Component {
     constructor(props) {
@@ -65,30 +66,44 @@ class Messages extends React.Component {
         const receivingDog = this.state.receivingDog;
 
         return (
-            <div>
-                <div>
-                    <Link to={`/${sendingDog._id}/matches`} class="fas fa-fire">Back to Matches</Link>
-                </div>
-                <h1>Messages with {receivingDog.name}</h1>
-                <h2>{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h2>
-                {messages.map((message) => (
-                    <li key={message._id}>
-                        {`${message.sendingDog.name}: ${message.body}`}
-                    </li>
-                ))}
-                <form onSubmit={this.handleSubmit} >
-                    <div>
-                        <input
-                            type="textarea"
-                            value={this.state.body}
-                            onChange={this.update("body")}
-                        />
-                        <input type="submit" value="woof!" />
-                        <br />
-                    </div>
-                </form>
+          <div className="messages-bgd">
+            <div className="messages-form">   
+
+            <div className="back-to-matches">
+              <Link to={`/${sendingDog._id}/matches`} class="fas fa-fire">
+                Back to Matches
+              </Link>
             </div>
-        )
+            <h1 className="message-h1"> Messages with {receivingDog.name} </h1>
+            <h2 className="message-h2">{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h2>
+            {messages.map((message) => (
+                <li className="chat-message" key={message._id}>
+                    <div classname="message-name">
+                        
+                        <div>{`${message.sendingDog.name}:`}</div>
+                        {/* <div>{moment().format("HH:mm")}</div> */}
+                    </div>
+
+                    <div className="message-body">
+                        {`${message.body}`}
+                    </div>
+              </li>
+            ))}
+            <form onSubmit={this.handleSubmit} className="enter-chat-input">
+              <div>
+                <input
+                  type="textarea"
+                  value={this.state.body}
+                  onChange={this.update("body")}
+                  className="chat-input"
+                  />
+                <input type="submit" value="woof!" />
+                <br />
+              </div>
+            </form>
+            </div>
+          </div>
+        );
     }
 }
 

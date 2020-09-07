@@ -1,0 +1,72 @@
+.messages-bgd {
+    background-color: rgb(39, 39, 66);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.fas fa-fire {
+    color: white;
+}
+
+.back-to-matches {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+
+.message-h1 {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    margin: 0% 20% 0% 20%;
+    color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.message-h2 {
+    /* border: 2px solid black; */
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    margin: 0% 20% 0% 20%;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.chat-message {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5px 20px 5px;
+    margin: 0% 20% 0% 20%;
+}
+
+.enter-chat-input {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 5px 0px 5px 0px; */
+    margin: 0% 20% 0% 20%;
+}
+
+.chat-message > * {
+    border: 2px solid white;
+    width: 50px;
+    border-radius: 4px;
+    color: black;
+    background: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.message-name {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
