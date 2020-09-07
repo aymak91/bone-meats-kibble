@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MessagesContainer from "../messages/messages_container"
+import NavBarContainer from "../nav/navbar_container";
+import Moment from "moment";
 
 class Matches extends React.Component {
     constructor(props) {
@@ -57,30 +59,58 @@ class Matches extends React.Component {
         }
 
         return (
+
           <div>
-                <h1>Matches for {currentDog.name}!</h1>
-                <h2>time to bone</h2>
-                {/* <img src={`${currentDog.imageURL}`} /> */}
+            <NavBarContainer />
+            <div className="dog-profile-container-container">
+              <div className="dogs-profile-container">
                 {matches.map((match) => (
-                <div key={match._id}>
-                    <ul>
-                    <li>{match.name}</li>
-                    <li>{match.breed}</li>
-                    <li>{match.description}</li>
-                    <li>{match.birthDate}</li>
-                    <li>{match.size}</li>
-                    <li>{match.gender}</li>
-                    <li>{match.activeness}</li>
-                    <li>{match.personality}</li>
+                  <div className="individual-dog">
+                    <div className="individual-dog-header">
+                      <div className="dog-container-name">{match.name}</div>
+                      <div>{match.breed}</div>
+                    </div>
+                    <img src={`${match.imageURL}`} />
+                    <div className="dog-buttons">
+                      <div className="first-three-dog-buttons">
+                        <span
+                          onClick={() =>
+                            this.handleDelete(currentDogId, match._id)
+                          }
+                          className="message-button"
+                          class="fas fa-comment"
+                        ></span>
+                        <Link
+                          to={`/messages/${currentDogId}/${match._id}/`}
+                          class="fas fa-times"
+                        ></Link>
+                      </div>
+                    </div>
+                    <ul className="dog-description-container">
+                      <li className="dog-attributes">
+                        <h1>Description:</h1> <p>{match.description}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Birth Date:</h1>{" "}
+                        <p>{Moment(match.birthDate).format("MMM Do YYYY")}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Size:</h1> <p>{match.size}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Gender:</h1> <p>{match.gender}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Activeness:</h1> <p>{match.activeness}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Personality:</h1> <p>{match.personality}</p>
+                      </li>
                     </ul>
-                    <button
-                    onClick={() => this.handleDelete(currentDogId, match._id)}
-                    >
-                    Delete Match
-                    </button>
-                    <Link to={`/messages/${currentDogId}/${match._id}/`}>Start Chatting</Link>
-                </div>
+                  </div>
                 ))}
+              </div>
+            </div>
           </div>
         );
     }
