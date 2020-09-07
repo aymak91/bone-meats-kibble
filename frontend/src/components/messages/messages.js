@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Messages extends React.Component {
     constructor(props) {
@@ -63,6 +64,9 @@ class Messages extends React.Component {
 
         return (
             <div>
+                <div>
+                    <Link to={`/${sendingDog._id}/matches`} class="fas fa-fire">Back to Matches</Link>
+                </div>
                 <h1>Messages with {receivingDog.name}</h1>
                 <h2>{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h2>
                 {messages.map((message) => (

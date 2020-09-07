@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MessagesContainer from "../messages/messages_container"
 
 class Matches extends React.Component {
     constructor(props) {
