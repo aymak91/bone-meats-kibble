@@ -45,7 +45,9 @@ class Messages extends React.Component {
         }
 
         this.props.createMessage(message, this.props.history)
-        this.state.body = ""
+        this.setState({
+            body: ''
+        })
     }
 
     update(field) {
