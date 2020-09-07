@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 
 const seed = async () => {
     //Users
-    User.collection.deleteMany({})
+    // User.collection.deleteMany({})
 
     const demoUser = await new User({
         handle: 'demoUser',
@@ -143,179 +143,16 @@ const seed = async () => {
 
     //Dogs
 
-    Dog.collection.deleteMany({})
-    PendingMatchesModel.collection.deleteMany({})
-    PossibleMatchesModel.collection.deleteMany({})
+    // Dog.collection.deleteMany({})
+    // PendingMatchesModel.collection.deleteMany({})
+    // PossibleMatchesModel.collection.deleteMany({})
 
-    RequestedMatchesModel.collection.deleteMany({})
-    MatchesModel.collection.deleteMany({})
-
-
-
-    const dog1 = new Dog({
-        user: demoUser._id,
-        name: "Lama",
-        description: "I wanna be a slumdog millionaire.",
-        breed: "Dachshund",
-        birthDate: 2018-01-15,
-        size: "Medium",
-        gender: "Male",
-        activeness: "Hyperactive",
-        personality: "Naughty",
-        imageURL: "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/dachshund-exercise.jpg"
-    });
-    const savedDog1 = await dog1.save();
-    //CREATE PENDING MATCHES ARRAY
-    const newPendingMatches1 = new PendingMatchesModel({
-        dogId: savedDog1._id,
-        pendingMatches: [],
-    });
-    newPendingMatches1.save()
-    //CREATE REQUESTED MATCHES ARRAY
-    const newRequestedMatches1 = new RequestedMatchesModel({
-        dogId: savedDog1._id,
-        requestedMatches: [],
-    });
-    newRequestedMatches1.save()
-    //CREATE MATCHES ARRAY
-    const newMatches1 = new MatchesModel({
-        dogId: savedDog1._id,
-        matches: [],
-    });
-    newMatches1.save()
-
-
-    const dog2 = new Dog({
-        user: demoUser._id,
-        name: "Butters",
-        description: "Curious about fireworks. Don't wanna go outside.",
-        breed: "Beagle",
-        birthDate: 2019-02-21,
-        size: "Small",
-        gender: "Male",
-        activeness: "Low",
-        personality: "Calm",
-        imageURL: "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/beagle-1024x731.jpg"
-    })
-    const savedDog2 = await dog2.save();
-    //CREATE PENDING MATCHES ARRAY
-    const newPendingMatches2 = new PendingMatchesModel({
-        dogId: savedDog2._id,
-        pendingMatches: [],
-    });
-    newPendingMatches2.save()
-    //CREATE REQUESTED MATCHES ARRAY
-    const newRequestedMatches2 = new RequestedMatchesModel({
-        dogId: savedDog2._id,
-        requestedMatches: [],
-    });
-    newRequestedMatches2.save()
-    //CREATE MATCHES ARRAY
-    const newMatches2 = new MatchesModel({
-        dogId: savedDog2._id,
-        matches: [],
-    });
-    newMatches2.save()
-
-
-    const dog3 = new Dog({
-        user: demoUser._id,
-        name: "Jacky",
-        description: "Gotta go fast! Sonic speed!",
-        breed: "Rottweiler",
-        birthDate: 2015-08-08,
-        size: "Big Boi",
-        gender: "Male",
-        activeness: "Hyperactive",
-        personality: "Sassy",
-        imageURL: "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/rottweiler-747859_960_720.jpg"
-    })
-    const savedDog3 = await dog3.save();
-    //CREATE PENDING MATCHES ARRAY
-    const newPendingMatches3 = new PendingMatchesModel({
-        dogId: savedDog3._id,
-        pendingMatches: [],
-    });
-    newPendingMatches3.save()
-    //CREATE REQUESTED MATCHES ARRAY
-    const newRequestedMatches3 = new RequestedMatchesModel({
-        dogId: savedDog3._id,
-        requestedMatches: [],
-    });
-    newRequestedMatches3.save()
-    //CREATE MATCHES ARRAY
-    const newMatches3 = new MatchesModel({
-        dogId: savedDog3._id,
-        matches: [],
-    });
-    newMatches3.save()
-
-
-    const dog4 = new Dog({
-        user: demoUser._id,
-        name: "Simba",
-        description: "I eat alot. Share your food pls.",
-        breed: "Shiba Inu",
-        birthDate: 2013-12-18,
-        size: "Medium",
-        gender: "Female",
-        activeness: "Normal",
-        personality: "Hasty",
-        imageURL: "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/Shiba+Inu.jpg"
-    })
-    const savedDog4 = await dog4.save();
-    //CREATE PENDING MATCHES ARRAY
-    const newPendingMatches4 = new PendingMatchesModel({
-        dogId: savedDog4._id,
-        pendingMatches: [],
-    });
-    newPendingMatches4.save()
-    //CREATE REQUESTED MATCHES ARRAY
-    const newRequestedMatches4 = new RequestedMatchesModel({
-        dogId: savedDog4._id,
-        requestedMatches: [],
-    });
-    newRequestedMatches4.save()
-    //CREATE MATCHES ARRAY
-    const newMatches4 = new MatchesModel({
-        dogId: savedDog4._id,
-        matches: [],
-    });
-    newMatches4.save()
+    // RequestedMatchesModel.collection.deleteMany({})
+    // MatchesModel.collection.deleteMany({})
 
 
 
-    const dog5 = new Dog({
-        user: demoUser._id,
-        name: "Scooby",
-        description: "2 Scooby snacks != enough",
-        breed: "Great Dane",
-        birthDate: 1969-01-01,
-        size: "Big Boi",
-        gender: "Male",
-        activeness: "Lazy",
-        personality: "Timid",
-        imageURL: "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/great+dane.jpg"
-    })
-    const savedDog5 = await dog5.save();
-    //CREATE PENDING MATCHES ARRAY
-    const newPendingMatches5 = new PendingMatchesModel({
-        dogId: savedDog5._id,
-        pendingMatches: [],
-    });
-    newPendingMatches5.save()
-    //CREATE REQUESTED MATCHES ARRAY
-    const newRequestedMatches5 = new RequestedMatchesModel({
-        dogId: savedDog5._id,
-        requestedMatches: [],
-    });
-    newRequestedMatches5.save()
-    //CREATE MATCHES ARRAY
-    const newMatches5 = new MatchesModel({
-        dogId: savedDog5._id,
-        matches: [],
-    });
-    newMatches5.save()
+
 
 
     const dog6 = new Dog({
@@ -1168,6 +1005,173 @@ const seed = async () => {
         matches: [],
     });
     newMatches30.save()
+
+
+
+    const dog1 = new Dog({
+      user: demoUser._id,
+      name: "Lama",
+      description: "I wanna be a slumdog millionaire.",
+      breed: "Dachshund",
+      birthDate: 2018 - 01 - 15,
+      size: "Medium",
+      gender: "Male",
+      activeness: "Hyperactive",
+      personality: "Naughty",
+      imageURL:
+        "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/dachshund-exercise.jpg",
+    });
+    const savedDog1 = await dog1.save();
+    //CREATE PENDING MATCHES ARRAY
+    const newPendingMatches1 = new PendingMatchesModel({
+      dogId: savedDog1._id,
+      pendingMatches: [savedDog10._id],
+    });
+    newPendingMatches1.save();
+    //CREATE REQUESTED MATCHES ARRAY
+    const newRequestedMatches1 = new RequestedMatchesModel({
+      dogId: savedDog1._id,
+      requestedMatches: [savedDog20._id],
+    });
+    newRequestedMatches1.save();
+    //CREATE MATCHES ARRAY
+    const newMatches1 = new MatchesModel({
+      dogId: savedDog1._id,
+      matches: [savedDog30._id],
+    });
+    newMatches1.save();
+
+    const dog2 = new Dog({
+      user: demoUser._id,
+      name: "Butters",
+      description: "Curious about fireworks. Don't wanna go outside.",
+      breed: "Beagle",
+      birthDate: 2019 - 02 - 21,
+      size: "Small",
+      gender: "Male",
+      activeness: "Low",
+      personality: "Calm",
+      imageURL:
+        "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/beagle-1024x731.jpg",
+    });
+    const savedDog2 = await dog2.save();
+    //CREATE PENDING MATCHES ARRAY
+    const newPendingMatches2 = new PendingMatchesModel({
+      dogId: savedDog2._id,
+      pendingMatches: [savedDog11._id],
+    });
+    newPendingMatches2.save();
+    //CREATE REQUESTED MATCHES ARRAY
+    const newRequestedMatches2 = new RequestedMatchesModel({
+      dogId: savedDog2._id,
+      requestedMatches: [savedDog21._id],
+    });
+    newRequestedMatches2.save();
+    //CREATE MATCHES ARRAY
+    const newMatches2 = new MatchesModel({
+      dogId: savedDog2._id,
+      matches: [savedDog25._id],
+    });
+    newMatches2.save();
+
+    const dog3 = new Dog({
+      user: demoUser._id,
+      name: "Jacky",
+      description: "Gotta go fast! Sonic speed!",
+      breed: "Rottweiler",
+      birthDate: 2015 - 08 - 08,
+      size: "Big Boi",
+      gender: "Male",
+      activeness: "Hyperactive",
+      personality: "Sassy",
+      imageURL:
+        "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/rottweiler-747859_960_720.jpg",
+    });
+    const savedDog3 = await dog3.save();
+    //CREATE PENDING MATCHES ARRAY
+    const newPendingMatches3 = new PendingMatchesModel({
+      dogId: savedDog3._id,
+      pendingMatches: [savedDog12._id],
+    });
+    newPendingMatches3.save();
+    //CREATE REQUESTED MATCHES ARRAY
+    const newRequestedMatches3 = new RequestedMatchesModel({
+      dogId: savedDog3._id,
+      requestedMatches: [savedDog22._id],
+    });
+    newRequestedMatches3.save();
+    //CREATE MATCHES ARRAY
+    const newMatches3 = new MatchesModel({
+      dogId: savedDog3._id,
+      matches: [savedDog26._id],
+    });
+    newMatches3.save();
+
+    const dog4 = new Dog({
+      user: demoUser._id,
+      name: "Simba",
+      description: "I eat alot. Share your food pls.",
+      breed: "Shiba Inu",
+      birthDate: 2013 - 12 - 18,
+      size: "Medium",
+      gender: "Female",
+      activeness: "Normal",
+      personality: "Hasty",
+      imageURL:
+        "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/Shiba+Inu.jpg",
+    });
+    const savedDog4 = await dog4.save();
+    //CREATE PENDING MATCHES ARRAY
+    const newPendingMatches4 = new PendingMatchesModel({
+      dogId: savedDog4._id,
+      pendingMatches: [savedDog13._id],
+    });
+    newPendingMatches4.save();
+    //CREATE REQUESTED MATCHES ARRAY
+    const newRequestedMatches4 = new RequestedMatchesModel({
+      dogId: savedDog4._id,
+      requestedMatches: [savedDog23._id],
+    });
+    newRequestedMatches4.save();
+    //CREATE MATCHES ARRAY
+    const newMatches4 = new MatchesModel({
+      dogId: savedDog4._id,
+      matches: [savedDog27._id],
+    });
+    newMatches4.save();
+
+    const dog5 = new Dog({
+      user: demoUser._id,
+      name: "Scooby",
+      description: "2 Scooby snacks != enough",
+      breed: "Great Dane",
+      birthDate: 1969 - 01 - 01,
+      size: "Big Boi",
+      gender: "Male",
+      activeness: "Lazy",
+      personality: "Timid",
+      imageURL:
+        "https://bonemeatskibble-pro.s3-us-west-1.amazonaws.com/great+dane.jpg",
+    });
+    const savedDog5 = await dog5.save();
+    //CREATE PENDING MATCHES ARRAY
+    const newPendingMatches5 = new PendingMatchesModel({
+      dogId: savedDog5._id,
+      pendingMatches: [savedDog14._id],
+    });
+    newPendingMatches5.save();
+    //CREATE REQUESTED MATCHES ARRAY
+    const newRequestedMatches5 = new RequestedMatchesModel({
+      dogId: savedDog5._id,
+      requestedMatches: [savedDog24._id],
+    });
+    newRequestedMatches5.save();
+    //CREATE MATCHES ARRAY
+    const newMatches5 = new MatchesModel({
+      dogId: savedDog5._id,
+      matches: [savedDog28._id],
+    });
+    newMatches5.save();
 
 
 
