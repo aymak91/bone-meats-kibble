@@ -18,22 +18,31 @@ class DogBox extends React.Component {
   }
   render() {
     return (
-      <div>
-        <ul>
-          <img className="match-image" src={`${this.props.dog.imageURL}`} />
-          <li>{this.props.dog.name}</li>
-          <li>{this.props.dog.breed}</li>
-          <li>{this.props.dog.description}</li>
-          <li>{this.props.dog.birthDate}</li>
-          <li>{this.props.dog.size}</li>
-          <li>{this.props.dog.gender}</li>
-          <li>{this.props.dog.activeness}</li>
-          <li>{this.props.dog.personality}</li>
+      <div className="individual-dog">
+          <div className="individual-dog-header">
+            <div className="dog-container-name">{this.props.dog.name}</div>
+            <div>{this.props.dog.breed}</div>
+          </div>
+            <img src="/Capture.jpg" alt=""/>
+            <div className="dog-buttons">
+              <div className="first-three-dog-buttons">
+                <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
+                <span onClick={() => this.props.destroyDog(this.props.dog._id)} class="fas fa-trash-alt"></span>
+                <Link to={`/${this.props.dog._id}/matches`} class="fas fa-fire"></Link>
+              </div>
+              <Link to={`/${this.props.dog._id}/possible_matches`} className="start-matching-button">Start Matching</Link>
+            </div>
+        <ul className="dog-description-container">
+          {/* <ul>
+            <h3>Description</h3>
+          </ul> */}
+            <li className="dog-attributes"><h1>Description:</h1> <p>{this.props.dog.description}</p></li>
+            <li className="dog-attributes"><h1>Birth Date:</h1> <p>{this.props.dog.birthDate}</p></li>
+            <li className="dog-attributes"><h1>Size:</h1> <p>{this.props.dog.size}</p></li>
+            <li className="dog-attributes"><h1>Gender:</h1> <p>{this.props.dog.gender}</p></li>
+            <li className="dog-attributes"><h1>Activeness:</h1> <p>{this.props.dog.activeness}</p></li>
+            <li className="dog-attributes"><h1>Personality:</h1> <p>{this.props.dog.personality}</p></li>
         </ul>
-        <span onClick={this.toggleUpdateModal}>Update Dog</span>
-        <button onClick={() => this.props.destroyDog(this.props.dog._id)}>Delete Dog</button>
-        <Link to={`/${this.props.dog._id}/possible_matches`}>Start Matching</Link>
-        <Link to={`/${this.props.dog._id}/matches`}>Matches</Link>
         {/* <Link to>Start Matching</Link> */}
         <Modal
           className=""
@@ -41,11 +50,13 @@ class DogBox extends React.Component {
           onRequestClose={this.toggleUpdateModal}
           ariaHideApp={false}
           style={{
+            
             content: {
-              top: "50%",
+              transform: "translate(-50%, 0%)",
+              // top: "20%",
               left: "50%",
-              right: "0",
-              bottom: "0",
+              // right: "0",
+              bottom: "50%",
               overflow: "hidden",
               width: "490px",
               height: "350px",
