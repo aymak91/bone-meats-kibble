@@ -19,7 +19,7 @@ import SearchIndexContainer from "./search/search_index_container"
 
 const App = () => (
   <div className="test">
-    <NavBarContainer />
+    {/* <NavBarContainer /> */}
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />

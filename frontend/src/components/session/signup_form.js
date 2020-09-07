@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -55,42 +56,63 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
+      <div className="signup-page">
+        <div className="signup-form-container">
           <div className="signup-form">
-            <br />
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.handle}
-              onChange={this.update("handle")}
-              placeholder="Handle"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
+            <h1 className="logo">Meet your Woofer Today</h1>
+            <form onSubmit={this.handleSubmit} className="signup-form-form">
+              <div>
+                Email
+                <br />
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  className="email-box"
+                />
+                <br />
+                Handle
+                <br />
+                <input
+                  type="text"
+                  value={this.state.handle}
+                  onChange={this.update("handle")}
+                  className="email-box"
+                />
+                <br />
+                Password
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="email-box"
+                />
+                <br />
+                Confirm Password
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  className="email-box"
+                />
+                <br />
+                <input
+                  type="submit"
+                  value="Register"
+                  className="login-button"
+                />
+                {this.renderErrors()}
+              </div>
+            </form>
+            <div className="registration">
+              Already registered?
+              <Link to={"/login"} className="login-signup-link"> Login</Link>
+            </div>
           </div>
-        </form>
+        </div>
+        <div className="signup-background"> ELLO </div>
       </div>
     );
   }

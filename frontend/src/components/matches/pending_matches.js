@@ -1,4 +1,5 @@
 import React from "react";
+import NavBarContainer from "../nav/navbar_container";
 
 class PendingMatches extends React.Component {
     constructor(props) {
@@ -54,30 +55,38 @@ class PendingMatches extends React.Component {
         const currentDog = this.state.currentDog;
 
         return (
+          <div>
+            <NavBarContainer />
+            <h1>These dogs want to match with {currentDog.name}!</h1>
+            {/* <img src={`${currentDog.imageURL}`} /> */}
             <div>
-                <h1>These dogs want to match with {currentDog.name}!</h1>
-                {/* <img src={`${currentDog.imageURL}`} /> */}
+              {pendingMatches.map((pendingMatch) => (
                 <div>
-                    {pendingMatches.map((pendingMatch) => (
-                        <div>
-                            <ul>
-                                <li>{pendingMatch.name}</li>
-                                <li>{pendingMatch.breed}</li>
-                                <li>{pendingMatch.description}</li>
-                                <li>{pendingMatch.birthDate}</li>
-                                <li>{pendingMatch.size}</li>
-                                <li>{pendingMatch.gender}</li>
-                                <li>{pendingMatch.activeness}</li>
-                                <li>{pendingMatch.personality}</li>
-                            </ul>
-                            <button onClick={() => this.handleAccept(currentDogId, pendingMatch._id)}>Match</button>
-                            <button onClick={() => this.handleReject(pendingMatch._id)}>Fuck Off</button>   
-                        </div>
-
-                    ))}
+                  <ul>
+                    <li>{pendingMatch.name}</li>
+                    <li>{pendingMatch.breed}</li>
+                    <li>{pendingMatch.description}</li>
+                    <li>{pendingMatch.birthDate}</li>
+                    <li>{pendingMatch.size}</li>
+                    <li>{pendingMatch.gender}</li>
+                    <li>{pendingMatch.activeness}</li>
+                    <li>{pendingMatch.personality}</li>
+                  </ul>
+                  <button
+                    onClick={() =>
+                      this.handleAccept(currentDogId, pendingMatch._id)
+                    }
+                  >
+                    Match
+                  </button>
+                  <button onClick={() => this.handleReject(pendingMatch._id)}>
+                    Fuck Off
+                  </button>
                 </div>
+              ))}
             </div>
-        )
+          </div>
+        );
     }
 }
 

@@ -121,15 +121,18 @@ class LoginForm extends React.Component {
                   className="password-box"
                 />
                 <br />
-                <input className="login-button" type="submit" value="Login" />
+                <div className="login-demo-buttons">
+
+                  <input className="login-button" type="submit" value="Login" />
+                  <button onClick={this.handleDemo} className="login-button"> Demo Login</button>
+                </div>
                 {this.renderErrors()}
               </div>
             </form>
             <div className="registration">
               Don't have an account?   
-              <Link to={"/signup"}>  Signup</Link>
+              <Link to={"/signup"} className="login-signup-link">  Signup</Link>
             </div>
-            <button onClick={this.handleDemo} > Demo Login</button>
           </div>
         </div>
         <div className="login-form-background">

@@ -12,7 +12,7 @@
 }
 .navbar-links {
     /* background-color: pink; */
-    width: 150px;
+    width: 120px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
