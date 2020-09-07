@@ -62,19 +62,21 @@
     display: flex;
     justify-content: space-between;
 }
-.dog-buttons {
+.first-three-dog-buttons {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    width: 15%;
 }
 .first-three-dog-buttons span{
     margin-right: 10px;
 }
 .first-three-dog-buttons :first-child:hover{
-    color: red;
+    color: rgb(82, 82, 121);;
 }
 .first-three-dog-buttons :last-child:hover{
-    color: rgb(70, 70, 70);
+    margin-left: 15px;
+    color: red;
 }
 .start-matching-button{
     font-family: 'Kalam', cursive;
@@ -91,3 +93,4 @@
     color: white;
     padding-top: 20px;
 }
+
