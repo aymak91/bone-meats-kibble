@@ -20,6 +20,7 @@ class DogBox extends React.Component {
     return (
       <div>
         <ul>
+          <img className="match-image" src={`${this.props.dog.imageURL}`} />
           <li>{this.props.dog.name}</li>
           <li>{this.props.dog.breed}</li>
           <li>{this.props.dog.description}</li>
