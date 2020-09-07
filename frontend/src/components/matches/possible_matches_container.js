@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
         currentDogId: ownProps.match.params.dog_id,
         currentDog: state.dogs.currentDog,
         possibleMatches: state.possibleMatches.data,
+        currentUser: state.session.user.id
     }
 }
 
