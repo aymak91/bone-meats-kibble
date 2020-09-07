@@ -73,17 +73,17 @@ class Matches extends React.Component {
                     <img src={`${match.imageURL}`} />
                     <div className="dog-buttons">
                       <div className="first-three-dog-buttons">
+                        <Link
+                          to={`/messages/${currentDogId}/${match._id}/`}
+                          className="message-button"
+                          class="fas fa-comment"
+                          ></Link>
                         <span
                           onClick={() =>
                             this.handleDelete(currentDogId, match._id)
                           }
-                          className="message-button"
-                          class="fas fa-comment"
-                        ></span>
-                        <Link
-                          to={`/messages/${currentDogId}/${match._id}/`}
                           class="fas fa-times"
-                        ></Link>
+                        ></span>
                       </div>
                     </div>
                     <ul className="dog-description-container">

@@ -62,10 +62,11 @@
     display: flex;
     justify-content: space-between;
 }
-.dog-buttons {
+.first-three-dog-buttons {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    width: 15%;
 }
 .first-three-dog-buttons span{
     margin-right: 10px;
@@ -74,6 +75,7 @@
     color: rgb(82, 82, 121);;
 }
 .first-three-dog-buttons :last-child:hover{
+    margin-left: 15px;
     color: red;
 }
 .start-matching-button{
