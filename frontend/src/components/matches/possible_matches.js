@@ -9,7 +9,7 @@ class PossibleMatches extends React.Component {
     super(props);
 
     this.state = {
-      possibleMatches: [], //returns mongodb array that we can only key into when it is set to state
+      possibleMatches: [], //returns array of possible match documents (objects) that we need to key into
       possibleMatchesExtracted: [], //possible matches array that is rendered
       currentDog: {},
       gender: '',

@@ -5,6 +5,7 @@ import dogs from "./dogs_reducer";
 import PossibleMatchesReducer from "./matches/possible_matches_reducer";
 import PendingMatchesReducer from "./matches/pending_matches_reducer";
 import MatchesReducer from "./matches/matches_reducer";
+import MessagesReducer from "./messages_reducer";
 import modal from "./modal_reducer";
 
 const RootReducer = combineReducers({
@@ -14,6 +15,7 @@ const RootReducer = combineReducers({
   possibleMatches: PossibleMatchesReducer,
   pendingMatches: PendingMatchesReducer,
   matches: MatchesReducer,
+  messages: MessagesReducer,
   modal
 });
 
