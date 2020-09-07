@@ -28,12 +28,12 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          <Link to={"/dogs"}>All Dogs</Link>
-          <Link to={"/profile"}>Profile</Link>
-          <span onClick={this.toggleCreateModal}>Write a Dog</span>
-          <Link to={"/search"}>Search</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className="navbar-links">
+          {/* <Link to={"/dogs"}>All Dogs</Link> */}
+          <Link to={"/profile"} className="profile-icon" class="fas fa-user-circle" ></Link>
+          <span onClick={this.toggleCreateModal} class="fas fa-plus"></span>
+          <Link to={"/search"} class="fas fa-search"></Link>
+          <span onClick={this.logoutUser} class="fas fa-sign-out-alt"></span>
 
           <Modal
           className=""
@@ -80,7 +80,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">
-        <h1 className="title">BoneMeatsKibble</h1>
+        <div className="navbar-title">
+          BoneMeatsKibble
+        </div>
           {this.getLinks()}
       </div>
     );

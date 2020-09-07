@@ -28,18 +28,20 @@ class Profile extends React.Component {
       return null;
     } else {
       return (
-        <div>
-          <h2>All of This User's Dogs</h2>
-          {this.state.dogs.map((dog) => (
-            <div>
-              <DogBox
-                  key={dog.id}
-                  dog={dog}
-                  destroyDog={this.props.destroyDog}
-              />
-            </div>
-          ))}
+        <div className="dog-profile-container-container">
+            <div className="dogs-profile-container">
+            {/* <h2>All of This User's Dogs</h2> */}
+            {this.state.dogs.map((dog) => (
+                <DogBox
+                    key={dog.id}
+                    dog={dog}
+                    destroyDog={this.props.destroyDog}
+                    
+                />
+            ))}
+          </div>
         </div>
+
       );
     }
   }
