@@ -1,4 +1,6 @@
 import React from "react";
+import NavBarContainer from "../nav/navbar_container";
+import Moment from "moment";
 
 class PendingMatches extends React.Component {
     constructor(props) {
@@ -54,30 +56,62 @@ class PendingMatches extends React.Component {
         const currentDog = this.state.currentDog;
 
         return (
-            <div>
-                <h1>These dogs want to match with {currentDog.name}!</h1>
-                {/* <img src={`${currentDog.imageURL}`} /> */}
-                <div>
-                    {pendingMatches.map((pendingMatch) => (
-                        <div>
-                            <ul>
-                                <li>{pendingMatch.name}</li>
-                                <li>{pendingMatch.breed}</li>
-                                <li>{pendingMatch.description}</li>
-                                <li>{pendingMatch.birthDate}</li>
-                                <li>{pendingMatch.size}</li>
-                                <li>{pendingMatch.gender}</li>
-                                <li>{pendingMatch.activeness}</li>
-                                <li>{pendingMatch.personality}</li>
-                            </ul>
-                            <button onClick={() => this.handleAccept(currentDogId, pendingMatch._id)}>Match</button>
-                            <button onClick={() => this.handleReject(pendingMatch._id)}>Fuck Off</button>   
-                        </div>
-
-                    ))}
-                </div>
+          <div>
+            <NavBarContainer />
+            <div className="dog-profile-container-container">
+              <h1 className="pending-matches-title">Pending Matches</h1>
+              <div className="dogs-profile-container">
+                {pendingMatches.map((pendingMatch) => (
+                  <div className="individual-dog">
+                    <div className="individual-dog-header">
+                      <div className="dog-container-name">
+                        {pendingMatch.name}
+                      </div>
+                      <div>{pendingMatch.breed}</div>
+                    </div>
+                    <img src={`${pendingMatch.imageURL}`} />
+                    <div className="dog-buttons">
+                      <div className="first-three-dog-buttons">
+                        <span
+                          onClick={() =>
+                            this.handleAccept(currentDogId, pendingMatch._id)
+                          }
+                          className="match-heart-button"
+                          class="fas fa-heart"
+                        ></span>
+                        <span
+                          onClick={() => this.handleReject(pendingMatch._id)}
+                          class="fas fa-times"
+                        ></span>
+                      </div>
+                    </div>
+                    <ul className="dog-description-container">
+                      <li className="dog-attributes">
+                        <h1>Description:</h1> <p>{pendingMatch.description}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Birth Date:</h1>{" "}
+                        <p>{Moment(pendingMatch.birthDate).format("MMM Do YYYY")}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Size:</h1> <p>{pendingMatch.size}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Gender:</h1> <p>{pendingMatch.gender}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Activeness:</h1> <p>{pendingMatch.activeness}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Personality:</h1> <p>{pendingMatch.personality}</p>
+                      </li>
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 

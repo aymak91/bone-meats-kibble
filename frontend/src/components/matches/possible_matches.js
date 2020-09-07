@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import PendingMatchesContainer from "./pending_matches_container";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Moment from 'moment'
+import NavBarContainer from "../nav/navbar_container";
 
 class PossibleMatches extends React.Component {
   constructor(props) {
@@ -127,21 +128,24 @@ class PossibleMatches extends React.Component {
   
 
     return (
-      <div className="search-bgd">
+      <div>
+        <NavBarContainer />
+        <div className="search-bgd">
           <div className="search-bar">
-            <div className="search-option-container"> 
+            <div className="search-option-container">
               <label className="select-label"> Gender </label>
-              <select 
+              <select
                 className="select"
                 value={this.state.gender}
-                onChange={this.switchOptions("gender")} >
+                onChange={this.switchOptions("gender")}
+              >
                 <option value=""> - </option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
             </div>
-            <div className="search-option-container"> 
-            <label className="select-label"> Breed </label>
+            <div className="search-option-container">
+              <label className="select-label"> Breed </label>
               <select
                 className="select"
                 value={this.state.breed}
@@ -152,14 +156,20 @@ class PossibleMatches extends React.Component {
                 <option value="Alaskan Malamute">Alaskan Malamute</option>
                 <option value="American Bulldog">American Bulldog</option>
                 <option value="American Pitbull">American Pitbull</option>
-                <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
-                <option value="Austrialian Sheperd">Austrialian Shepherd</option>
+                <option value="American Staffordshire Terrier">
+                  American Staffordshire Terrier
+                </option>
+                <option value="Austrialian Sheperd">
+                  Austrialian Shepherd
+                </option>
                 <option value="Beagle">Beagle</option>
                 <option value="Blue Heeler Mix">Blue Heeler Mix</option>
                 <option value="Border Collie">Border Collie</option>
                 <option value="Boxer">Boxer</option>
                 <option value="Bulldog">Bulldog</option>
-                <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
+                <option value="Cavalier King Charles Spaniel">
+                  Cavalier King Charles Spaniel
+                </option>
                 <option value="Chihuahua">Chihuahua</option>
                 <option value="Chow Chow">Chow Chow</option>
                 <option value="Corgi">Corgi</option>
@@ -182,7 +192,9 @@ class PossibleMatches extends React.Component {
                 <option value="maltese poodle">maltese poodle</option>
                 <option value="Mutt">Mutt</option>
                 <option value="Papillion">Papillion</option>
-                <option value="Persian Yellow Mongrel">Persian Yellow Mongrel</option>
+                <option value="Persian Yellow Mongrel">
+                  Persian Yellow Mongrel
+                </option>
                 <option value="Pomeranian">Pomeranian</option>
                 <option value="Pomsky">Pomsky</option>
                 <option value="Poodle">Poodle</option>
@@ -195,9 +207,9 @@ class PossibleMatches extends React.Component {
                 <option value="Shih Tzu">Shih Tzu</option>
                 <option value="Siberian Husky">Siberian Husky</option>
               </select>
-            </div> 
+            </div>
             <div className="search-option-container">
-            <label className="select-label"> Size </label>
+              <label className="select-label"> Size </label>
               <select
                 className="select"
                 value={this.state.size}
@@ -212,7 +224,7 @@ class PossibleMatches extends React.Component {
               </select>
             </div>
             <div className="search-option-container">
-            <label className="select-label"> Activeness </label>
+              <label className="select-label"> Activeness </label>
               <select
                 className="select"
                 value={this.state.activeness}
@@ -225,9 +237,9 @@ class PossibleMatches extends React.Component {
                 <option value="High"> High </option>
                 <option value="Hyperactive"> Hyperactive</option>
               </select>
-            </div>  
-          <div className="search-option-container"> 
-            <label className="select-label"> Personality </label>
+            </div>
+            <div className="search-option-container">
+              <label className="select-label"> Personality </label>
               <select
                 className="select"
                 value={this.state.personality}
@@ -258,58 +270,69 @@ class PossibleMatches extends React.Component {
               </select>
             </div>
           </div>
-        <div className="sub-header"> 
-          <Link to={`/${this.props.currentDogId}/pending_matches`}>View Pending Matches</Link>
-          <h1>Find a match for {currentDog.name}</h1>
-          <h1 className="dog-search-header">Dogs near you</h1>
-        </div>
-        <ul className="dog-index" >
-          {compat_dogs.map((dog) => (
-            <div className="dog-index-item-container">
-              <li className="dog-index-item-sub-container" >
-                <ul className="dog-index-item">
-                  <li className="dog-name">
-                    {dog.name} 
-                    <br/>
-                    Age: {Moment().diff(dog.birthDate, 'years')}
-                    <br/>
+          <div className="sub-header">
+            <Link to={`/${this.props.currentDogId}/pending_matches`}>
+              View Pending Matches
+            </Link>
+            <h1>Find a match for {currentDog.name}</h1>
+            <h1 className="dog-search-header">Dogs near you</h1>
+          </div>
+          <ul className="dog-index">
+            {compat_dogs.map((dog) => (
+              <div className="dog-index-item-container">
+                <li className="dog-index-item-sub-container">
+                  <ul className="dog-index-item">
+                    <li className="dog-name">
+                      {dog.name}
+                      <br />
+                      Age: {Moment().diff(dog.birthDate, "years")}
+                      <br />
+                    </li>
 
-                  </li>
-
-                  <img className="match-image" src={`${dog.imageURL}`} />
+                    <img className="match-image" src={`${dog.imageURL}`} />
                     <li className="dog-desc">
                       <div> Description: </div> <div> {dog.description} </div>
                     </li>
-                  <div className="dog-details">
-                    <li > 
-                      <span> Breed: </span> 
-                      <br/>
-                      <span> {dog.breed} </span>
-                    </li>
-                    <li>
-                      <span> BDay: </span> <span>{Moment(dog.birthDate).format("MMM Do YYYY")}</span>
-                    </li>
-                    <li>
-                      <span>Size: </span> <span>{dog.size}</span>
-                    </li>
-                    <li>
-                      <span>Gender: </span> <span>{dog.gender}</span>
-                    </li>
-                    <li>
-                      <span>Activeness: </span> <span>{dog.activeness}</span>
-                    </li>
-                  </div>
-                  <br />
-                  <div className="match-buttons">
-                    <li><button className="button" onClick={() => this.handleRequest(dog._id)}> Request Match </button></li>
-                    <li><button className="button" onClick={() => this.handleReject(dog._id)}> Not interested </button></li>
-                  </div>
-              </ul>
-            </li>
-            </div>
-          ))}
-        </ul>
-        <br />
+                    <div className="dog-details">
+                      <li>
+                        <span> Breed: </span>
+                        <br />
+                        <span> {dog.breed} </span>
+                      </li>
+                      <li>
+                        <span> BDay: </span>{" "}
+                        <span>
+                          {Moment(dog.birthDate).format("MMM Do YYYY")}
+                        </span>
+                      </li>
+                      <li>
+                        <span>Size: </span> <span>{dog.size}</span>
+                      </li>
+                      <li>
+                        <span>Gender: </span> <span>{dog.gender}</span>
+                      </li>
+                      <li>
+                        <span>Activeness: </span> <span>{dog.activeness}</span>
+                      </li>
+                    </div>
+                    <br />
+                    <div className="possible-match-buttons">
+                        <span
+                          onClick={() => this.handleRequest(dog._id)}
+                          class="fas fa-heart"
+                        ></span>
+                        <span
+                          onClick={() => this.handleReject(dog._id)}
+                          class="fas fa-times"
+                        ></span>
+                    </div>
+                  </ul>
+                </li>
+              </div>
+            ))}
+          </ul>
+          <br />
+        </div>
       </div>
     );
   }

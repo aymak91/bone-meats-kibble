@@ -70,11 +70,11 @@
 .first-three-dog-buttons span{
     margin-right: 10px;
 }
-.first-three-dog-buttons span:hover{
-    color: rgb(82, 82, 121);
+.first-three-dog-buttons :first-child:hover{
+    color: red;
 }
-.first-three-dog-buttons a:hover{
-    color: rgb(82, 82, 121);
+.first-three-dog-buttons :last-child:hover{
+    color: rgb(70, 70, 70);
 }
 .start-matching-button{
     font-family: 'Kalam', cursive;
@@ -82,4 +82,12 @@
 }
 .start-matching-button:hover {
     color: rgb(82, 82, 121);
+}
+.pending-matches-title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Kalam', cursive;
+    font-size: 22px;
+    color: white;
+    padding-top: 20px;
 }

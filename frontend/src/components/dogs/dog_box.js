@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import UpdateDogFormContainer from "../profile/update_dog_container";
 import { Link } from "react-router-dom";
+import Moment from "moment";
 
 class DogBox extends React.Component {
   constructor(props) {
@@ -19,29 +20,53 @@ class DogBox extends React.Component {
   render() {
     return (
       <div className="individual-dog">
-          <div className="individual-dog-header">
-            <div className="dog-container-name">{this.props.dog.name}</div>
-            <div>{this.props.dog.breed}</div>
+        <div className="individual-dog-header">
+          <div className="dog-container-name">{this.props.dog.name}</div>
+          <div>{this.props.dog.breed}</div>
+        </div>
+        <img src={`${this.props.dog.imageURL}`} alt="" />
+        <div className="dog-buttons">
+          <div className="first-three-dog-buttons">
+            <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
+            <span
+              onClick={() => this.props.destroyDog(this.props.dog._id)}
+              class="fas fa-trash-alt"
+            ></span>
+            <Link
+              to={`/${this.props.dog._id}/matches`}
+              class="fas fa-fire"
+            ></Link>
           </div>
-            <img src="/Capture.jpg" alt=""/>
-            <div className="dog-buttons">
-              <div className="first-three-dog-buttons">
-                <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
-                <span onClick={() => this.props.destroyDog(this.props.dog._id)} class="fas fa-trash-alt"></span>
-                <Link to={`/${this.props.dog._id}/matches`} class="fas fa-fire"></Link>
-              </div>
-              <Link to={`/${this.props.dog._id}/possible_matches`} className="start-matching-button">Start Matching</Link>
-            </div>
+          <Link
+            to={`/${this.props.dog._id}/possible_matches`}
+            className="start-matching-button"
+          >
+            Start Matching
+          </Link>
+        </div>
         <ul className="dog-description-container">
           {/* <ul>
             <h3>Description</h3>
           </ul> */}
-            <li className="dog-attributes"><h1>Description:</h1> <p>{this.props.dog.description}</p></li>
-            <li className="dog-attributes"><h1>Birth Date:</h1> <p>{this.props.dog.birthDate}</p></li>
-            <li className="dog-attributes"><h1>Size:</h1> <p>{this.props.dog.size}</p></li>
-            <li className="dog-attributes"><h1>Gender:</h1> <p>{this.props.dog.gender}</p></li>
-            <li className="dog-attributes"><h1>Activeness:</h1> <p>{this.props.dog.activeness}</p></li>
-            <li className="dog-attributes"><h1>Personality:</h1> <p>{this.props.dog.personality}</p></li>
+          <li className="dog-attributes">
+            <h1>Description:</h1> <p>{this.props.dog.description}</p>
+          </li>
+          <li className="dog-attributes">
+            <h1>Birth Date:</h1>{" "}
+            <p>{Moment(this.props.dog.birthDate).format("MMM Do YYYY")}</p>
+          </li>
+          <li className="dog-attributes">
+            <h1>Size:</h1> <p>{this.props.dog.size}</p>
+          </li>
+          <li className="dog-attributes">
+            <h1>Gender:</h1> <p>{this.props.dog.gender}</p>
+          </li>
+          <li className="dog-attributes">
+            <h1>Activeness:</h1> <p>{this.props.dog.activeness}</p>
+          </li>
+          <li className="dog-attributes">
+            <h1>Personality:</h1> <p>{this.props.dog.personality}</p>
+          </li>
         </ul>
         {/* <Link to>Start Matching</Link> */}
         <Modal
@@ -50,7 +75,6 @@ class DogBox extends React.Component {
           onRequestClose={this.toggleUpdateModal}
           ariaHideApp={false}
           style={{
-            
             content: {
               transform: "translate(-50%, 0%)",
               // top: "20%",
@@ -69,7 +93,11 @@ class DogBox extends React.Component {
             },
           }}
         >
-          <UpdateDogFormContainer dog={this.props.dog} dogId={this.props.dog._id} closeModal={this.toggleUpdateModal} />
+          <UpdateDogFormContainer
+            dog={this.props.dog}
+            dogId={this.props.dog._id}
+            closeModal={this.toggleUpdateModal}
+          />
           <label onClick={this.toggleUpdateModal}>BACK</label>
         </Modal>
       </div>
