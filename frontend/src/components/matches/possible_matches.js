@@ -316,25 +316,15 @@ class PossibleMatches extends React.Component {
                       </li>
                     </div>
                     <br />
-                    <div className="match-buttons">
-                      <li>
-                        <button
-                          className="button"
+                    <div className="possible-match-buttons">
+                        <span
                           onClick={() => this.handleRequest(dog._id)}
-                        >
-                          {" "}
-                          Request Match{" "}
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          className="button"
+                          class="fas fa-heart"
+                        ></span>
+                        <span
                           onClick={() => this.handleReject(dog._id)}
-                        >
-                          {" "}
-                          Not interested{" "}
-                        </button>
-                      </li>
+                          class="fas fa-times"
+                        ></span>
                     </div>
                   </ul>
                 </li>
