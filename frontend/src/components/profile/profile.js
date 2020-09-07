@@ -3,7 +3,6 @@ import DogBox from "../dogs/dog_box";
 import NavBarContainer from "../nav/navbar_container";
 
 class Profile extends React.Component {
-  // _isMounted = false;
   
   constructor(props) {
     super(props);
@@ -14,11 +13,11 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    // this._isMounted = true;
     this.props.fetchUserDogs(this.props.currentUser.id);
   }
 
   componentWillReceiveProps(newState) {
+    this.props.fetchUserDogs(this.props.currentUser.id);
     this.setState({ dogs: newState.dogs });
   }
 

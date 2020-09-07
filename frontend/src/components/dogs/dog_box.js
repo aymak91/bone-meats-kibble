@@ -27,7 +27,8 @@ class DogBox extends React.Component {
             <div className="dog-buttons">
               <div className="first-three-dog-buttons">
                 <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
-                <span onClick={() => this.props.destroyDog(this.props.dog._id)} class="fas fa-trash-alt"></span>
+                <span onClick={() => this.props.destroyDog(this.props.dog._id)
+                } class="fas fa-trash-alt"></span>
                 <Link to={`/${this.props.dog._id}/matches`} class="fas fa-fire"></Link>
               </div>
               <Link to={`/${this.props.dog._id}/possible_matches`} className="start-matching-button">Start Matching</Link>
