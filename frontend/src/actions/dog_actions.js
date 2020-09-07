@@ -1,6 +1,7 @@
 import { getDog, getDogs, getUserDogs, writeDog, updateDog, deleteDog } from "../util/dog_api_util";
 
 export const RECEIVE_CURRENT_DOG = "RECEIVE_CURRENT_DOG";
+export const RECEIVE_RECEIVING_DOG = "RECEIVE_RECEIVING_DOG";
 export const RECEIVE_DOGS = "RECEIVE_DOGS";
 export const RECEIVE_USER_DOGS = "RECEIVE_USER_DOGS";
 export const RECEIVE_NEW_DOG = "RECEIVE_NEW_DOG";
@@ -8,6 +9,11 @@ export const REMOVE_DOG = "REMOVE_DOG";
 
 export const receiveCurrentDog = (dog) => ({
   type: RECEIVE_CURRENT_DOG,
+  dog,
+});
+
+export const receiveReceivingDog = (dog) => ({
+  type: RECEIVE_RECEIVING_DOG,
   dog,
 });
 
@@ -34,6 +40,11 @@ export const removeDog = (dogId) => ({
 export const fetchCurrentDog = (dogId) => (dispatch) =>
   getDog(dogId)
     .then((dog) => dispatch(receiveCurrentDog(dog)))
+    .catch((err) => console.log(err));
+
+export const fetchReceivingDog = (dogId) => (dispatch) =>
+  getDog(dogId)
+    .then((dog) => dispatch(receiveReceivingDog(dog)))
     .catch((err) => console.log(err));
 
 export const fetchDogs = () => (dispatch) =>

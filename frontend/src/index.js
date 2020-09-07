@@ -19,6 +19,7 @@ import { logout } from "./actions/session_actions";
 import { fetchDogs, fetchUserDogs, createDog, destroyDog } from "./actions/dog_actions"
 import { logoutUser, signup, login } from "./actions/session_actions"
 import { getUserDogs, writeDog } from "./util/dog_api_util";
+import {fetchMessages} from "./actions/message_actions"
 
 window.getUserDogs = getUserDogs;
 window.fetchDogs = fetchDogs;
@@ -31,6 +32,10 @@ window.signup = signup;
 window.login = login;
 
 window.writeDog = writeDog;
+
+window.fetchMessages = fetchMessages;
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
