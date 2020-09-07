@@ -1,5 +1,6 @@
 import {
   RECEIVE_CURRENT_DOG,
+  RECEIVE_RECEIVING_DOG,
   RECEIVE_DOGS,
   RECEIVE_USER_DOGS,
   RECEIVE_NEW_DOG,
@@ -7,7 +8,7 @@ import {
 } from "../actions/dog_actions";
 
 const DogsReducer = (
-  state = { all: {}, user: {}, new: undefined, currentDog: {}},
+  state = { all: {}, user: {}, new: undefined, currentDog: {}, receivingDog: {}},
   action
 ) => {
   Object.freeze(state);
@@ -15,6 +16,9 @@ const DogsReducer = (
   switch (action.type) {
     case RECEIVE_CURRENT_DOG:
       newState.currentDog = action.dog.data;
+      return newState;
+    case RECEIVE_RECEIVING_DOG:
+      newState.receivingDog = action.dog.data;
       return newState;
     case RECEIVE_DOGS:
       newState.all = action.dogs.data;

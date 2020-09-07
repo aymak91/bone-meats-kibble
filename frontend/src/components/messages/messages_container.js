@@ -5,17 +5,18 @@ import {
     createMessage,
 } from "../../actions/message_actions";
 
-import { fetchCurrentDog } from "../../actions/dog_actions"
+import { fetchCurrentDog, fetchReceivingDog } from "../../actions/dog_actions"
 
 
 const mapStateToProps = (state, ownProps) => {
     // const sendingDogId = ownProps.match.params.sending_dog_id;
     // const receivingDogId = ownProps.match.params.receiving_dog_id;
-    // console.log(ownProps)
+    // console.log(state.dogs)
 
     return ({
         messages: state.messages.data,
         currentDog: state.dogs.currentDog,
+        receivingDog: state.dogs.receivingDog
     })
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -27,7 +28,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchSendingDog: () =>
             dispatch(fetchCurrentDog(sendingDogId)),
         fetchReceivingDog: () =>
-            dispatch(fetchCurrentDog(receivingDogId)),
+            dispatch(fetchReceivingDog(receivingDogId)),
         fetchMessages: () => dispatch(fetchMessages(sendingDogId, receivingDogId)),
         createMessage: (message) => dispatch(createMessage(sendingDogId, receivingDogId, message)),
     };

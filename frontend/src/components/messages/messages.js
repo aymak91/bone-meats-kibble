@@ -10,6 +10,8 @@ class Messages extends React.Component {
             receivingDog: {},
             body: ""
         };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
@@ -21,7 +23,7 @@ class Messages extends React.Component {
         await this.setState({ sendingDog: this.props.currentDog })
 
         await this.props.fetchReceivingDog();
-        await this.setState({ recivingDog: this.props.currentDog })
+        await this.setState({ receivingDog: this.props.receivingDog })
     }
 
     async componentDidUpdate(prevProps) {
@@ -37,11 +39,12 @@ class Messages extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        let body = {
+        const message = {
             body: this.state.body
         }
 
-        this.props.createMessage(body)
+        this.props.createMessage(message, this.props.history)
+        this.state.body = ""
     }
 
     update(field) {
@@ -53,7 +56,6 @@ class Messages extends React.Component {
 
     render() {
         if (!this.props.messages) return null;
-        // if (this.state.messages.length === 0) return null;
 
         const messages = this.state.messages
         const sendingDog = this.state.sendingDog;
@@ -61,9 +63,10 @@ class Messages extends React.Component {
 
         return (
             <div>
-                <h1>Messages</h1>
+                <h1>Messages with {receivingDog.name}</h1>
+                <h2>{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h2>
                 {messages.map((message) => (
-                    <li>
+                    <li key={message._id}>
                         {`${message.sendingDog.name}: ${message.body}`}
                     </li>
                 ))}
@@ -74,7 +77,7 @@ class Messages extends React.Component {
                             value={this.state.body}
                             onChange={this.update("body")}
                         />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="woof!" />
                         <br />
                     </div>
                 </form>

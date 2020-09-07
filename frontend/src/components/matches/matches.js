@@ -44,6 +44,8 @@ class Matches extends React.Component {
         const matches = this.state.matches[0].matches;
         const currentDogId = this.state.currentDogId;
         const currentDog = this.state.currentDog;
+
+        console.log(currentDog)
         
         if (matches.length === 0) {
             return (
@@ -59,7 +61,7 @@ class Matches extends React.Component {
                 <h2>time to bone</h2>
                 {/* <img src={`${currentDog.imageURL}`} /> */}
                 {matches.map((match) => (
-                <div>
+                <div key={match._id}>
                     <ul>
                     <li>{match.name}</li>
                     <li>{match.breed}</li>
@@ -70,7 +72,6 @@ class Matches extends React.Component {
                     <li>{match.activeness}</li>
                     <li>{match.personality}</li>
                     </ul>
-                    <button>Message</button>
                     <button
                     onClick={() => this.handleDelete(currentDogId, match._id)}
                     >

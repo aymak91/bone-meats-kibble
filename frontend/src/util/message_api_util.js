@@ -5,6 +5,6 @@ export const getMessages = (sendingDogId, receivingDogId) => {
 };
 
 export const postMessage = (sendingDogId, receivingDogId, message) => {
-    return axios.post(`/api/messages/${sendingDogId}/${receivingDogId}`);
+    return axios.post(`/api/messages/${sendingDogId}/${receivingDogId}`, message);
 };
 
