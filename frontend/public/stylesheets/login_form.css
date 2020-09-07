@@ -36,7 +36,7 @@
 }
 .login-button {
   font-family: 'Mukta Vaani', sans-serif;
-  width: 40%;
+  width: 45%;
 }
 .logo {
   font-family: 'Kalam', cursive;
@@ -65,4 +65,13 @@
 .login-form-form {
   font-family: 'Mukta Vaani', sans-serif;
   color: white;
+}
+.login-signup-link {
+  color: blue;
+}
+.login-demo-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
 }

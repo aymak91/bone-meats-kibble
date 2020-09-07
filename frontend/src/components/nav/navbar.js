@@ -32,7 +32,7 @@ class NavBar extends React.Component {
           {/* <Link to={"/dogs"}>All Dogs</Link> */}
           <Link to={"/profile"} className="profile-icon" class="fas fa-user-circle" ></Link>
           <span onClick={this.toggleCreateModal} class="fas fa-plus"></span>
-          <Link to={"/search"} class="fas fa-search"></Link>
+          {/* <Link to={"/search"} class="fas fa-search"></Link> */}
           <span onClick={this.logoutUser} class="fas fa-sign-out-alt"></span>
 
           <Modal
