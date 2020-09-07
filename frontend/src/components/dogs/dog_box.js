@@ -23,7 +23,7 @@ class DogBox extends React.Component {
             <div className="dog-container-name">{this.props.dog.name}</div>
             <div>{this.props.dog.breed}</div>
           </div>
-            <img src="/Capture.jpg" alt=""/>
+            <img src="/login-background.jpg" alt=""/>
             <div className="dog-buttons">
               <div className="first-three-dog-buttons">
                 <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
