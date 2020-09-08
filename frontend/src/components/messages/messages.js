@@ -38,15 +38,17 @@ class Messages extends React.Component {
         }
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
 
-        const message = {
+        const message = await{
             body: this.state.body
         }
 
-        this.props.createMessage(message, this.props.history)
-        this.setState({
+        await this.props.createMessage(message, this.props.history)
+        await this.props.fetchMessages();
+        await this.setState({ messages: this.props.messages })
+        await this.setState({
             body: ''
         })
     }
