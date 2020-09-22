@@ -63,16 +63,21 @@ class Messages extends React.Component {
 
     deleteMessage(idx) {
       console.log("test")
-        this.setState({ messages: []})
-      console.log(this.state.messages)
+      this.state.messages.splice(idx, 1);
+      this.setState({ messages: this.state.messages})
     }
 
     render() {
-        if (!this.props.messages) return null;
+      // if (!this.props.messages) return null;
+
+      // if (!this.props.matches) return null;
+      // if (this.state.matches.length === 0) return null;
 
         const messages = this.state.messages
         const sendingDog = this.state.sendingDog;
         const receivingDog = this.state.receivingDog;
+
+        // const matches = this.state.matches[0].matches;
 
         return (
           <div className="messages-bgd">
@@ -82,6 +87,15 @@ class Messages extends React.Component {
                   Back to Matches
                 </Link>
               </div>
+              {/* <div>
+                <ul>
+                      {matches.map((match) => (
+                        <div>
+                          {match.name}
+                        </div>
+                      )) }
+                  </ul>
+              </div> */}
               <h1 className="message-h1">
                 {" "}
                 Messages with {receivingDog.name}{" "}
@@ -95,7 +109,7 @@ class Messages extends React.Component {
                     <div>{`${message.sendingDog.name}:`}</div>
                     <div>{`${message.body}`}</div>
                     <div className="timestamp">{moment().format("HH:mm")}</div>
-                    <button onClick={()=> this.deleteMessage(idx)}>delete</button>
+                    <button onClick={() => this.deleteMessage(idx)}>delete</button>
                   </div>
 
                 </li>
