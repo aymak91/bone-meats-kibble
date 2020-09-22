@@ -63,7 +63,7 @@ class LoginForm extends React.Component {
     let email = 'demoUser@doge.com';
     let password = 'password'
 
-    let interval = 150;
+    let interval = 50;
     let login = () => {
       this.props.login(this.state);
       this.props.history.push("/")
