@@ -1,7 +1,6 @@
 import React from "react";
 import DogBox from "../dogs/dog_box";
 import NavBarContainer from "../nav/navbar_container";
-import Modal from "react-modal";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -9,53 +8,62 @@ class Profile extends React.Component {
 
     this.state = {
       dogs: [],
-      showDogModal: false,
     };
-    this.toggleDogModal = this.toggleDogModal.bind(this);
-  }
-  toggleDogModal() {
-    this.setState({
-      showDogModal: !this.state.showDogModal,
-    });
-  }
-  componentDidMount() {
-    this.props.fetchUserDogs(this.props.currentUser.id);
   }
 
-  componentWillReceiveProps(newState) {
-    this.props.fetchUserDogs(this.props.currentUser.id);
-    this.setState({ dogs: newState.dogs });
+  async componentDidMount() {
+    await this.props.fetchUserDogs(this.props.currentUser.id);
+    await this.setState({dogs: this.props.dogs})
+  }
+
+  // componentWillReceiveProps(newState) {
+  //   // this.props.fetchUserDogs(this.props.currentUser.id);
+  //   this.setState({ dogs: newState.dogs });
+  // }
+
+  async componentDidUpdate(prevProps) {
+    if (!this.props.dogs) return null;
+    if (this.state.dogs.length === 0) return null;
+
+    if ((await prevProps.dogs.length) !== this.props.dogs.length) {
+      await this.props.fetchUserDogs(this.props.currentUser.id);
+      await this.setState({dogs: this.props.dogs})
+    }
+
+    // if ((await prevProps.dogs.length) !== this.props.dogs.length) {
+    //   await this.props.fetchUserDogs(this.props.currentUser.id);
+    //   await this.setState({dogs: this.props.dogs})
+    // }
   }
 
   render() {
+    console.log(this.state.dogs)
+    console.log(this.props.dogs)
+    
     if (this.state.dogs.length === 0) {
       return null;
-    } else {
-      return (
+    } 
+    
+    return (
         <div>
           <NavBarContainer />
           <div className="dog-profile-container-container">
             <div className="dogs-profile-container">
-              
+              {/* <h2>All of This User's Dogs</h2> */}
               {this.state.dogs.map((dog) => (
-                <div className="dogurl">
-                  <a href={`/api/dogs/${dog.id}`}>
-                    <img
-                    src={`${dog.imageURL}`}
-                    alt=""
-                    />
-                  </a>
-  
-
-                </div>
-
+                <DogBox
+                  key={dog.id}
+                  dog={dog}
+                  destroyDog={this.props.destroyDog}
+                />
               ))}
             </div>
           </div>
         </div>
       );
-    }
   }
+
+
 }
 
 export default Profile;

@@ -43,51 +43,81 @@ class DogForm extends React.Component {
       <div>Dog profile successfully created</div>
     )
   }
-  handleSubmit(e) {
+  
+  async handleSubmit(e) {
     e.preventDefault();
-    // const dog = {
-    //   breed: this.state.breed,
-    //   description: this.state.description,
-    //   birthDate: this.state.birthDate,
-    //   size: this.state.size,
-    //   gender: this.state.gender,
-    //   activeness: this.state.activeness,
-    //   personality: this.state.personality
-    // };
-    // const dog = Object.assign({}, this.state);
-    // this.props.createDog(dog);
 
-    const formData = new FormData();
-    if (this.state.photoFile) {
-      formData.append('name', this.state.name);
-      formData.append('description', this.state.description);
-      formData.append('breed', this.state.breed);
-      formData.append('birthDate', this.state.birthDate);
-      formData.append('size', this.state.size);
-      formData.append('gender', this.state.gender);
-      formData.append('activeness', this.state.activeness);
-      formData.append('personality', this.state.personality);
-      formData.append('file', this.state.photoFile);
-      axios.post("/api/dogs/", formData,
-        // {headers: {
-        //   accept: "application/json",
-        //   "Accept-Language": "en-US,en;q=0.8",
-        //   "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
-        //   "Access-Control-Allow-Origin": "*",
-        // },}
-      )
-        .then(response => {
-          if (response.state === 200) {                         //.state or .status are both okay to use
-            console.log(response.data);
-          } else {
-            this.props.history.push('/profile')
-          }
-        })
-        .catch(errors => this.setState({ errors: errors }));
+    const formData = await new FormData();
+    if (await this.state.photoFile) {
+      await formData.append('name', this.state.name);
+      await formData.append('description', this.state.description);
+      await formData.append('breed', this.state.breed);
+      await formData.append('birthDate', this.state.birthDate);
+      await formData.append('size', this.state.size);
+      await formData.append('gender', this.state.gender);
+      await formData.append('activeness', this.state.activeness);
+      await formData.append('personality', this.state.personality);
+      await formData.append('file', this.state.photoFile);
+      await axios.post("/api/dogs/", formData)
+        // .then(response => {
+        //   if (response.state === 200) {                         //.state or .status are both okay to use
+        //     console.log(response.data);
+        //   } else {
+        //     this.props.history.push('/profile')
+        //   }
+        // })
+        // .catch(errors => this.setState({ errors: errors }));
     };
     
+    await this.props.fetchUserDogs(this.props.currentUser.id)
     this.props.closeModal();
   }
+
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   // const dog = {
+  //   //   breed: this.state.breed,
+  //   //   description: this.state.description,
+  //   //   birthDate: this.state.birthDate,
+  //   //   size: this.state.size,
+  //   //   gender: this.state.gender,
+  //   //   activeness: this.state.activeness,
+  //   //   personality: this.state.personality
+  //   // };
+  //   // const dog = Object.assign({}, this.state);
+  //   // this.props.createDog(dog);
+
+  //   const formData = new FormData();
+  //   if (this.state.photoFile) {
+  //     formData.append('name', this.state.name);
+  //     formData.append('description', this.state.description);
+  //     formData.append('breed', this.state.breed);
+  //     formData.append('birthDate', this.state.birthDate);
+  //     formData.append('size', this.state.size);
+  //     formData.append('gender', this.state.gender);
+  //     formData.append('activeness', this.state.activeness);
+  //     formData.append('personality', this.state.personality);
+  //     formData.append('file', this.state.photoFile);
+  //     axios.post("/api/dogs/", formData,
+  //       // {headers: {
+  //       //   accept: "application/json",
+  //       //   "Accept-Language": "en-US,en;q=0.8",
+  //       //   "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
+  //       //   "Access-Control-Allow-Origin": "*",
+  //       // },}
+  //     )
+  //       .then(response => {
+  //         if (response.state === 200) {                         //.state or .status are both okay to use
+  //           console.log(response.data);
+  //         } else {
+  //           this.props.history.push('/profile')
+  //         }
+  //       })
+  //       .catch(errors => this.setState({ errors: errors }));
+  //   };
+    
+  //   this.props.closeModal();
+  // }
 
   update(field) {
     return (e) =>

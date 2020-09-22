@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MessagesContainer from "../messages/messages_container"
+// import MessagesContainer from "../messages/messages_container"
 import NavBarContainer from "../nav/navbar_container";
 import Moment from "moment";
 

@@ -1,6 +1,6 @@
 .dog-profile-container-container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(39, 39, 66);
 }
 .dogs-profile-container {
@@ -14,18 +14,19 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-flow: wrap row;
 }
 
 .dogurl {
     margin: 0px 15px;
 }
-.dogurl img{
+.dogbox-imageurl {
     width: 325px;
     height: 325px;
     object-fit: cover;  
 }
 .individual-dog {
-    width: 100%;
+    width: 30%;
     margin: 0 auto;
     border-radius: 3px;
     background-color: white;
@@ -96,6 +97,9 @@
     font-size: 18px;
 }
 .start-matching-button:hover {
+    color: rgb(82, 82, 121);
+}
+.delete-match-button:hover {
     color: rgb(82, 82, 121);
 }
 .pending-matches-title {
