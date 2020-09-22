@@ -18,6 +18,16 @@
     color: white;
 }
 
+.message-avatar {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.message-body {
+    /* overflow-wrap: break-word; */
+}
 
 .message-h1 {
 
@@ -42,12 +52,14 @@
 
 .chat-message {
     display: flex;
-
-    flex-direction: column;
+    flex-direction: row;
     padding: 20px 5px 20px 5px;
     margin: 0% 20% 0% 20%;
-    border-bottom: 1px solid white;
-    
+    /* border-bottom: 1px solid white; */
+    margin: 10px 20% 0 20%;
+    border-radius: 5px;
+    background-color: darkgray;
+    border: 2px solid lightgray;
 }
 
 .enter-chat-input {
@@ -65,24 +77,19 @@
 
 
 .chat-message > * {
-
     width: 50px;
     border-radius: 4px;
     color: white;
-
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.message-body {
-    padding-top: 20px;
-
-
-}
-.message-name {
+.timestamp {
     display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
+    justify-content: flex-end;
 }
+
+
+
 
 
 
