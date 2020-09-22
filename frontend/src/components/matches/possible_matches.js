@@ -282,49 +282,55 @@ class PossibleMatches extends React.Component {
               <div className="dog-index-item-container">
                 <li className="dog-index-item-sub-container">
                   <ul className="dog-index-item">
-                    <li className="dog-name">
+                    <div className="individual-dog-header">
+                      <div className="dog-container-name"> {dog.name} </div>
+                      <div>{dog.breed}</div>
+                    </div>
+                    {/* <li className="dog-name">
                       {dog.name}
                       <br />
                       Age: {Moment().diff(dog.birthDate, "years")}
                       <br />
-                    </li>
+                    </li> */}
 
                     <img className="match-image" src={`${dog.imageURL}`} />
-                    <li className="dog-desc">
-                      <div> Description: </div> <div> {dog.description} </div>
-                    </li>
-                    <div className="dog-details">
-                      <li>
-                        <span> Breed: </span>
-                        <br />
-                        <span> {dog.breed} </span>
+                    <div className="dog-description-container">
+                      <li className="dog-attributes-description">
+                        <h1>Description: </h1>{" "}
+                        <p className="dog-profile-description">{dog.description}</p>
                       </li>
-                      <li>
-                        <span> BDay: </span>{" "}
-                        <span>
-                          {Moment(dog.birthDate).format("MMM Do YYYY")}
-                        </span>
+                      <li className="dog-attributes">
+                        <h1>Birth Date:</h1>{" "}
+                        <p>
+                          {Moment(dog.birthDate).format(
+                            "MMM Do YYYY"
+                          )}
+                        </p>
                       </li>
-                      <li>
-                        <span>Size: </span> <span>{dog.size}</span>
+                      <li className="dog-attributes">
+                        <h1>Size:</h1> <p>{dog.size}</p>
                       </li>
-                      <li>
-                        <span>Gender: </span> <span>{dog.gender}</span>
+                      <li className="dog-attributes">
+                        <h1>Gender:</h1> <p>{dog.gender}</p>
                       </li>
-                      <li>
-                        <span>Activeness: </span> <span>{dog.activeness}</span>
+                      <li className="dog-attributes">
+                        <h1>Activeness:</h1> <p>{dog.activeness}</p>
+                      </li>
+                      <li className="dog-attributes">
+                        <h1>Personality:</h1>{" "}
+                        <p>{dog.personality}</p>
                       </li>
                     </div>
                     <br />
                     <div className="possible-match-buttons">
-                        <span
-                          onClick={() => this.handleRequest(dog._id)}
-                          class="fas fa-heart"
-                        ></span>
-                        <span
-                          onClick={() => this.handleReject(dog._id)}
-                          class="fas fa-times"
-                        ></span>
+                      <span
+                        onClick={() => this.handleRequest(dog._id)}
+                        class="fas fa-heart"
+                      ></span>
+                      <span
+                        onClick={() => this.handleReject(dog._id)}
+                        class="fas fa-times"
+                      ></span>
                     </div>
                   </ul>
                 </li>

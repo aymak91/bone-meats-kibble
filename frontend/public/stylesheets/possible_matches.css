@@ -21,10 +21,10 @@
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 30px;
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-    background-image: url("/login-background.jpg");
+    /* background-image: url("/login-background.jpg"); */
     background-position: 100px 100px;
-
-    border-radius: 10px;
+    background-color: #8380B6;
+    border-radius: 5px;
 }
 
 .sub-header {
@@ -39,11 +39,10 @@
     background-color: grey;
     margin-left: 30%;
     margin-right: 30%;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 20px;
-    background-image: url("https://images.unsplash.com/photo-1452441271666-5d998aa2f6cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80");
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-
+    background-color: #C2CAE8;
 }
 
 .select-label {
@@ -68,11 +67,28 @@
     text-align: center;
 }
 
+
 .match-image {
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 100%;
     object-fit: cover;
-    border-radius: 20px;
+}
+
+.dog-attributes-description {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.dog-attributes-description h1{
+    font-weight: 600;
+    margin-right: 7px;
+}
+
+.dog-profile-description {
+    text-align: right;
+    width: 60%
+
 }
 
 .dog-desc {
@@ -96,10 +112,11 @@
 .dog-index {
     display: flex;
     justify-content: center;
-    flex-flow: wrap row;
+    align-items: center;
+    flex-direction: column;
+    /* flex-flow: wrap row; */
     margin: 20px;
     position: relative;
-    /* flex-direction: column; */
 
 }
 
@@ -112,23 +129,19 @@
 }
 
 .dog-index-item {
-    /* display: flex;
-    justify-content: center;
-    align-items: column;
-    align-content: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* text-align: center; */
-    border: 1px solid lightgray;
-    padding: 10px;
+    border: 2px solid black;
     margin: 10px;
     height: auto;
-    width: 350px;
+    width: 450px;
     background-color: white;
-    border-radius: 10px;
     box-shadow: 5px 5px 5px black;
     font-family: 'Mukta Vaani', sans-serif;
+    border-radius: 5px;
+
+
 }
 
 .dog-index-item > * {
