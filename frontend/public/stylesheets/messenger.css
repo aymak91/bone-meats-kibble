@@ -21,12 +21,14 @@
 .message-avatar {
     float: left;
     max-width: 60px;
+    max-height: 60px;
     width: 100%;
     margin-right: 20px;
 }
 
-.message-body {
+.message-body > * {
     /* overflow-wrap: break-word; */
+    width: 100%;
 }
 
 .message-h1 {
@@ -65,14 +67,13 @@
 .enter-chat-input {
     display: flex;
     justify-content: space-between;
-
     margin: 0% 20% 0% 20%;
-
     padding: 20px 0px;
 }
 
 .chat-input {
-    width: 350px;
+    width: 450px;
+    /* width: 100%; */
 }
 
 
