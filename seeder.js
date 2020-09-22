@@ -5,22 +5,22 @@ const PossibleMatchesModel = require("./models/matches/PossibleMatches");
 const PendingMatchesModel = require("./models/matches/PendingMatches");
 const RequestedMatchesModel = require("./models/matches/RequestedMatches");
 const MatchesModel = require("./models/matches/Matches");
+const MessagesModel = require("./models/Message");
 const bcrypt = require('bcryptjs');
 
 
 const seed = async () => {
-  //Users
+  
+  //DELETE ALL
   await User.collection.deleteMany({})
-
-  //Dogs
-
   await Dog.collection.deleteMany({})
   await PendingMatchesModel.collection.deleteMany({})
   await PossibleMatchesModel.collection.deleteMany({})
-
   await RequestedMatchesModel.collection.deleteMany({})
   await MatchesModel.collection.deleteMany({});
+  await MessagesModel.collection.deleteMany({});
 
+  //Seed users
   const demoUser = await new User({
     handle: "demoUser",
     email: "demoUser@doge.com",
@@ -105,54 +105,10 @@ const seed = async () => {
     });
   });
 
-  // const demoUser = new User({
-  //     handle: 'demoUser',
-  //     email: 'demoUser@doge.com',
-  //     password: 'password'
-  // });
-  // demoUser.save();
 
-  // const user1 = new User({
-  //     handle: 'alexUser',
-  //     email: 'demoUser1@doge.com',
-  //     password: 'password'
-  // });
-  // user1.save();
 
-  // const user2 = new User({
-  //     handle: 'danielUser',
-  //     email: 'demoUser2@doge.com',
-  //     password: 'password'
-  // })
-  // user2.save();
-  // const user3 = new User({
-  //     handle: 'jaronUser',
-  //     email: 'demoUser3@doge.com',
-  //     password: 'password'
-  // })
-  // user3.save();
-  // const user4 = new User({
-  //     handle: 'jordanUser',
-  //     email: 'demoUser4@doge.com',
-  //     password: 'password'
-  // })
-  // user4.save();
-  // const user5 = new User({
-  //     handle: 'kennethUser',
-  //     email: 'demoUser5@doge.com',
-  //     password: 'password'
-  // })
-  // user5.save();
 
-  //Dogs
-
-  // Dog.collection.deleteMany({})
-  // PendingMatchesModel.collection.deleteMany({})
-  // PossibleMatchesModel.collection.deleteMany({})
-
-  // RequestedMatchesModel.collection.deleteMany({})
-  // MatchesModel.collection.deleteMany({})
-
+  //SEEDING DOGS
   const dog6 = new Dog({
     user: user1._id,
     name: "Snooki",
@@ -185,6 +141,7 @@ const seed = async () => {
     matches: [],
   });
   newMatches6.save();
+
 
   const dog7 = new Dog({
     user: user1._id,
@@ -219,6 +176,7 @@ const seed = async () => {
   });
   newMatches7.save();
 
+
   const dog8 = new Dog({
     user: user1._id,
     name: "Snoop",
@@ -251,6 +209,7 @@ const seed = async () => {
     matches: [],
   });
   newMatches8.save();
+
 
   const dog9 = new Dog({
     user: user1._id,
@@ -1145,6 +1104,8 @@ const seed = async () => {
 
   const allDogs = await Dog.find().lean().exec();
   const allDogIds = allDogs.map((pojo) => pojo._id);
+
+
 
   //CREATE POSSIBLE MATCHES ARRAY
   const newPossibleMatches1 = new PossibleMatchesModel({
