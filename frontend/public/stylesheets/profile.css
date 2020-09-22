@@ -1,28 +1,36 @@
 .dog-profile-container-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgb(39, 39, 66);
 }
 .dogs-profile-container {
     font-family: 'Mukta Vaani', sans-serif;
     font-weight: 300;
-    width: 500px;
+    width: 80%;
     /* background-color: rgb(39, 39, 66); */
     margin: 0 auto;
     font-size: 14px;
     padding: 40px 0px;
-}
-.dogs-profile-container h2 {
-    padding: 20px 0px;
-    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
+.dogurl {
+    margin: 0px 15px;
+}
+.dogurl img{
+    width: 325px;
+    height: 325px;
+    object-fit: cover;  
+}
 .individual-dog {
     width: 100%;
     margin: 0 auto;
     border-radius: 3px;
     background-color: white;
-    margin-bottom: 30px;   
+    margin-bottom: 30px;
+    margin: 0px 0px 20px 20px;   
 }
 .individual-dog img {
     width: 100%;
@@ -98,4 +106,5 @@
     color: white;
     padding-top: 20px;
 }
+
 

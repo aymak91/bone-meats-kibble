@@ -42,13 +42,13 @@ class NavBar extends React.Component {
           ariaHideApp={false}
           style={{
             content: {
-              top: "50%",
-              left: "50%",
+              top: "10%",
+              left: "40%",
               right: "0",
               bottom: "0",
               overflow: "hidden",
               width: "490px",
-              height: "350px",
+              height: "725px",
               background: "rgb(255, 255, 255)",
             },
             overlay: {
@@ -59,7 +59,7 @@ class NavBar extends React.Component {
           }}
         >
           <CreateDogFormContainer closeModal={this.toggleCreateModal} />
-          <label onClick={this.toggleCreateModal}>BACK</label>
+          {/* <label onClick={this.toggleCreateModal}>BACK</label> */}
         </Modal>
         </div>
       );

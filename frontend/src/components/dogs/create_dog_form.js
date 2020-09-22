@@ -113,13 +113,19 @@ class DogForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="create-form-input-container">
+            <h1>Create a Dog</h1>
+            <br />
+            <span>Name</span>
+            <br />
             <input
               type="textarea"
               value={this.state.name}
               onChange={this.update("name")}
               placeholder="Write your dog name..."
             />
+            <br />
+            <span>Description</span>
             <br />
             <input
               type="textarea"
@@ -128,12 +134,8 @@ class DogForm extends React.Component {
               placeholder="Write your dog description..."
             />
             <br />
-            {/* <input
-              type="textarea"
-              value={this.state.breed}
-              onChange={this.update("breed")}
-              placeholder="Write your dog breed..."
-            /> */}
+            <span>Breed</span>
+            <br />
             <select
               // className="breed"
               value={this.state.breed}
@@ -144,14 +146,18 @@ class DogForm extends React.Component {
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
               <option value="American Pitbull">American Pitbull</option>
-              <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
+              <option value="American Staffordshire Terrier">
+                American Staffordshire Terrier
+              </option>
               <option value="Austrialian Sheperd">Austrialian Shepherd</option>
               <option value="Beagle">Beagle</option>
               <option value="Blue Heeler Mix">Blue Heeler Mix</option>
               <option value="Border Collie">Border Collie</option>
               <option value="Boxer">Boxer</option>
               <option value="Bulldog">Bulldog</option>
-              <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
+              <option value="Cavalier King Charles Spaniel">
+                Cavalier King Charles Spaniel
+              </option>
               <option value="Chihuahua">Chihuahua</option>
               <option value="Chow Chow">Chow Chow</option>
               <option value="Corgi">Corgi</option>
@@ -174,7 +180,9 @@ class DogForm extends React.Component {
               <option value="maltese poodle">maltese poodle</option>
               <option value="Mutt">Mutt</option>
               <option value="Papillion">Papillion</option>
-              <option value="Persian Yellow Mongrel">Persian Yellow Mongrel</option>
+              <option value="Persian Yellow Mongrel">
+                Persian Yellow Mongrel
+              </option>
               <option value="Pomeranian">Pomeranian</option>
               <option value="Pomsky">Pomsky</option>
               <option value="Poodle">Poodle</option>
@@ -187,7 +195,9 @@ class DogForm extends React.Component {
               <option value="Shih Tzu">Shih Tzu</option>
               <option value="Siberian Husky">Siberian Husky</option>
             </select>
-            
+
+            <br />
+            <span>Birth Date</span>
             <br />
             <input
               type="textarea"
@@ -195,6 +205,8 @@ class DogForm extends React.Component {
               onChange={this.update("birthDate")}
               placeholder="Write your dog birthdate..."
             />
+            <br />
+            <span>Size</span>
             <br />
             <select
               // className="size"
@@ -209,6 +221,8 @@ class DogForm extends React.Component {
               <option value="Big Boi"> Big Boi </option>
             </select>
             <br />
+            <span>Gender</span>
+            <br />
             <select
               className="gender"
               value={this.state.gender}
@@ -218,6 +232,8 @@ class DogForm extends React.Component {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
+            <br />
+            <span>Activeness</span>
             <br />
             <select
               className="activeness"
@@ -238,10 +254,12 @@ class DogForm extends React.Component {
               onChange={this.update("personality")}
               placeholder="Write your dog personality..."
             /> */}
+            <span>Personality</span>
+            <br />
             <select
               value={this.state.personality}
               onChange={this.switchOptions("personality")}
-            > 
+            >
               <option value=""> Personality </option>
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
@@ -266,9 +284,11 @@ class DogForm extends React.Component {
               <option value="Careful"> Careful </option>
             </select>
             <br />
+            <span>Picture</span>
+            <br />
             <input type="file" onChange={this.handleUpload} />
             <br />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="create-dog-submit-button"/>
             <br />
           </div>
         </form>
