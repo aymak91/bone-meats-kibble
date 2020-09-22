@@ -89,6 +89,9 @@
 .first-three-dog-buttons :first-child:hover{
     color: rgb(82, 82, 121);;
 }
+.first-three-dog-buttons :nth-child(2):hover{
+    color: rgb(82, 82, 121);;
+}
 .first-three-dog-buttons :last-child:hover{
     color: red;
 }
@@ -97,9 +100,6 @@
     font-size: 18px;
 }
 .start-matching-button:hover {
-    color: rgb(82, 82, 121);
-}
-.delete-match-button:hover {
     color: rgb(82, 82, 121);
 }
 .pending-matches-title {

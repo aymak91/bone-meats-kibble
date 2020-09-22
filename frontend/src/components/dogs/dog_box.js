@@ -19,12 +19,14 @@ class DogBox extends React.Component {
     });
   }
 
-  async handleDelete() {
-    await this.props.destroyDog(this.props.dog._id);
-    await this.props.fetchUserDogs(this.props.currentUser.id)
-  }
+  // async handleDelete() {
+  //   if (!await this.props.currentUser) return null;
+  //   await this.props.destroyDog(this.props.dog._id);
+  //   await this.props.fetchUserDogs(this.props.currentUser.id)
+  // }
   
   render() {
+
     return (
       <div className="individual-dog">
         <div className="individual-dog-header">
@@ -36,10 +38,9 @@ class DogBox extends React.Component {
           <div className="first-three-dog-buttons">
             <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
             <span
-              // onClick={() => this.props.destroyDog(this.props.dog._id)}
-              onClick={this.handleDelete}
+              onClick={() => this.props.destroyDog(this.props.dog._id)}
+              // onClick={() => this.handleDelete()}
               class="fas fa-trash-alt"
-              className="delete-match-button"
             ></span>
             <Link
               to={`/${this.props.dog._id}/matches`}
