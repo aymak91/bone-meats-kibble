@@ -16,29 +16,20 @@ class Profile extends React.Component {
     await this.setState({dogs: this.props.dogs})
   }
 
-  // componentWillReceiveProps(newState) {
-  //   // this.props.fetchUserDogs(this.props.currentUser.id);
-  //   this.setState({ dogs: newState.dogs });
-  // }
-
   async componentDidUpdate(prevProps) {
     if (!this.props.dogs) return null;
     if (this.state.dogs.length === 0) return null;
 
     if ((await prevProps.dogs.length) !== this.props.dogs.length) {
-      await this.props.fetchUserDogs(this.props.currentUser.id);
       await this.setState({dogs: this.props.dogs})
     }
 
-    // if ((await prevProps.dogs.length) !== this.props.dogs.length) {
-    //   await this.props.fetchUserDogs(this.props.currentUser.id);
-    //   await this.setState({dogs: this.props.dogs})
-    // }
+    if ((await prevProps.dogs) !== this.props.dogs) {
+      await this.setState({dogs: this.props.dogs})
+    }
   }
 
   render() {
-    console.log(this.state.dogs)
-    console.log(this.props.dogs)
     
     if (this.state.dogs.length === 0) {
       return null;
@@ -55,6 +46,9 @@ class Profile extends React.Component {
                   key={dog.id}
                   dog={dog}
                   destroyDog={this.props.destroyDog}
+
+                  currentUser={this.props.currentUser}
+                  fetchUserDogs={this.props.fetchUserDogs}
                 />
               ))}
             </div>

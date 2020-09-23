@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Modal from "react-modal";
 import UpdateDogFormContainer from "../profile/update_dog_container";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ class DogBox extends React.Component {
       showUpdateModal: false,
     };
     this.toggleUpdateModal = this.toggleUpdateModal.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   toggleUpdateModal() {
@@ -19,14 +20,13 @@ class DogBox extends React.Component {
     });
   }
 
-  // async handleDelete() {
-  //   if (!await this.props.currentUser) return null;
-  //   await this.props.destroyDog(this.props.dog._id);
-  //   await this.props.fetchUserDogs(this.props.currentUser.id)
-  // }
-  
-  render() {
+  async handleDelete() {
+    if (!(await this.props.currentUser)) return null;
+    await this.props.destroyDog(this.props.dog._id);
+    await this.props.fetchUserDogs(this.props.currentUser.id);
+  }
 
+  render() {
     return (
       <div className="individual-dog">
         <div className="individual-dog-header">
@@ -37,11 +37,7 @@ class DogBox extends React.Component {
         <div className="dog-buttons">
           <div className="first-three-dog-buttons">
             <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
-            <span
-              onClick={() => this.props.destroyDog(this.props.dog._id)}
-              // onClick={() => this.handleDelete()}
-              class="fas fa-trash-alt"
-            ></span>
+            <span onClick={this.handleDelete} class="fas fa-trash-alt"></span>
             <Link
               to={`/${this.props.dog._id}/matches`}
               class="fas fa-fire"
