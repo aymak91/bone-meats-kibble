@@ -279,10 +279,9 @@ class PossibleMatches extends React.Component {
           </div>
           <ul className="dog-index">
             {compat_dogs.map((dog) => (
-              <div className="dog-index-item-container">
                 <li className="dog-index-item-sub-container">
                   <ul className="dog-index-item">
-                    <div className="individual-dog-header">
+                    <div className="individual-dog-header" id="idv-dog-header">
                       <div className="dog-container-name"> {dog.name} </div>
                       <div>{dog.breed}</div>
                     </div>
@@ -334,7 +333,6 @@ class PossibleMatches extends React.Component {
                     </div>
                   </ul>
                 </li>
-              </div>
             ))}
           </ul>
           <br />
