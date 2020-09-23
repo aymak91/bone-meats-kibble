@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import PendingMatchesContainer from "./pending_matches_container";
+// import PendingMatchesContainer from "./pending_matches_container";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Moment from 'moment'
 import NavBarContainer from "../nav/navbar_container";

@@ -3,7 +3,6 @@ import DogBox from "../dogs/dog_box";
 import NavBarContainer from "../nav/navbar_container";
 
 class Profile extends React.Component {
-  
   constructor(props) {
     super(props);
 
@@ -12,21 +11,40 @@ class Profile extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchUserDogs(this.props.currentUser.id);
+  async componentDidMount() {
+    await this.props.fetchUserDogs(this.props.currentUser.id);
+    await this.setState({dogs: this.props.dogs})
   }
 
-  componentWillReceiveProps(newState) {
-    this.props.fetchUserDogs(this.props.currentUser.id);
-    this.setState({ dogs: newState.dogs });
-  }
+  // componentWillReceiveProps(newState) {
+  //   // this.props.fetchUserDogs(this.props.currentUser.id);
+  //   this.setState({ dogs: newState.dogs });
+  // }
 
+  async componentDidUpdate(prevProps) {
+    if (!this.props.dogs) return null;
+    if (this.state.dogs.length === 0) return null;
+
+    if ((await prevProps.dogs.length) !== this.props.dogs.length) {
+      await this.props.fetchUserDogs(this.props.currentUser.id);
+      await this.setState({dogs: this.props.dogs})
+    }
+
+    // if ((await prevProps.dogs.length) !== this.props.dogs.length) {
+    //   await this.props.fetchUserDogs(this.props.currentUser.id);
+    //   await this.setState({dogs: this.props.dogs})
+    // }
+  }
 
   render() {
+    console.log(this.state.dogs)
+    console.log(this.props.dogs)
+    
     if (this.state.dogs.length === 0) {
       return null;
-    } else {
-      return (
+    } 
+    
+    return (
         <div>
           <NavBarContainer />
           <div className="dog-profile-container-container">
@@ -43,8 +61,9 @@ class Profile extends React.Component {
           </div>
         </div>
       );
-    }
   }
+
+
 }
 
 export default Profile;

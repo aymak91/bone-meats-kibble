@@ -12,12 +12,21 @@ class DogBox extends React.Component {
     };
     this.toggleUpdateModal = this.toggleUpdateModal.bind(this);
   }
+
   toggleUpdateModal() {
     this.setState({
       showUpdateModal: !this.state.showUpdateModal,
     });
   }
+
+  // async handleDelete() {
+  //   if (!await this.props.currentUser) return null;
+  //   await this.props.destroyDog(this.props.dog._id);
+  //   await this.props.fetchUserDogs(this.props.currentUser.id)
+  // }
+  
   render() {
+
     return (
       <div className="individual-dog">
         <div className="individual-dog-header">
@@ -30,6 +39,7 @@ class DogBox extends React.Component {
             <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
             <span
               onClick={() => this.props.destroyDog(this.props.dog._id)}
+              // onClick={() => this.handleDelete()}
               class="fas fa-trash-alt"
             ></span>
             <Link

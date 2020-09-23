@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
   Dog.find()
     // .sort({ date: -1 })
     .then(dogs => res.json(dogs))
-    .catch(err => res.status(404).json({ notweetsfound: 'No dogs found' }));
+    .catch(err => res.status(404).json({ nodogsfound: 'No dogs found' }));
 });
 
 router.get('/user/:user_id', (req, res) => {

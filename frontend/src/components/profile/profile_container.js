@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUserDogs: (id) => dispatch(fetchUserDogs(id)),
-    destroyDog: (dogId) => dispatch(destroyDog(dogId)),
+    destroyDog: (dogId) => dispatch(destroyDog(dogId))
   };
 };
 

@@ -1,0 +1,26 @@
+.create-form-input-container input {
+    font-family: 'Mukta Vaani', sans-serif;
+    margin: 10px 0px;
+    align-items: right;
+    padding: 3px;
+}
+.create-form-input-container select {
+    font-family: 'Mukta Vaani', sans-serif;
+    margin: 10px 0px;
+    padding: 3px;
+}
+.create-form-input-container h1 {
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    color: rgb(39, 39, 66);
+}
+.create-form-input-container span {
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+/* .create-dog-submit-button{
+    font-weight: 500;
+    color: white;
+    background-color: rgb(39, 39, 66)
+} */

@@ -22,7 +22,7 @@ module.exports = function validateDogInput(data) {
   }
 
   //description
-  if (!Validator.isLength(data.description, { min: 5, max: 140 })) {
+  if (!Validator.isLength(data.description, { min: 3, max: 140 })) {
     errors.description = "description must be between 5 and 140 characters";
   }
 

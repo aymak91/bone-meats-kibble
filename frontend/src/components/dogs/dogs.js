@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import DogBox from "./dog_box";
+// import DogBox from "./dog_box";
 
 class Dogs extends React.Component {
   constructor(props) {

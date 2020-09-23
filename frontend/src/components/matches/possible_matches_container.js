@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { 
   fetchPossibleMatches, 
-  createPossibleMatches, 
-  increasePossibleMatches, 
+  // createPossibleMatches, 
+  // increasePossibleMatches, 
   decreasePossibleMatches 
 } from "../../actions/match_actions/possible_matches_actions";
 import {
