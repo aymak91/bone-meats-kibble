@@ -10,7 +10,7 @@
     /* background-color: rgb(39, 39, 66); */
     margin: 0 auto;
     font-size: 14px;
-    padding: 40px 0px;
+    padding: 20px 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -98,9 +98,10 @@
 .start-matching-button{
     font-family: 'Kalam', cursive;
     font-size: 18px;
+    
 }
 .start-matching-button:hover {
-    color: rgb(82, 82, 121);
+    color: red;
 }
 .pending-matches-title {
     display: flex;
@@ -110,5 +111,42 @@
     color: white;
     padding-top: 20px;
 }
+.profile-header {
+    font-family: 'Mukta Vaani', sans-serif;
+    font-weight: 600;
+    color: silver;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 235px 0px 260px;
+    font-size: 30px;
+    /* border-bottom: 2px solid silver; */
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
 
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -67px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 

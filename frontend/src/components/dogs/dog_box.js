@@ -36,16 +36,24 @@ class DogBox extends React.Component {
         <img src={`${this.props.dog.imageURL}`} alt="" />
         <div className="dog-buttons">
           <div className="first-three-dog-buttons">
-            <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
-            <span
-              onClick={() => this.props.destroyDog(this.props.dog._id)}
-              // onClick={() => this.handleDelete()}
-              class="fas fa-trash-alt"
-            ></span>
-            <Link
-              to={`/${this.props.dog._id}/matches`}
-              class="fas fa-fire"
-            ></Link>
+            <div className="tooltip">
+              <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
+              <span class="tooltiptext">Edit Doggo</span>
+            </div>
+            <div className="tooltip">
+              <span
+                onClick={() => this.props.destroyDog(this.props.dog._id)}
+                class="fas fa-trash-alt"
+              ></span>
+              <span class="tooltiptext">Delete Doggo</span>
+            </div>
+            <div className="tooltip">
+              <Link
+                to={`/${this.props.dog._id}/matches`}
+                class="fas fa-fire"
+              ></Link>
+              <span class="tooltiptext">View Matches</span>
+            </div>
           </div>
           <Link
             to={`/${this.props.dog._id}/possible_matches`}

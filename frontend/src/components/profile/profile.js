@@ -48,6 +48,7 @@ class Profile extends React.Component {
         <div>
           <NavBarContainer />
           <div className="dog-profile-container-container">
+            <h1 className="profile-header">My Profile</h1>
             <div className="dogs-profile-container">
               {/* <h2>All of This User's Dogs</h2> */}
               {this.state.dogs.map((dog) => (
