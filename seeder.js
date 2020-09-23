@@ -762,7 +762,7 @@ const seed = async () => {
   newPendingMatches25.save();
   //CREATE REQUESTED MATCHES ARRAY
   const newRequestedMatches25 = new RequestedMatchesModel({
-    dogId: savedDog2._id,
+    dogId: savedDog25._id,
     requestedMatches: [],
   });
   newRequestedMatches25.save();
