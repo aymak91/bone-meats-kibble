@@ -15,7 +15,7 @@ const requestedMatches = require("./routes/api/matches/requested_matches")
 const matches = require("./routes/api/matches/matches")
 
 const messages = require("./routes/api/messages")
-// const seed = require("./seeder")
+const seed = require("./seeder")
 
 
 if (process.env.NODE_ENV === 'production') {

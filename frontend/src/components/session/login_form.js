@@ -60,10 +60,10 @@ class LoginForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    let email = 'demoUser@doge.com';
+    let email = 'demoUser1@doge.com';
     let password = 'password'
 
-    let interval = 150;
+    let interval = 50;
     let login = () => {
       this.props.login(this.state);
       this.props.history.push("/")

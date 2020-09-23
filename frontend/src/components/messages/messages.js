@@ -62,7 +62,6 @@ class Messages extends React.Component {
     }
 
     deleteMessage(idx) {
-      console.log("test")
       this.state.messages.splice(idx, 1);
       this.setState({ messages: this.state.messages})
     }
