@@ -20,11 +20,11 @@
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 30px;
-    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-    /* background-image: url("/login-background.jpg"); */
     background-position: 100px 100px;
     background-color: #8380B6;
     border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+
 }
 
 .sub-header {
@@ -41,8 +41,9 @@
     margin-right: 30%;
     border-radius: 5px;
     padding: 20px;
-    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
     background-color: #C2CAE8;
+    box-shadow: 5px 5px 5px black;
+
 }
 
 .select-label {
@@ -117,16 +118,13 @@
     /* flex-flow: wrap row; */
     margin: 20px;
     position: relative;
-
 }
 
-.dog-index-item-sub-container{
-    height: 90%;
+#idv-dog-header {
+    width: 100%;
+    margin-left: 15px;
 }
 
-.dog-index-item-container {
-    transition: transform .2 ease-in-out;
-}
 
 .dog-index-item {
     display: flex;
@@ -140,8 +138,6 @@
     box-shadow: 5px 5px 5px black;
     font-family: 'Mukta Vaani', sans-serif;
     border-radius: 5px;
-
-
 }
 
 .dog-index-item > * {
