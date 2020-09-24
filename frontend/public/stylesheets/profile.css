@@ -179,3 +179,39 @@
   opacity: 1;
 }
 
+.profile-header-container{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-header-container :last-child{
+    color: silver;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 245px 0px 60px;
+    font-size: 30px;
+}
+.tooltip .profiletooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 435%;
+    margin-left: -67px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .profiletooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+

@@ -53,10 +53,10 @@ class NavBar extends React.Component {
           style={{
             content: {
               top: "10%",
-              left: "40%",
+              left: "35%",
               right: "0",
               bottom: "0",
-              overflow: "hidden",
+              overflow: "scroll",
               width: "490px",
               height: "725px",
               background: "rgb(255, 255, 255)",

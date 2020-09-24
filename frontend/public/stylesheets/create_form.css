@@ -24,3 +24,6 @@
     color: white;
     background-color: rgb(39, 39, 66)
 } */
+.create-dog-form-container{
+    overflow-x: hidden;
+}
