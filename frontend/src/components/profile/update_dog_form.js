@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+
 
 
 class UpdateDogForm extends React.Component {
@@ -37,7 +39,7 @@ class UpdateDogForm extends React.Component {
   }
 
   render() {
-
+    // console.log(oment(this.update("birthDate")).format("YYYY-MM-DD"));
     return (
       <div className="create-dog-form-container">
         <form onSubmit={this.handleSubmit}>
@@ -130,8 +132,8 @@ class UpdateDogForm extends React.Component {
             <span>Birth Date</span>
             <br />
             <input
-              type="textarea"
-              value={this.state.birthDate}
+              type="date"
+              value={moment(this.state.birthDate).format("YYYY-MM-DD")}
               onChange={this.update("birthDate")}
               // placeholder={`${this.props.dog.birthDate}`}
             />
