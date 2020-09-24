@@ -30,10 +30,20 @@ class NavBar extends React.Component {
       return (
         <div className="navbar-links">
           {/* <Link to={"/dogs"}>All Dogs</Link> */}
-          <Link to={"/profile"} className="profile-icon" class="fas fa-user-circle" ></Link>
-          <span onClick={this.toggleCreateModal} class="fas fa-plus"></span>
+          <div className="tooltip">
+            <Link to={"/profile"} className="profile-icon" class="fas fa-user-circle" ></Link>
+            <span className="navbartooltiptext">Profile</span>
+          </div>
+          <div className="tooltip">
+
+            <span onClick={this.toggleCreateModal} class="fas fa-plus"></span>
+            <span className="navbartooltiptext">Create a Doggo</span>
+          </div>
           {/* <Link to={"/search"} class="fas fa-search"></Link> */}
-          <span onClick={this.logoutUser} class="fas fa-sign-out-alt"></span>
+          <div className="tooltip">
+            <span onClick={this.logoutUser} class="fas fa-sign-out-alt"></span>
+            <span className="navbartooltiptext">Logout</span>
+          </div>
 
           <Modal
           className=""
@@ -81,9 +91,11 @@ class NavBar extends React.Component {
     return (
       <div className="nav">
         <div className="navbar-title">
-          BoneMeatsKibble
+          <Link
+            to={"/profile"}
+          >BoneMeatsKibble</Link>
         </div>
-          {this.getLinks()}
+        {this.getLinks()}
       </div>
     );
   }
