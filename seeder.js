@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 
 
 const seed = async () => {
-  
+
   //DELETE ALL
   await User.collection.deleteMany({})
   await Dog.collection.deleteMany({})
@@ -114,7 +114,7 @@ const seed = async () => {
     name: "Snooki",
     description: "Who let the dog out?",
     breed: "Pomeranian",
-    birthDate: 2012 - 04 - 22,
+    birthDate: new Date("2012-04-22"),
     size: "Smol",
     gender: "Female",
     activeness: "High",
@@ -148,7 +148,7 @@ const seed = async () => {
     name: "Nymeria",
     description: "Famous dog. $5 per autograph",
     breed: "Siberian Husky",
-    birthDate: 1998 - 01 - 01,
+    birthDate: new Date("1998-01-01"),
     size: "Big Boi",
     gender: "Female",
     activeness: "Hyperactive",
@@ -182,7 +182,7 @@ const seed = async () => {
     name: "Snoop",
     description: "AKA Snoop Lion. The more medicated the more dedicated",
     breed: "Greyhound",
-    birthDate: 1971 - 10 - 20,
+    birthDate: new Date("1971-10-20"),
     size: "Large",
     gender: "Male",
     activeness: "Lazy",
@@ -216,7 +216,7 @@ const seed = async () => {
     name: "Lotus",
     description: "I like urban sledding.",
     breed: "Alaskan Malamute",
-    birthDate: 2019 - 10 - 21,
+    birthDate: new Date("2019-10-21"),
     size: "Large",
     gender: "Female",
     activeness: "Hyperactive",
@@ -250,7 +250,7 @@ const seed = async () => {
     description:
       "It has a brave and trustworthy nature. It fearlessly stands up to bigger and stronger foes.",
     breed: "Chow Chow",
-    birthDate: 1996 - 02 - 27,
+    birthDate: new Date("1996-02-27"),
     size: "Smol",
     gender: "Male",
     activeness: "Hyperactive",
@@ -283,7 +283,7 @@ const seed = async () => {
     name: "Clifford",
     description: "Biggest dog in the house. The big red one.",
     breed: "Labrador Retriever",
-    birthDate: 2016 - 09 - 04,
+    birthDate: new Date("2016-09-04"),
     size: "Big Boi",
     gender: "Male",
     activeness: "Normal",
@@ -316,7 +316,7 @@ const seed = async () => {
     name: "Lady",
     description: "Lowkey trying to get outside the house. Like musicals",
     breed: "Pomsky",
-    birthDate: 2001 - 05 - 29,
+    birthDate: new Date("2001-05-29"),
     size: "Small",
     gender: "Female",
     activeness: "Low",
@@ -349,7 +349,7 @@ const seed = async () => {
     name: "Bagel",
     description: "Baby",
     breed: "Beagle",
-    birthDate: 2020 - 02 - 10,
+    birthDate: new Date("2020-02-10"),
     size: "Small",
     gender: "Male",
     activeness: "High",
@@ -382,7 +382,7 @@ const seed = async () => {
     name: "Lucky",
     description: "Michelle’s obvious favorite",
     breed: "Corgi",
-    birthDate: 2010 - 08 - 10,
+    birthDate: new Date("2010-08-10"),
     size: "Small",
     gender: "Male",
     activeness: "Low",
@@ -416,7 +416,7 @@ const seed = async () => {
     description:
       "I roam the streets with no leash, and have a huge stash of treats",
     breed: "Mutt",
-    birthDate: 2013 - 09 - 08,
+    birthDate: new Date("2013-09-08"),
     size: "Medium",
     gender: "Male",
     activeness: "Normal",
@@ -449,7 +449,7 @@ const seed = async () => {
     name: "Buster",
     description: "Noise makes me anxious",
     breed: "Labrador Retriever",
-    birthDate: 2016 - 07 - 16,
+    birthDate: new Date("2016-07-16"),
     size: "Large",
     gender: "Male",
     activeness: "Low",
@@ -482,7 +482,7 @@ const seed = async () => {
     name: "Luna",
     description: "Don't get barking mad at me if I walk in your house barefoot",
     breed: "Shih Tzu",
-    birthDate: 2014 - 06 - 15,
+    birthDate: new Date("2014-06-15"),
     size: "Smol",
     gender: "Female",
     activeness: "Normal",
@@ -515,7 +515,7 @@ const seed = async () => {
     name: "Garfield",
     description: "Not even a dog, just fishing",
     breed: "Mutt",
-    birthDate: 1978 - 06 - 19,
+    birthDate: new Date("1978-06-19"),
     size: "Medium",
     gender: "Male",
     activeness: "Lazy",
@@ -548,7 +548,7 @@ const seed = async () => {
     name: "Goofy",
     description: "Gawrsh! Ah-hyuck!",
     breed: "Mutt",
-    birthDate: 1932 - 11 - 11,
+    birthDate: new Date("1932-11-11"),
     size: "Big Boi",
     gender: "Male",
     activeness: "Lazy",
@@ -581,7 +581,7 @@ const seed = async () => {
     name: "Chowder",
     description: "smol white doge",
     breed: "Shih Tzu",
-    birthDate: 2020 - 06 - 15,
+    birthDate: new Date("2020-06-15"),
     size: "Smol",
     gender: "Male",
     activeness: "Low",
@@ -614,7 +614,7 @@ const seed = async () => {
     name: "Shadow",
     description: "tougher than I look",
     breed: "Mutt",
-    birthDate: 2012 - 07 - 11,
+    birthDate: new Date("2012-07-11"),
     size: "Medium",
     gender: "Female",
     activeness: "Normal",
@@ -647,7 +647,7 @@ const seed = async () => {
     name: "Akamaru",
     description: "Spirit bomb! Wait wrong reference. Nvm.",
     breed: "Mutt",
-    birthDate: 2015 - 07 - 07,
+    birthDate: new Date("2015-07-07"),
     size: "Smol",
     gender: "Male",
     activeness: "Hyperactive",
@@ -680,7 +680,7 @@ const seed = async () => {
     name: "Rocket",
     description: "good boi",
     breed: "Mutt",
-    birthDate: 2015 - 12 - 04,
+    birthDate: new Date("2015-12-04"),
     size: "Medium",
     gender: "Male",
     activeness: "High",
@@ -713,7 +713,7 @@ const seed = async () => {
     name: "Kim Pawssible",
     description: "Poodle. Poodle. Poodle. Poodle!",
     breed: "Poodle",
-    birthDate: 2016 - 12 - 25,
+    birthDate: new Date("2016-12-25"),
     size: "Small",
     gender: "Female",
     activeness: "Hyperactive",
@@ -746,7 +746,7 @@ const seed = async () => {
     name: "Oreo",
     description: "Supa Cool",
     breed: "Papillion",
-    birthDate: 2004 - 06 - 12,
+    birthDate: new Date("2004-06-12"),
     size: "Smol",
     gender: "Male",
     activeness: "Lazy",
@@ -778,7 +778,7 @@ const seed = async () => {
     name: "Harry",
     description: "Wingardium Leviosa",
     breed: "Jack Russel Terrier",
-    birthDate: 1980 - 07 - 31,
+    birthDate: new Date("1980-07-31"),
     size: "Medium",
     gender: "Male",
     activeness: "Normal",
@@ -811,7 +811,7 @@ const seed = async () => {
     name: "Abu Boo Duff Duffington the 3rd",
     description: "Whiney Boi",
     breed: "Mutt",
-    birthDate: 2020 - 10 - 03,
+    birthDate: new Date("2020-10-03"),
     size: "Big Boi",
     gender: "Male",
     activeness: "High",
@@ -844,7 +844,7 @@ const seed = async () => {
     name: "Pongo",
     description: "Have 100 brothes and sisters.",
     breed: "Dalmatian",
-    birthDate: 1996 - 11 - 27,
+    birthDate: new Date("1996-11-27"),
     size: "Big Boi",
     gender: "Male",
     activeness: "Normal",
@@ -877,7 +877,7 @@ const seed = async () => {
     name: "Roxy",
     description: "Short-hair, brindle , and full of energy",
     breed: "American Staffordshire Terrier",
-    birthDate: 2014 - 08 - 15,
+    birthDate: new Date("2014-08-15"),
     size: "Medium",
     gender: "Female",
     activeness: "Hyperactive",
@@ -909,7 +909,7 @@ const seed = async () => {
     name: "Jacqueline",
     description: "Picky eater!",
     breed: "Corgi",
-    birthDate: 2020 - 02 - 27,
+    birthDate: new Date("2020-02-27"),
     size: "Small",
     gender: "Female",
     activeness: "Normal",
@@ -942,7 +942,7 @@ const seed = async () => {
     name: "Lama",
     description: "I wanna be a slumdog millionaire.",
     breed: "Dachshund",
-    birthDate: 2018 - 01 - 15,
+    birthDate: new Date("2018-01-15"),
     size: "Medium",
     gender: "Male",
     activeness: "Hyperactive",
@@ -954,7 +954,14 @@ const seed = async () => {
   //CREATE PENDING MATCHES ARRAY
   const newPendingMatches1 = new PendingMatchesModel({
     dogId: savedDog1._id,
-    pendingMatches: [savedDog10._id],
+    pendingMatches: [
+      savedDog10._id,
+      savedDog6._id,
+      savedDog7._id,
+      savedDog8._id,
+      savedDog9._id,
+      savedDog11._id
+    ],
   });
   newPendingMatches1.save();
   //CREATE REQUESTED MATCHES ARRAY
@@ -966,7 +973,14 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches1 = new MatchesModel({
     dogId: savedDog1._id,
-    matches: [savedDog30._id],
+    matches: [
+      savedDog30._id,
+      savedDog21._id,
+      savedDog22._id,
+      savedDog23._id,
+      savedDog24._id,
+      savedDog25._id
+    ],
   });
   newMatches1.save();
 
@@ -975,7 +989,7 @@ const seed = async () => {
     name: "Butters",
     description: "Curious about fireworks. Don't wanna go outside.",
     breed: "Beagle",
-    birthDate: 2019 - 02 - 21,
+    birthDate: new Date("2019-02-21"),
     size: "Small",
     gender: "Male",
     activeness: "Low",
@@ -987,7 +1001,14 @@ const seed = async () => {
   //CREATE PENDING MATCHES ARRAY
   const newPendingMatches2 = new PendingMatchesModel({
     dogId: savedDog2._id,
-    pendingMatches: [savedDog11._id],
+    pendingMatches: [
+      savedDog11._id,
+      savedDog15._id,
+      savedDog16._id,
+      savedDog17._id,
+      savedDog18._id,
+      savedDog19._id,
+    ],
   });
   newPendingMatches2.save();
   //CREATE REQUESTED MATCHES ARRAY
@@ -999,7 +1020,14 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches2 = new MatchesModel({
     dogId: savedDog2._id,
-    matches: [savedDog25._id],
+    matches: [
+      savedDog25._id,
+      savedDog6._id,
+      savedDog7._id,
+      savedDog8._id,
+      savedDog9._id,
+      savedDog10._id,
+    ],
   });
   newMatches2.save();
 
@@ -1008,7 +1036,7 @@ const seed = async () => {
     name: "Jacky",
     description: "Gotta go fast! Sonic speed!",
     breed: "Rottweiler",
-    birthDate: 2015 - 08 - 08,
+    birthDate: new Date("2015-08-08"),
     size: "Big Boi",
     gender: "Male",
     activeness: "Hyperactive",
@@ -1020,7 +1048,14 @@ const seed = async () => {
   //CREATE PENDING MATCHES ARRAY
   const newPendingMatches3 = new PendingMatchesModel({
     dogId: savedDog3._id,
-    pendingMatches: [savedDog12._id],
+    pendingMatches: [
+      savedDog12._id,
+      savedDog16._id,
+      savedDog17._id,
+      savedDog18._id,
+      savedDog19._id,
+      savedDog20._id
+    ],
   });
   newPendingMatches3.save();
   //CREATE REQUESTED MATCHES ARRAY
@@ -1032,7 +1067,14 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches3 = new MatchesModel({
     dogId: savedDog3._id,
-    matches: [savedDog26._id],
+    matches: [
+      savedDog26._id,
+      savedDog6._id,
+      savedDog7._id,
+      savedDog8._id,
+      savedDog9._id,
+      savedDog10._id
+    ],
   });
   newMatches3.save();
 
@@ -1041,7 +1083,7 @@ const seed = async () => {
     name: "Simba",
     description: "I eat alot. Share your food pls.",
     breed: "Shiba Inu",
-    birthDate: 2013 - 12 - 18,
+    birthDate: new Date("2013-12-18"),
     size: "Medium",
     gender: "Female",
     activeness: "Normal",
@@ -1053,7 +1095,14 @@ const seed = async () => {
   //CREATE PENDING MATCHES ARRAY
   const newPendingMatches4 = new PendingMatchesModel({
     dogId: savedDog4._id,
-    pendingMatches: [savedDog13._id],
+    pendingMatches: [
+      savedDog13._id,
+      savedDog26._id,
+      savedDog28._id,
+      savedDog29._id,
+      savedDog30._id,
+      savedDog16._id
+    ],
   });
   newPendingMatches4.save();
   //CREATE REQUESTED MATCHES ARRAY
@@ -1065,7 +1114,14 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches4 = new MatchesModel({
     dogId: savedDog4._id,
-    matches: [savedDog27._id],
+    matches: [
+      savedDog27._id,
+      savedDog17._id,
+      savedDog18._id,
+      savedDog19._id,
+      savedDog20._id,
+      savedDog21._id
+    ],
   });
   newMatches4.save();
 
@@ -1074,7 +1130,7 @@ const seed = async () => {
     name: "Scooby",
     description: "2 Scooby snacks != enough",
     breed: "Great Dane",
-    birthDate: 1969 - 01 - 01,
+    birthDate: new Date("1969-01-01"),
     size: "Big Boi",
     gender: "Male",
     activeness: "Lazy",
@@ -1086,7 +1142,14 @@ const seed = async () => {
   //CREATE PENDING MATCHES ARRAY
   const newPendingMatches5 = new PendingMatchesModel({
     dogId: savedDog5._id,
-    pendingMatches: [savedDog14._id],
+    pendingMatches: [
+      savedDog14._id,
+      savedDog15._id,
+      savedDog16._id,
+      savedDog17._id,
+      savedDog18._id,
+      savedDog19._id
+    ],
   });
   newPendingMatches5.save();
   //CREATE REQUESTED MATCHES ARRAY
@@ -1098,7 +1161,14 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches5 = new MatchesModel({
     dogId: savedDog5._id,
-    matches: [savedDog28._id],
+    matches: [
+      savedDog28._id,
+      savedDog8._id,
+      savedDog9._id,
+      savedDog10._id,
+      savedDog11._id,
+      savedDog12._id,
+    ],
   });
   newMatches5.save();
 
