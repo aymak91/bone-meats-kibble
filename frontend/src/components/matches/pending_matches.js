@@ -74,17 +74,23 @@ class PendingMatches extends React.Component {
                     <img src={`${pendingMatch.imageURL}`} />
                     <div className="dog-buttons">
                       <div className="first-three-dog-buttons">
-                        <span
-                          onClick={() =>
-                            this.handleAccept(currentDogId, pendingMatch._id)
-                          }
-                          className="match-heart-button"
-                          class="fas fa-heart"
-                        ></span>
-                        <span
-                          onClick={() => this.handleReject(pendingMatch._id)}
-                          class="fas fa-times"
-                        ></span>
+                        <div className="tooltip">
+                          <span
+                            onClick={() =>
+                              this.handleAccept(currentDogId, pendingMatch._id)
+                            }
+                            className="match-heart-button"
+                            class="fas fa-heart"
+                          ></span>
+                          <span class="tooltiptext">Match Doggo</span>
+                        </div>
+                        <div className="tooltip">
+                          <span
+                            onClick={() => this.handleReject(pendingMatch._id)}
+                            class="fas fa-times"
+                          ></span>
+                          <span class="tooltiptext">Not Interested</span>
+                        </div>
                       </div>
                     </div>
                     <ul className="dog-description-container">
@@ -93,7 +99,9 @@ class PendingMatches extends React.Component {
                       </li>
                       <li className="dog-attributes">
                         <h1>Birth Date:</h1>{" "}
-                        <p>{Moment(pendingMatch.birthDate).format("MMM Do YYYY")}</p>
+                        <p>
+                          {Moment(pendingMatch.birthDate).format("MMM Do YYYY")}
+                        </p>
                       </li>
                       <li className="dog-attributes">
                         <h1>Size:</h1> <p>{pendingMatch.size}</p>
