@@ -19,54 +19,61 @@ class DogForm extends React.Component {
       photoFile: null,
       photoURL: null,
       errors: null,
-      newDog: ""
+      newDog: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-    this.switchOptions = this.switchOptions.bind(this)
-
+    this.switchOptions = this.switchOptions.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   switchOptions(trait) {
-    return e => {
-      this.setState({ [trait]: e.currentTarget.value })
-    }
+    return (e) => {
+      this.setState({ [trait]: e.currentTarget.value });
+    };
   }
-
 
   componentDidMount() {
-    return (
-      <div>Dog profile successfully created</div>
-    )
+    return <div>Dog profile successfully created</div>;
   }
-  
+
+  renderErrors() {
+    return (
+      <ul>
+        {Object.keys(this.state.errors).map((error, i) => (
+          <li key={`error-${i}`}>{this.state.errors[error]}</li>
+        ))}
+      </ul>
+    );
+  }
+
   async handleSubmit(e) {
     e.preventDefault();
 
     const formData = await new FormData();
     if (await this.state.photoFile) {
-      await formData.append('name', this.state.name);
-      await formData.append('description', this.state.description);
-      await formData.append('breed', this.state.breed);
-      await formData.append('birthDate', this.state.birthDate);
-      await formData.append('size', this.state.size);
-      await formData.append('gender', this.state.gender);
-      await formData.append('activeness', this.state.activeness);
-      await formData.append('personality', this.state.personality);
-      await formData.append('file', this.state.photoFile);
-      await axios.post("/api/dogs/", formData)
-        // .then(response => {
-        //   if (response.state === 200) {                         //.state or .status are both okay to use
-        //     console.log(response.data);
-        //   } else {
-        //     this.props.history.push('/profile')
-        //   }
-        // })
-        // .catch(errors => this.setState({ errors: errors }));
-    };
-    
-    await this.props.fetchUserDogs(this.props.currentUser.id)
+      await formData.append("name", this.state.name);
+      await formData.append("description", this.state.description);
+      await formData.append("breed", this.state.breed);
+      await formData.append("birthDate", this.state.birthDate);
+      await formData.append("size", this.state.size);
+      await formData.append("gender", this.state.gender);
+      await formData.append("activeness", this.state.activeness);
+      await formData.append("personality", this.state.personality);
+      await formData.append("file", this.state.photoFile);
+      await axios.post("/api/dogs/", formData);
+      // .then(response => {
+      //   if (response.state === 200) {                         //.state or .status are both okay to use
+      //     console.log(response.data);
+      //   } else {
+      //     this.props.history.push('/profile')
+      //   }
+      // })
+      // .catch(errors => this.setState({ errors: errors }));
+    }
+
+    await this.props.fetchUserDogs(this.props.currentUser.id);
     this.props.closeModal();
   }
 
@@ -122,7 +129,9 @@ class DogForm extends React.Component {
               value={this.state.breed}
               onChange={this.switchOptions("breed")}
             >
-              <option value="" disabled>--- Breed ---</option>
+              <option value="" disabled>
+                --- Breed ---
+              </option>
               <option value="Akita">Akita</option>
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
@@ -194,7 +203,9 @@ class DogForm extends React.Component {
               value={this.state.size}
               onChange={this.switchOptions("size")}
             >
-              <option value="" disabled>--- Size ---</option>
+              <option value="" disabled>
+                --- Size ---
+              </option>
               <option value="Smol"> smol </option>
               <option value="Small"> small </option>
               <option value="Medium"> Medium </option>
@@ -209,7 +220,9 @@ class DogForm extends React.Component {
               value={this.state.gender}
               onChange={this.switchOptions("gender")}
             >
-              <option value="" disabled>--- Gender ---</option>
+              <option value="" disabled>
+                --- Gender ---
+              </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
@@ -221,7 +234,9 @@ class DogForm extends React.Component {
               value={this.state.activeness}
               onChange={this.switchOptions("activeness")}
             >
-              <option value="" disabled>--- Activeness ---</option>
+              <option value="" disabled>
+                --- Activeness ---
+              </option>
               <option value="Lazy">Lazy</option>
               <option value="Low">Low</option>
               <option value="Normal"> Normal </option>
@@ -241,7 +256,9 @@ class DogForm extends React.Component {
               value={this.state.personality}
               onChange={this.switchOptions("personality")}
             >
-              <option value="" disabled>--- Personality ---</option>
+              <option value="" disabled>
+                --- Personality ---
+              </option>
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
@@ -269,9 +286,14 @@ class DogForm extends React.Component {
             <br />
             <input type="file" onChange={this.handleUpload} />
             <br />
-            <input type="submit" value="Submit" className="create-dog-submit-button"/>
+            <input
+              type="submit"
+              value="Submit"
+              className="create-dog-submit-button"
+            />
             <br />
           </div>
+          {/* {this.renderErrors()} */}
         </form>
         <br />
       </div>
