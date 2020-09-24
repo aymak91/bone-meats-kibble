@@ -3,7 +3,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .fas fa-fire {
@@ -157,6 +157,7 @@
 .messages-container {
     /* position: absolute; */
     height: 75vh;
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
