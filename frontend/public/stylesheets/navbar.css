@@ -4,6 +4,8 @@
     flex-direction: row;
     border: 1px solid lightgray;
     padding: 10px 20px;
+    background-color: white;
+    box-shadow: 1px 1px 1px black;
     
 }
 .navbar-title {

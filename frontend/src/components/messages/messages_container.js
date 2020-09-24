@@ -18,7 +18,6 @@ const mapStateToProps = (state, ownProps) => {
         currentDog: state.dogs.currentDog,
         receivingDog: state.dogs.receivingDog,
         matches: state.matches.data,
-
     })
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
