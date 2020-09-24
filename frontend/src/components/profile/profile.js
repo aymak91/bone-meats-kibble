@@ -41,7 +41,7 @@ class Profile extends React.Component {
     return (
       <div>
         <NavBarContainer />
-        {/* <div>Add a dog profildffafafe</div> */}
+        {/* <div>Add a dog profi ldffafafe</div> */}
         <div className="dog-profile-container-container">
           <div className="profile-header-container">
             <h1 className="profile-header">My Profile</h1>
