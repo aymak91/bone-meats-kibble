@@ -41,8 +41,8 @@ class Messages extends React.Component {
         }
 
         // if (await this.props.currentDog === null) return null 
-        // await this.props.fetchSendingDog();
-        // await this.setState({ sendingDog: this.props.currentDog });
+        await this.props.fetchSendingDog();
+        await this.setState({ sendingDog: this.props.currentDog });
 
         // await this.props.fetchReceivingDog();
         // await this.setState({ receivingDog: this.props.receivingDog });
@@ -125,9 +125,9 @@ class Messages extends React.Component {
                   <div>
                     <div className="message-header">
                       <div>{`${message.sendingDog.name}`}</div>
-                      <div className="timestamp">
+                      {/* <div className="timestamp">
                         {moment().format("HH:mm")}
-                      </div>
+                      </div> */}
                     </div>
                     <div className="message-body">
                       <span>{`${message.body}`}</span>

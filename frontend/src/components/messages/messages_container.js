@@ -23,8 +23,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     const sendingDogId = ownProps.match.params.sending_dog_id;
     const receivingDogId = ownProps.match.params.receiving_dog_id;
-    console.log(sendingDogId)
-    console.log(receivingDogId)
+    // console.log(sendingDogId)
+    // console.log(receivingDogId)
     return {
         fetchSendingDog: () =>
             dispatch(fetchCurrentDog(sendingDogId)),
