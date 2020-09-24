@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import MessagesContainer from "../messages/messages_container"
 import NavBarContainer from "../nav/navbar_container";
 import Moment from "moment";
+import BackButton from "../back_button/back_button"
 
 class Matches extends React.Component {
     constructor(props) {
@@ -71,6 +72,7 @@ class Matches extends React.Component {
           <div>
             <NavBarContainer />
             <div className="dog-profile-container-container">
+              <BackButton />
               <h1 className="profile-header">My Matches</h1>
               <div className="dogs-profile-container">
                 {matches.map((match) => (

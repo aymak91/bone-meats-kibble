@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import moment from 'moment'
 import NavBarContainer from "../nav/navbar_container";
-
+import BackButton from "../back_button/back_button"
 
 class Messages extends React.Component {
     constructor(props) {
@@ -94,6 +94,7 @@ class Messages extends React.Component {
           <NavBarContainer />
 
           <div className="messages-form">
+            <BackButton />
             <h1 className="message-h1">{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h1>
             <h2 className="message-h2">
               {" "}
