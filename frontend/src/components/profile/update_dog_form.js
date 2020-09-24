@@ -20,15 +20,12 @@ class UpdateDogForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //   componentWillReceiveProps(nextProps) {
-  //     this.setState({ newDog: nextProps.newDog.text });
-  //   }
-
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
 
     const dog = Object.assign({}, this.state);
-    this.props.patchDog(dog, this.props.dogId);
+    await this.props.patchDog(dog, this.props.dogId);
+    await this.props.fetchUserDogs(this.props.currentUser.id)
     this.props.closeModal();
   }
 
@@ -40,8 +37,7 @@ class UpdateDogForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
-    // console.log(this.props)
+
     return (
       <div>        
         <form onSubmit={this.handleSubmit} >
