@@ -111,7 +111,7 @@ class UpdateDogForm extends React.Component {
             </select>
             <br />
             <input
-              type="textarea"
+              type="date"
               value={this.state.birthDate }
               onChange={this.update("birthDate")}
               // placeholder={`${this.props.dog.birthDate}`}
