@@ -5,26 +5,30 @@
     background-attachment: fixed;
     overflow-x: hidden;
 }
+.search-bar-dog-index-container{
+    display: flex;
+}
 .search-bar {
-    margin: 5%;
+    margin: 35px 0px 0px 50px;
     padding-top: 1%;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 1%;
-    height: 75px;
-    width: 80%;
+    height: 475px;
+    width: 5%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 30px;
     background-position: 100px 100px;
-    background-color: #8380B6;
+    background-color: rgb(12, 11, 70);
     border-radius: 5px;
-    box-shadow: 5px 5px 5px black;
-
+    
+    margin-right: 350px;
 }
 
 .sub-header {
@@ -47,11 +51,18 @@
 }
 
 .select-label {
-    padding-bottom: 10px;
+    padding: 10px;
+    color: silver;
+    font-family: 'Mukta Vaani', sans-serif;
+    font-weight: 500;
+    font-size: 25px
 }
 
 .select {
-    width: 200px;
+    position: relative;
+    font-family: 'Mukta Vaani', sans-serif;
+    width: 175px;
+    padding: 4px;
 }
 
 .search-option-container {
@@ -169,5 +180,32 @@
 .possible-match-buttons :last-child:hover {
     color: rgb(54, 54, 54);
 }
+.browse-for-matches-header {
+    font-family: 'Mukta Vaani', sans-serif;
+    font-weight: 600;
+    color: silver;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 35px 0px 60px;
+    font-size: 30px;
+}
+.pending-matches-link{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-weight: 600;
+    color: silver;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 35px 0px 60px;
+    font-size: 30px;
+    border-bottom: 2px solid silver;
+}
+.possible-matches-header{
+    display: flex;
+    justify-content: space-between;
+}
+.sort-by-header{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-weight: 600;
+    color: silver;
+    font-size: 25px;
+    margin-bottom: 10px;
 
-
+}

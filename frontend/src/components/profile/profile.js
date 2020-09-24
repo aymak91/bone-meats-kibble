@@ -9,6 +9,7 @@ class Profile extends React.Component {
     this.state = {
       dogs: [],
     };
+
   }
 
   async componentDidMount() {
@@ -17,9 +18,6 @@ class Profile extends React.Component {
   }
 
   async componentDidUpdate(prevProps) {
-    if (!this.props.dogs) return null;
-    if (this.state.dogs.length === 0) return null;
-
     if ((await prevProps.dogs.length) !== this.props.dogs.length) {
       await this.setState({dogs: this.props.dogs})
     }
@@ -30,20 +28,30 @@ class Profile extends React.Component {
   }
 
   render() {
-    
+
+    if (!this.state.dogs) return null;
+    if (!this.props.dogs) return null;
+
     if (this.state.dogs.length === 0) {
-      return null;
-    } 
+      return (
+        <div>
+          <NavBarContainer />
+          <div>Add a dog profile</div>
+        </div>
+      );
+    }
     
     return (
         <div>
           <NavBarContainer />
+          <div>Add a dog profile</div>
           <div className="dog-profile-container-container">
+            <h1 className="profile-header">My Profile</h1>
             <div className="dogs-profile-container">
               {/* <h2>All of This User's Dogs</h2> */}
               {this.state.dogs.map((dog) => (
                 <DogBox
-                  key={dog.id}
+                  key={dog._id}
                   dog={dog}
                   destroyDog={this.props.destroyDog}
 

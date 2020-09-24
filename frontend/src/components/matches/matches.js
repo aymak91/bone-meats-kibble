@@ -47,22 +47,31 @@ class Matches extends React.Component {
         const matches = this.state.matches[0].matches;
         const currentDogId = this.state.currentDogId;
         const currentDog = this.state.currentDog;
-
-        console.log(currentDog)
         
         if (matches.length === 0) {
             return (
-                <div>
-                    No matches lmao
+              <div>
+                <NavBarContainer />
+                <div className="no-matches-container">
+                  <h1 className="no-matches-header">This dog has no matches</h1>
+                  <div className="matches-link-container">
+                    <Link
+                      to={`/${currentDogId}/possible_matches`}
+                      className="matches-link"
+                    >
+                      Start Matching
+                    </Link>
+                  </div>
                 </div>
-            )
+              </div>
+            );
         }
 
         return (
-
           <div>
             <NavBarContainer />
             <div className="dog-profile-container-container">
+              <h1 className="profile-header">My Matches</h1>
               <div className="dogs-profile-container">
                 {matches.map((match) => (
                   <div className="individual-dog">
@@ -77,7 +86,7 @@ class Matches extends React.Component {
                           to={`/messages/${currentDogId}/${match._id}/`}
                           className="message-button"
                           class="fas fa-comment"
-                          ></Link>
+                        ></Link>
                         <span
                           onClick={() =>
                             this.handleDelete(currentDogId, match._id)

@@ -184,7 +184,7 @@ class DogForm extends React.Component {
               type="date"
               value={this.state.birthDate}
               onChange={this.update("birthDate")}
-              placeholder="Write your dog birthdate..."
+              placeholder="i.e. 2020-08-15"
             />
             <br />
             <span>Size</span>
