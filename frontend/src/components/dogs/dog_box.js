@@ -42,7 +42,7 @@ class DogBox extends React.Component {
             </div>
             <div className="tooltip">
               <span
-                onClick={() => this.props.destroyDog(this.props.dog._id)}
+                onClick={this.handleDelete}
                 class="fas fa-trash-alt"
               ></span>
               <span class="tooltiptext">Delete Doggo</span>
@@ -99,9 +99,9 @@ class DogBox extends React.Component {
               left: "50%",
               // right: "0",
               bottom: "50%",
-              overflow: "hidden",
+              overflow: "scroll",
               width: "490px",
-              height: "350px",
+              height: "700px",
               background: "rgb(255, 255, 255)",
             },
             overlay: {
@@ -116,7 +116,6 @@ class DogBox extends React.Component {
             dogId={this.props.dog._id}
             closeModal={this.toggleUpdateModal}
           />
-          <label onClick={this.toggleUpdateModal}>BACK</label>
         </Modal>
       </div>
     );

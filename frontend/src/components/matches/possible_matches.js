@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Moment from 'moment'
 import NavBarContainer from "../nav/navbar_container";
+import BackButton from "../back_button/back_button"
 
 class PossibleMatches extends React.Component {
   constructor(props) {
@@ -131,13 +132,14 @@ class PossibleMatches extends React.Component {
       <div>
         <NavBarContainer />
         <div className="search-bgd">
+        <BackButton />
           <div className="possible-matches-header">
-            <h1 className="browse-for-matches-header">Browse Matches</h1>
+          <h1 className="browse-for-matches-header">Browse Matches for {currentDog.name}</h1>
             <Link
               to={`/${this.props.currentDogId}/pending_matches`}
               className="pending-matches-link"
             >
-              See who likes you
+              See who likes {currentDog.name}
             </Link>
           </div>
           <div className="search-bar-dog-index-container">

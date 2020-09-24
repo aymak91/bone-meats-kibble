@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import MessagesContainer from "../messages/messages_container"
 import NavBarContainer from "../nav/navbar_container";
 import Moment from "moment";
+import BackButton from "../back_button/back_button"
 
 class Matches extends React.Component {
     constructor(props) {
@@ -53,7 +54,7 @@ class Matches extends React.Component {
               <div>
                 <NavBarContainer />
                 <div className="no-matches-container">
-                  <h1 className="no-matches-header">This dog has no matches</h1>
+                  <h1 className="no-matches-header">{currentDog.name} has no matches</h1>
                   <div className="matches-link-container">
                     <Link
                       to={`/${currentDogId}/possible_matches`}
@@ -71,7 +72,8 @@ class Matches extends React.Component {
           <div>
             <NavBarContainer />
             <div className="dog-profile-container-container">
-              <h1 className="profile-header">My Matches</h1>
+              <BackButton />
+              <h1 className="profile-header"> Matches for {currentDog.name}</h1>
               <div className="dogs-profile-container">
                 {matches.map((match) => (
                   <div className="individual-dog">
@@ -82,17 +84,23 @@ class Matches extends React.Component {
                     <img src={`${match.imageURL}`} />
                     <div className="dog-buttons">
                       <div className="first-three-dog-buttons">
-                        <Link
-                          to={`/messages/${currentDogId}/${match._id}/`}
-                          className="message-button"
-                          class="fas fa-comment"
-                        ></Link>
-                        <span
-                          onClick={() =>
-                            this.handleDelete(currentDogId, match._id)
-                          }
-                          class="fas fa-times"
-                        ></span>
+                        <div className="tooltip">
+                          <Link
+                            to={`/messages/${currentDogId}/${match._id}/`}
+                            className="message-button"
+                            class="fas fa-comment"
+                          ></Link>
+                          <span class="tooltiptext">Message</span>
+                        </div>
+                        <div className="tooltip">
+                          <span
+                            onClick={() =>
+                              this.handleDelete(currentDogId, match._id)
+                            }
+                            class="fas fa-times"
+                          ></span>
+                          <span class="tooltiptext">Unmatch</span>
+                        </div>
                       </div>
                     </div>
                     <ul className="dog-description-container">
