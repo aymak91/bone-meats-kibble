@@ -122,7 +122,7 @@ class DogForm extends React.Component {
               value={this.state.breed}
               onChange={this.switchOptions("breed")}
             >
-              <option value=""> Breed </option>
+              <option value="" disabled>--- Breed ---</option>
               <option value="Akita">Akita</option>
               <option value="Alaskan Malamute">Alaskan Malamute</option>
               <option value="American Bulldog">American Bulldog</option>
@@ -181,7 +181,7 @@ class DogForm extends React.Component {
             <span>Birth Date</span>
             <br />
             <input
-              type="textarea"
+              type="date"
               value={this.state.birthDate}
               onChange={this.update("birthDate")}
               placeholder="Write your dog birthdate..."
@@ -194,7 +194,7 @@ class DogForm extends React.Component {
               value={this.state.size}
               onChange={this.switchOptions("size")}
             >
-              <option value=""> Size </option>
+              <option value="" disabled>--- Size ---</option>
               <option value="Smol"> smol </option>
               <option value="Small"> small </option>
               <option value="Medium"> Medium </option>
@@ -209,7 +209,7 @@ class DogForm extends React.Component {
               value={this.state.gender}
               onChange={this.switchOptions("gender")}
             >
-              <option value=""> Gender </option>
+              <option value="" disabled>--- Gender ---</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
@@ -221,7 +221,7 @@ class DogForm extends React.Component {
               value={this.state.activeness}
               onChange={this.switchOptions("activeness")}
             >
-              <option value=""> Activeness </option>
+              <option value="" disabled>--- Activeness ---</option>
               <option value="Lazy">Lazy</option>
               <option value="Low">Low</option>
               <option value="Normal"> Normal </option>
@@ -241,7 +241,7 @@ class DogForm extends React.Component {
               value={this.state.personality}
               onChange={this.switchOptions("personality")}
             >
-              <option value=""> Personality </option>
+              <option value="" disabled>--- Personality ---</option>
               <option value="Lonely"> Lonely </option>
               <option value="Brave"> Brave </option>
               <option value="Adamant"> Adamant </option>
