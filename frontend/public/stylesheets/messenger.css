@@ -147,9 +147,6 @@
     justify-content: flex-end;
 }
 
-.delete-button :hover {
-    color: red;
-}
 .chat-box {
     width: 100%;
 }
