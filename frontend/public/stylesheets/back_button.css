@@ -1,0 +1,18 @@
+.back-button {
+    margin: 10px;
+    background-color: #8380B6;
+    height: 50px;
+    width: 150px;
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    margin-left: 50px;
+    font-family: 'Mukta Vaani', sans-serif;
+}
+
+.back-button:hover {
+    background-color: #64618d;
+
+}
