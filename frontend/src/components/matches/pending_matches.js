@@ -61,7 +61,7 @@ class PendingMatches extends React.Component {
             <NavBarContainer />
             <div className="dog-profile-container-container">
             <BackButton />
-              <h1 className="pending-matches-title">Pending Matches</h1>
+              <h1 className="pending-matches-title">Pending Matches for {currentDog.name}</h1>
               <div className="dogs-profile-container">
                 {pendingMatches.map((pendingMatch) => (
                   <div className="individual-dog">
