@@ -42,7 +42,7 @@ class DogBox extends React.Component {
             </div>
             <div className="tooltip">
               <span
-                onClick={() => this.props.destroyDog(this.props.dog._id)}
+                onClick={this.handleDelete}
                 class="fas fa-trash-alt"
               ></span>
               <span class="tooltiptext">Delete Doggo</span>
