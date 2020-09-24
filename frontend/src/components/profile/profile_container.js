@@ -4,6 +4,7 @@ import Profile from "./profile";
 
 const mapStateToProps = (state) => {
   return {
+    // dogsObj: state.dogs.user,
     dogs: Object.values(state.dogs.user),
     currentUser: state.session.user,
   };
