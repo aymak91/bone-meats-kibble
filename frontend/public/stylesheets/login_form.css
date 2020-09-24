@@ -37,6 +37,11 @@
 .login-button {
   font-family: 'Mukta Vaani', sans-serif;
   width: 45%;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(21, 114, 156);
+  border: none;
+  border-radius: 3px;
 }
 .logo {
   font-family: 'Kalam', cursive;

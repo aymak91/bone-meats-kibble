@@ -136,9 +136,9 @@ class LoginForm extends React.Component {
           </div>
         </div>
         <div className="login-form-background">
-          <span className="motto">
+          {/* <span className="motto">
             Happy Birthday Jaron!!
-          </span>
+          </span> */}
           
         </div>
 
