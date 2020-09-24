@@ -32,7 +32,7 @@ class NavBar extends React.Component {
           {/* <Link to={"/dogs"}>All Dogs</Link> */}
           <div className="tooltip">
             <Link to={"/profile"} className="profile-icon" class="fas fa-user-circle" ></Link>
-            <span className="navbartooltiptext">Profile</span>
+            <span className="navbartooltiptext">My dogs</span>
           </div>
           <div className="tooltip">
 
