@@ -54,7 +54,7 @@ class Matches extends React.Component {
               <div>
                 <NavBarContainer />
                 <div className="no-matches-container">
-                  <h1 className="no-matches-header">This dog has no matches</h1>
+                  <h1 className="no-matches-header">{currentDog.name} has no matches</h1>
                   <div className="matches-link-container">
                     <Link
                       to={`/${currentDogId}/possible_matches`}
@@ -73,7 +73,7 @@ class Matches extends React.Component {
             <NavBarContainer />
             <div className="dog-profile-container-container">
               <BackButton />
-              <h1 className="profile-header">My Matches</h1>
+              <h1 className="profile-header"> Matches for {currentDog.name}</h1>
               <div className="dogs-profile-container">
                 {matches.map((match) => (
                   <div className="individual-dog">
