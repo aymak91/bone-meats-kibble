@@ -16,14 +16,15 @@ const mapStateToProps = (state, ownProps) => {
     return ({
         messages: state.messages.data,
         currentDog: state.dogs.currentDog,
-        receivingDog: state.dogs.receivingDog
+        receivingDog: state.dogs.receivingDog,
+        matches: state.matches.data,
     })
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     const sendingDogId = ownProps.match.params.sending_dog_id;
     const receivingDogId = ownProps.match.params.receiving_dog_id;
-    console.log(sendingDogId)
-    console.log(receivingDogId)
+    // console.log(sendingDogId)
+    // console.log(receivingDogId)
     return {
         fetchSendingDog: () =>
             dispatch(fetchCurrentDog(sendingDogId)),

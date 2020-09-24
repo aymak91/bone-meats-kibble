@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from 'moment'
+import NavBarContainer from "../nav/navbar_container";
+
 
 class Messages extends React.Component {
     constructor(props) {
@@ -14,6 +16,7 @@ class Messages extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.deleteMessage = this.deleteMessage.bind(this);
     }
 
 
@@ -36,6 +39,13 @@ class Messages extends React.Component {
             await this.props.fetchMessages();
             this.setState({ messages: this.props.messages })
         }
+
+        // if (await this.props.currentDog === null) return null 
+        await this.props.fetchSendingDog();
+        await this.setState({ sendingDog: this.props.currentDog });
+
+        // await this.props.fetchReceivingDog();
+        // await this.setState({ receivingDog: this.props.receivingDog });
     }
 
     async handleSubmit(e) {
@@ -60,53 +70,88 @@ class Messages extends React.Component {
             });
     }
 
+    deleteMessage(idx) {
+      this.state.messages.splice(idx, 1);
+      this.setState({ messages: this.state.messages})
+    }
+
     render() {
-        if (!this.props.messages) return null;
+      // if (!this.props.messages) return null;
 
-        const messages = this.state.messages
-        const sendingDog = this.state.sendingDog;
-        const receivingDog = this.state.receivingDog;
+      // if (!this.props.matches) return null;
+      // if (this.state.matches.length === 0) return null;
+      
+      const messages = this.state.messages;
+      const sendingDog = this.state.sendingDog;
+      const receivingDog = this.state.receivingDog;
 
-        return (
-          <div className="messages-bgd">
-            <div className="messages-form">   
+      if (sendingDog === undefined) return null
+      let chatMessage 
+      let avatar
 
-            <div className="back-to-matches">
-              <Link to={`/${sendingDog._id}/matches`} class="fas fa-fire">
-                Back to Matches
-              </Link>
-            </div>
-            <h1 className="message-h1"> Messages with {receivingDog.name} </h1>
-            <h2 className="message-h2">{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h2>
-            {messages.map((message) => (
-                <li className="chat-message" key={message._id}>
-                    <div classname="message-name">
-                        
-                        <div>{`${message.sendingDog.name}:`}</div>
-                        {/* <div>{moment().format("HH:mm")}</div> */}
+      return (
+        <div className="messages-bgd">
+          <NavBarContainer />
+
+          <div className="messages-form">
+            <h1 className="message-h1">{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h1>
+            <h2 className="message-h2">
+              {" "}
+              {/* <img className="message-avatar" src={`${message.sendingDog.imageURL}`} /> */}
+              <img
+                className="message-avatar"
+                // src="https://cms-tc.pbskids.org/global/show-icons/circle/Clifford_200x200_white.png?mtime=20191120142954"
+                src={receivingDog.imageURL}
+              />
+              Messages with {receivingDog.name}{" "}
+              <div className="back-to-matches">
+                <Link
+                  to={`/${sendingDog._id}/matches`}
+                  class="fas far fa-arrow-alt-circle-left"
+                >
+                  Back to Matches
+                </Link>
+              </div>
+            </h2>
+            <div className="messages-container">
+            {messages.map((message, idx) => {
+            console.log(receivingDog)
+            console.log(sendingDog)
+            chatMessage = (this.props.messages[idx].sendingDog.name !== this.props.currentDog.name) ? "chat-message-left" : "chat-message-right"
+            avatar = (this.props.messages[idx].sendingDog.name !== this.props.currentDog.name) ? receivingDog : sendingDog
+              return (
+                <li className={chatMessage} key={message._id}>
+                  <img className="message-avatar" src={`${avatar.imageURL}`} />
+                  <div>
+                    <div className="message-header">
+                      <div>{`${message.sendingDog.name}`}</div>
+                      {/* <div className="timestamp">
+                        {moment().format("HH:mm")}
+                      </div> */}
                     </div>
-
                     <div className="message-body">
-                        {`${message.body}`}
+                      <span>{`${message.body}`}</span>
                     </div>
-              </li>
-            ))}
+                  </div>
+                </li>
+              );
+      })} </div>
             <form onSubmit={this.handleSubmit} className="enter-chat-input">
-              <div>
+              <div className="chat-box">
                 <input
                   type="textarea"
                   value={this.state.body}
                   onChange={this.update("body")}
                   className="chat-input"
-                  />
+                />
                 <input type="submit" value="woof!" />
-                <br />
               </div>
             </form>
-            </div>
           </div>
-        );
+        </div>
+      );
     }
 }
 
 export default Messages
+
