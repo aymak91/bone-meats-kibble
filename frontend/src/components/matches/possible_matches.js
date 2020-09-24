@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Moment from 'moment'
 import NavBarContainer from "../nav/navbar_container";
+import BackButton from "../back-button/back"
 
 class PossibleMatches extends React.Component {
   constructor(props) {
@@ -131,6 +132,7 @@ class PossibleMatches extends React.Component {
       <div>
         <NavBarContainer />
         <div className="search-bgd">
+        <BackButton />
           <div className="search-bar">
             <div className="search-option-container">
               <label className="select-label"> Gender </label>

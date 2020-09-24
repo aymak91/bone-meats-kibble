@@ -1,6 +1,8 @@
 import React from "react";
 import DogBox from "../dogs/dog_box";
 import NavBarContainer from "../nav/navbar_container";
+import BackButton from "../back-button/back";
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -39,6 +41,7 @@ class Profile extends React.Component {
         <div>
           <NavBarContainer />
           <div className="dog-profile-container-container">
+          <BackButton />
             <div className="dogs-profile-container">
               {/* <h2>All of This User's Dogs</h2> */}
               {this.state.dogs.map((dog) => (

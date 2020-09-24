@@ -1,6 +1,8 @@
 import React from "react";
 import NavBarContainer from "../nav/navbar_container";
 import Moment from "moment";
+import BackButton from "../back-button/back";
+
 
 class PendingMatches extends React.Component {
     constructor(props) {
@@ -59,6 +61,7 @@ class PendingMatches extends React.Component {
           <div>
             <NavBarContainer />
             <div className="dog-profile-container-container">
+            <BackButton />
               <h1 className="pending-matches-title">Pending Matches</h1>
               <div className="dogs-profile-container">
                 {pendingMatches.map((pendingMatch) => (
