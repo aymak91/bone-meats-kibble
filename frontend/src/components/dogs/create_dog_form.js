@@ -18,7 +18,7 @@ class DogForm extends React.Component {
       personality: "",
       photoFile: null,
       photoURL: null,
-      errors: null,
+      errors: {},
       newDog: "",
     };
 
@@ -293,6 +293,8 @@ class DogForm extends React.Component {
             />
             <br />
           </div>
+          {console.log(this.state)}
+          {/* {console.log(this.state.errors)} */}
           {/* {this.renderErrors()} */}
         </form>
         <br />
