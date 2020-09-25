@@ -40,9 +40,9 @@ class Messages extends React.Component {
             this.setState({ messages: this.props.messages })
         }
 
-        // if (await this.props.currentDog === null) return null 
-        await this.props.fetchSendingDog();
-        await this.setState({ sendingDog: this.props.currentDog });
+        // // if (await this.props.currentDog === null) return null 
+        // await this.props.fetchSendingDog();
+        // await this.setState({ sendingDog: this.props.currentDog });
 
         // await this.props.fetchReceivingDog();
         // await this.setState({ receivingDog: this.props.receivingDog });
@@ -116,10 +116,11 @@ class Messages extends React.Component {
             </h2>
             <div className="messages-container">
             {messages.map((message, idx) => {
-            console.log(receivingDog)
-            console.log(sendingDog)
-            chatMessage = (this.props.messages[idx].sendingDog.name !== this.props.currentDog.name) ? "chat-message-left" : "chat-message-right"
-            avatar = (this.props.messages[idx].sendingDog.name !== this.props.currentDog.name) ? receivingDog : sendingDog
+            // console.log(receivingDog)
+            // console.log(sendingDog)
+            console.log(message, idx)
+            chatMessage = (message.sendingDog.name !== this.props.currentDog.name) ? "chat-message-left" : "chat-message-right"
+            avatar = (message.sendingDog.name !== this.props.currentDog.name) ? receivingDog : sendingDog
               return (
                 <li className={chatMessage} key={message._id}>
                   <img className="message-avatar" src={`${avatar.imageURL}`} />
