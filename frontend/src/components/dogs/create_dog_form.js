@@ -99,7 +99,7 @@ class DogForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="create-dog-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="create-form-input-container">
             <h1>Create a Dog</h1>
