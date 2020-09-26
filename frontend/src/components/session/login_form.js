@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    let email = 'demoUser1@doge.com';
+    let email = 'demoUser@doge.com';
     let password = 'password'
 
     let interval = 50;
