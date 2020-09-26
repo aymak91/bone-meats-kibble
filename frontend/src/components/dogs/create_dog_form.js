@@ -26,6 +26,11 @@ class DogForm extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
     this.switchOptions = this.switchOptions.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+  closeModal() {
+    if (this.state.errors.length === 0) 
+      this.props.closeModal() 
   }
 
   switchOptions(trait) {
@@ -48,33 +53,27 @@ class DogForm extends React.Component {
     );
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ errors: nextProps.errors });
+  }
+
   async handleSubmit(e) {
     e.preventDefault();
-
     const formData = await new FormData();
-    if (await this.state.photoFile) {
-      await formData.append("name", this.state.name);
-      await formData.append("description", this.state.description);
-      await formData.append("breed", this.state.breed);
-      await formData.append("birthDate", this.state.birthDate);
-      await formData.append("size", this.state.size);
-      await formData.append("gender", this.state.gender);
-      await formData.append("activeness", this.state.activeness);
-      await formData.append("personality", this.state.personality);
-      await formData.append("file", this.state.photoFile);
-      await axios.post("/api/dogs/", formData);
-      // .then(response => {
-      //   if (response.state === 200) {                         //.state or .status are both okay to use
-      //     console.log(response.data);
-      //   } else {
-      //     this.props.history.push('/profile')
-      //   }
-      // })
-      // .catch(errors => this.setState({ errors: errors }));
-    }
+    await formData.append("name", this.state.name);
+    await formData.append("description", this.state.description);
+    await formData.append("breed", this.state.breed);
+    await formData.append("birthDate", this.state.birthDate);
+    await formData.append("size", this.state.size);
+    await formData.append("gender", this.state.gender);
+    await formData.append("activeness", this.state.activeness);
+    await formData.append("personality", this.state.personality);
+    await formData.append("file", this.state.photoFile);
 
-    await this.props.fetchUserDogs(this.props.currentUser.id);
-    this.props.closeModal();
+    await this.props.createDog(formData)
+    await this.props.fetchUserDogs(this.props.currentUser.id)
+    // => on success, respond to the user and close the modal
+    // => on failure, DONT close the modal
   }
 
   update(field) {
@@ -293,11 +292,10 @@ class DogForm extends React.Component {
             />
             <br />
           </div>
-          {console.log(this.state)}
-          {/* {console.log(this.state.errors)} */}
-          {/* {this.renderErrors()} */}
+          {this.renderErrors()}
+          {this.closeModal()}
         </form>
-        <br />
+        <br /> 
       </div>
     );
   }

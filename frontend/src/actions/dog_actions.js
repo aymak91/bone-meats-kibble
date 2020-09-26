@@ -44,7 +44,7 @@ export const receiveDogErrors = (errors) => ({
   errors
 })
 
-export const fetchCurrentDog = (dogId) => (dispatch) =>
+export const fetchCurrentDog = (dogId) => (dispatch) => 
   getDog(dogId)
     .then((dog) => dispatch(receiveCurrentDog(dog)))
     .catch((err) => console.log(err));
@@ -64,13 +64,11 @@ export const fetchUserDogs = (id) => (dispatch) =>
     .then((dogs) => dispatch(receiveUserDogs(dogs)))
     .catch((err) => console.log(err));
 
-export const createDog = (data) => (dispatch) =>
+export const createDog = (data) => (dispatch) => {
   writeDog(data)
     .then((dog) => dispatch(receiveNewDog(dog)))
-    // .catch((err) => console.log(err));
-    .catch((err) => {
-      dispatch(receiveDogErrors(err.response.data))
-    });
+    .catch((err) => dispatch(receiveDogErrors(err.response.data)))
+};
 
 export const patchDog = (data, dogId) => (dispatch) =>
   updateDog(data, dogId)
