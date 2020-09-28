@@ -40,9 +40,9 @@ module.exports = function validateDogInput(data) {
   }
 
   //birthDate
-  if (!Validator.isDate(data.birthDate)) {
-    errors.birthDate = "Must be a valid date";
-  }
+  // if (!Validator.isDate(data.birthDate)) {
+  //   errors.birthDate = "Must be a valid date";
+  // }
 
   if (Validator.isEmpty(data.birthDate)) {
     errors.birthDate = "Birth date field is required";
