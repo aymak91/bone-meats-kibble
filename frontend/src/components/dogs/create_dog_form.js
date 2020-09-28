@@ -292,7 +292,7 @@ class DogForm extends React.Component {
             />
             <br />
           </div>
-          {this.renderErrors()}
+          <div className="create-dog-errors"> {this.renderErrors()} </div>
           {this.closeModal()}
         </form>
         <br /> 
