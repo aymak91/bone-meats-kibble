@@ -72,6 +72,10 @@ class DogForm extends React.Component {
 
     await this.props.createDog(formData)
     await this.props.fetchUserDogs(this.props.currentUser.id)
+
+    if (this.state.errors.length !== 0) {
+
+    }
     // => on success, respond to the user and close the modal
     // => on failure, DONT close the modal
   }
@@ -294,6 +298,7 @@ class DogForm extends React.Component {
           </div>
           <div className="create-dog-errors"> {this.renderErrors()} </div>
           {this.closeModal()}
+          {/* {this.props.fetchUserDogs(this.props.currentUser.id)} */}
         </form>
         <br /> 
       </div>
