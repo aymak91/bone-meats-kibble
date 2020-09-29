@@ -42,6 +42,10 @@
   background-color: rgb(21, 114, 156);
   border: none;
   border-radius: 3px;
+
+}
+.login-button:hover {
+  cursor: pointer;
 }
 .logo {
   font-family: 'Kalam', cursive;
