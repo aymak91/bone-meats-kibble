@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
-
+import ImageUploader from "react-images-upload"
+import FormData from "form-data"
 
 
 class UpdateDogForm extends React.Component {
@@ -16,18 +17,41 @@ class UpdateDogForm extends React.Component {
       gender: this.props.dog.gender,
       activeness: this.props.dog.activeness,
       personality: this.props.dog.personality,
+      imageURL: this.props.dog.imageURL,
       newDog: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onDrop = this.onDrop.bind(this);
+  }
+
+  onDrop(picture) {
+    this.setState({
+      imageURL: picture[picture.length - 1],
+    });
   }
 
   async handleSubmit(e) {
     e.preventDefault();
 
-    const dog = Object.assign({}, this.state);
-    await this.props.patchDog(dog, this.props.dogId);
-    await this.props.fetchUserDogs(this.props.currentUser.id)
+    const formData = new FormData();
+    formData.append("name", this.state.name);
+    formData.append("description", this.state.description);
+    formData.append("breed", this.state.breed);
+    formData.append("birthDate", this.state.birthDate);
+    formData.append("size", this.state.size);
+    formData.append("gender", this.state.gender);
+    formData.append("activeness", this.state.activeness);
+    formData.append("personality", this.state.personality);
+    formData.append("file", this.state.imageURL);
+    formData.append("user", this.props.dog.user);
+
+    // const dog = Object.assign({}, this.state);
+    // await this.props.patchDog(dog, this.props.dogId);
+    this.props.patchDog(formData, this.props.dogId);
+    setTimeout(() => {
+      this.props.fetchUserDogs(this.props.currentUser.id)
+    }, 1000);
     this.props.closeModal();
   }
 
@@ -222,6 +246,13 @@ class UpdateDogForm extends React.Component {
             <br />
             <span>Picture</span>
             <br />
+            <ImageUploader
+              withIcon={true}
+              buttonText="Upload photo"
+              onChange={this.onDrop}
+              imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+              maxFileSize={5242880}
+            />
             <input type="submit" value="Submit" />
             <br />
           </div>

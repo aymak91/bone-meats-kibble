@@ -27,3 +27,10 @@
 .create-dog-form-container{
     overflow-x: hidden;
 }
+
+
+.create-dog-errors {
+    font-family: 'Mukta Vaani', sans-serif;
+    color: red;
+
+}

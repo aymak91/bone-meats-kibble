@@ -14,20 +14,20 @@ module.exports = function validateDogInput(data) {
 
   //name
   if (!Validator.isLength(data.name, { min: 1, max: 140 })) {
-    errors.name = "name must be between 1 and 140 characters";
+    errors.name = "Name must be between 1 and 140 characters";
   }
 
   if (Validator.isEmpty(data.name)) {
-    errors.name = "name field is required";
+    errors.name = "Name field is required";
   }
 
   //description
   if (!Validator.isLength(data.description, { min: 3, max: 140 })) {
-    errors.description = "description must be between 5 and 140 characters";
+    errors.description = "Description must be between 5 and 140 characters";
   }
 
   if (Validator.isEmpty(data.description)) {
-    errors.description = "description field is required";
+    errors.description = "Description field is required";
   }
 
   //breed
@@ -39,10 +39,12 @@ module.exports = function validateDogInput(data) {
     errors.breed = "Breed field is required";
   }
 
+  //this is commented out because the data format is including T00:00Z and making it not possible to edit other attributes without updating date.
+  //Since we are not having users manually input date and is instead using a calendar. We do not need this validator.
   //birthDate
-  if (!Validator.isDate(data.birthDate)) {
-    errors.birthDate = "Must be a valid date";
-  }
+  // if (!Validator.isDate(data.birthDate)) {
+  //   errors.birthDate = "Must be a valid date";
+  // }
 
   if (Validator.isEmpty(data.birthDate)) {
     errors.birthDate = "Birth date field is required";
