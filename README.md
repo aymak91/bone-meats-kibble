@@ -17,7 +17,7 @@ Users can create an account and use the same credentials to login. Database cons
 ### Dog profiles
 Users can create multiple dog profiles and attribute certain character traits to their dogs such as breed, size, gender, activeness, and personality. We utilized AWS S3 to allow users to upload profile images of their dogs. We also incorporated client-side form validations in the form of dropdown menus when creating dog profiles to avoid unnecessary axios requests. 
 
-![create_dog_gif](demo_folder/Create-Dog.gif)
+![create_dog_gif](demo_folder/demo_create_dog.gif)
 ### Matching Logic
 One of the challenges was how to store matching data for each dog. We used three different collections to store dog match data (below). Each document within the collection will have a dog ID that it corresponds to and an array of dog IDs that correspond to the match data. 
   * Possible matches - All other dog profiles
@@ -28,7 +28,7 @@ When a user looks at possible matches for their dog and clicks request match on 
 
 ### Filter for Dog Traits
 
-![filter_dog_gif](demo_dog_filter.gif)
+![filter_dog_gif](demo_folder/demo_dog_filter.gif)
 ### Live Chat
 Users can chat in real-time within each channel. The functionality is integrated using INSERTHERE. WebSockets allow both the server and the client to push messages at any time without any relation to a previous request, resulting in live-chat.
 
