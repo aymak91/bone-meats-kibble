@@ -1,0 +1,74 @@
+.about-page {
+    background-color: #272742;
+}
+
+.about-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 25% 5% 25%;
+    font-size: 25px;
+    border: 1px solid red;
+    height: 75px;
+    border-width: thick;
+    font-weight: 600;
+    font-family: 'Mukta Vaani', sans-serif;
+    border-radius: 25px;
+    background-color: #64618D;
+
+}
+
+.dev-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: #272742;
+    
+}
+
+.dev-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    border: 1px solid white;
+    border-width: thick;
+    border-radius: 25px;
+    height: 230px;
+    background-color: #64618D;
+    
+}
+
+.dev-img {
+    height: auto;
+    max-width: 230px;
+    border-radius: 25px 0 0 25px;
+    border-right: 1px solid white;
+    border-width: thick;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.dev-icons > * {
+    transition: transform .2s;
+}
+
+.dev-icons > *:hover {
+    color: red;
+    transform: scale(1.5)
+}
+
+.left-dev {
+    width: 40%;
+}
+
+.right-dev {
+    width: 40%;
+}
+
+
+
+
+
