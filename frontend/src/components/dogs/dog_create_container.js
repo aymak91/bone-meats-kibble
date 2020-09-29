@@ -8,14 +8,13 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.session.user,
     newDog: state.dogs.new,
-    errors: state.errors,
+    errors: state.errors.dogErrors,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     createDog: (data) => dispatch(createDog(data)),
-
     fetchUserDogs: (id) => dispatch(fetchUserDogs(id)),
   };
 };
