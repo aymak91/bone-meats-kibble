@@ -27,7 +27,7 @@
     object-fit: cover;  
 }
 .individual-dog {
-    width: 30%;
+    width: 450px;
     margin: 0 auto;
     border-radius: 3px;
     background-color: white;
@@ -36,7 +36,8 @@
 }
 .individual-dog img {
     width: 100%;
-    height: 600px;
+    height: 550px;
+    object-fit: cover;
 }
 .individual-dog-header img {
     width: 100%;
@@ -87,14 +88,27 @@
     font-size: 20px;
     width: 10%;
 }
+.matches-dog-buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    width: 10%;
+}
 
 .first-three-dog-buttons span{
     margin-right: 10px;
 }
+
 .first-three-dog-buttons :first-child:hover{
     color: rgb(82, 82, 121);;
 }
 .first-three-dog-buttons :nth-child(2):hover{
+    color: rgb(82, 82, 121);;
+}
+.matches-dog-buttons :first-child:hover{
+    color: rgb(82, 82, 121);;
+}
+.matches-dog-buttons :nth-child(2):hover{
     color: rgb(82, 82, 121);;
 }
 .first-three-dog-buttons :last-child:hover{
@@ -151,12 +165,13 @@
 }
 .tooltip .navbartooltiptext{
     visibility: hidden;
-    width: 120px;
+    width: 90px;
     background-color: #555;
     color: #fff;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
+    font-family: 'Mukta Vaani', sans-serif;
 
     /* Position the tooltip text */
     position: absolute;
@@ -182,6 +197,7 @@
 .profile-header-container{
     display: flex;
     justify-content: space-between;
+    padding-top: 50px;
 }
 .profile-header-container :last-child{
     color: silver;
@@ -214,4 +230,6 @@
   visibility: visible;
   opacity: 1;
 }
-
+.message-button{
+    margin-left: 50px;
+}

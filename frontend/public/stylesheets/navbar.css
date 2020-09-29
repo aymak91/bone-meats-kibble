@@ -6,7 +6,8 @@
     padding: 10px 20px;
     background-color: white;
     box-shadow: 1px 1px 1px black;
-    
+    position: fixed;
+    width: 98%;
 }
 .navbar-title {
     font-family: 'Kalam', cursive;

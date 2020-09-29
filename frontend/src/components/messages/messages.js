@@ -91,7 +91,7 @@ class Messages extends React.Component {
 
       return (
         <div className="messages-bgd">
-          <NavBarContainer />
+          <NavBarContainer className="navbarcontainer" />
 
           <div className="messages-form">
             <BackButton />
@@ -115,29 +115,39 @@ class Messages extends React.Component {
               </div>
             </h2>
             <div className="messages-container">
-            {messages.map((message, idx) => {
-            // console.log(receivingDog)
-            // console.log(sendingDog)
-            console.log(message, idx)
-            chatMessage = (message.sendingDog.name !== this.props.currentDog.name) ? "chat-message-left" : "chat-message-right"
-            avatar = (message.sendingDog.name !== this.props.currentDog.name) ? receivingDog : sendingDog
-              return (
-                <li className={chatMessage} key={message._id}>
-                  <img className="message-avatar" src={`${avatar.imageURL}`} />
-                  <div>
-                    <div className="message-header">
-                      <div>{`${message.sendingDog.name}`}</div>
-                      {/* <div className="timestamp">
+              {messages.map((message, idx) => {
+                // console.log(receivingDog)
+                // console.log(sendingDog)
+                console.log(message, idx);
+                chatMessage =
+                  message.sendingDog.name !== this.props.currentDog.name
+                    ? "chat-message-left"
+                    : "chat-message-right";
+                avatar =
+                  message.sendingDog.name !== this.props.currentDog.name
+                    ? receivingDog
+                    : sendingDog;
+                return (
+                  <li className={chatMessage} key={message._id}>
+                    <img
+                      className="message-avatar"
+                      src={`${avatar.imageURL}`}
+                    />
+                    <div>
+                      <div className="message-header">
+                        <div>{`${message.sendingDog.name}`}</div>
+                        {/* <div className="timestamp">
                         {moment().format("HH:mm")}
                       </div> */}
+                      </div>
+                      <div className="message-body">
+                        <span>{`${message.body}`}</span>
+                      </div>
                     </div>
-                    <div className="message-body">
-                      <span>{`${message.body}`}</span>
-                    </div>
-                  </div>
-                </li>
-              );
-      })} </div>
+                  </li>
+                );
+              })}{" "}
+            </div>
             <form onSubmit={this.handleSubmit} className="enter-chat-input">
               <div className="chat-box">
                 <input

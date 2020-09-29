@@ -52,9 +52,11 @@ class Matches extends React.Component {
         if (matches.length === 0) {
             return (
               <div>
-                <NavBarContainer />
+                <NavBarContainer className="navbarcontainer" />
                 <div className="no-matches-container">
-                  <h1 className="no-matches-header">{currentDog.name} has no matches</h1>
+                  <h1 className="no-matches-header">
+                    {currentDog.name} has no matches
+                  </h1>
                   <div className="matches-link-container">
                     <Link
                       to={`/${currentDogId}/possible_matches`}
@@ -70,7 +72,7 @@ class Matches extends React.Component {
 
         return (
           <div>
-            <NavBarContainer />
+            <NavBarContainer className="navbarcontainer" />
             <div className="dog-profile-container-container">
               <BackButton />
               <h1 className="profile-header"> Matches for {currentDog.name}</h1>
@@ -83,7 +85,7 @@ class Matches extends React.Component {
                     </div>
                     <img src={`${match.imageURL}`} />
                     <div className="dog-buttons">
-                      <div className="first-three-dog-buttons">
+                      <div className="matches-dog-buttons">
                         <div className="tooltip">
                           <Link
                             to={`/messages/${currentDogId}/${match._id}/`}
