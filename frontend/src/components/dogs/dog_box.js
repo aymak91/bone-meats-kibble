@@ -37,22 +37,22 @@ class DogBox extends React.Component {
         <div className="dog-buttons">
           <div className="first-three-dog-buttons">
             <div className="tooltip">
-              <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
-              <span class="tooltiptext">Edit Doggo</span>
+              <span onClick={this.toggleUpdateModal} className="fas fa-edit"></span>
+              <span className="tooltiptext">Edit Doggo</span>
             </div>
             <div className="tooltip">
               <span
                 onClick={this.handleDelete}
-                class="fas fa-trash-alt"
+                className="fas fa-trash-alt"
               ></span>
-              <span class="tooltiptext">Delete Doggo</span>
+              <span className="tooltiptext">Delete Doggo</span>
             </div>
             <div className="tooltip">
               <Link
                 to={`/${this.props.dog._id}/matches`}
-                class="fas fa-fire"
+                className="fas fa-fire"
               ></Link>
-              <span class="tooltiptext">View Matches</span>
+              <span className="tooltiptext">View Matches</span>
             </div>
           </div>
           <Link
@@ -71,7 +71,7 @@ class DogBox extends React.Component {
           </li>
           <li className="dog-attributes">
             <h1>Birth Date:</h1>{" "}
-            <p>{Moment(this.props.dog.birthDate).format("MMM Do YYYY")}</p>
+            <p>{Moment(this.props.dog.birthDate).utc().format("MMM Do YYYY")}</p>
           </li>
           <li className="dog-attributes">
             <h1>Size:</h1> <p>{this.props.dog.size}</p>

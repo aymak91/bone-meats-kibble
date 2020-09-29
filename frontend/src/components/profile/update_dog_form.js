@@ -157,7 +157,7 @@ class UpdateDogForm extends React.Component {
             <br />
             <input
               type="date"
-              value={moment(this.state.birthDate).format("YYYY-MM-DD")}
+              value={moment(this.state.birthDate).utc().format("YYYY-MM-DD")}
               onChange={this.update("birthDate")}
               // placeholder={`${this.props.dog.birthDate}`}
             />
@@ -250,7 +250,7 @@ class UpdateDogForm extends React.Component {
               withIcon={true}
               buttonText="Upload photo"
               onChange={this.onDrop}
-              imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+              imgExtension={[".jpg", ".gif", ".png"]}
               maxFileSize={5242880}
             />
             <input type="submit" value="Submit" />

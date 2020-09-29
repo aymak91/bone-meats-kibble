@@ -47,7 +47,7 @@ class Profile extends React.Component {
           <div className="profile-header-container">
             <h1 className="profile-header">My dogs</h1>
             <div className="tooltip">
-              <span onClick={this.toggleCreateModal} class="fas fa-plus"></span>
+              <span onClick={this.toggleCreateModal} className="fas fa-plus"></span>
               <span className="profiletooltiptext">Create Dog</span>
             </div>
             
