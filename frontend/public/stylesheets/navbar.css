@@ -5,13 +5,17 @@
     border: 1px solid lightgray;
     padding: 10px 20px;
     background-color: white;
-    box-shadow: 1px 1px 1px black;
-    
+    box-shadow: 2px 2px 2px black;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
+
 .navbar-title {
     font-family: 'Kalam', cursive;
     font-size: 20px;
 }
+
 .navbar-links {
     /* background-color: pink; */
     width: 120px;

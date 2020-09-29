@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import Footer from "../about_page/footer"
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -97,6 +98,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
+      <div>
       <div className="login-page">
         <div className="login-form-container">
           <div className="login-form">
@@ -141,7 +143,8 @@ class LoginForm extends React.Component {
           </span> */}
           
         </div>
-
+      </div>
+        <Footer />
       </div>
     );
   }
