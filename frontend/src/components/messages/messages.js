@@ -200,65 +200,19 @@ class Messages extends React.Component {
           </form>
         </div>
 
-        {/* <h1>Real Time Messaging</h1>
-        <pre id="messages" style="height: 400px; overflow: scroll"></pre>
+        <h1>Real Time Messaging</h1>
+        <pre class="messages-form" ></pre>
         <input
           type="text"
-          id="messageBox"
+          class="messages-container"
           placeholder="Type your message here"
-          style="display: block; width: 100%; margin-bottom: 10px; padding: 10px;"
         />
         <button
-          id="send"
+          class="send"
           title="Send Message!"
-          style="width: 100%; height: 30px;"
         >
           Send Message
         </button>
-
-        <script>
-          {(function () {
-            const sendBtn = document.querySelector('#send');
-            const messages = document.querySelector('#messages');
-            const messageBox = document.querySelector('#messageBox');
-
-            let ws;
-
-            function showMessage(message) {
-              messages.textContent += `\n\n${message}`;
-              messages.scrollTop = messages.scrollHeight;
-              messageBox.value = '';
-            }
-
-            function init() {
-              if (ws) {
-                ws.onerror = ws.onopen = ws.onclose = null;
-                ws.close();
-              }
-
-              ws = new WebSocket('ws://localhost:6969');
-              ws.onopen = () => {
-                console.log('Connection opened!');
-              }
-              ws.onmessage = ({ data }) => showMessage(data);
-              ws.onclose = function () {
-                ws = null;
-              }
-            }
-
-            sendBtn.onclick = function () {
-              if (!ws) {
-                showMessage("No WebSocket connection :(");
-                return;
-              }
-
-              ws.send(messageBox.value);
-              showMessage(messageBox.value);
-            }
-
-            init();
-          })()}
-        </script> */}
 
       </div>
     );
