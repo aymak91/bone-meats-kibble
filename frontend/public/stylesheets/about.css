@@ -41,6 +41,18 @@
     
 }
 
+.dev-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+    margin: 0 5% 0 5%;
+    width: 100%;
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 25px;
+}
+
 .dev-img {
     height: auto;
     max-width: 230px;
@@ -51,21 +63,27 @@
     object-position: 0 0;
 }
 
+.dev-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .dev-icons > * {
     transition: transform .2s;
+    font-size: 40px
 }
 
 .dev-icons > *:hover {
     color: red;
-    transform: scale(1.5)
+    transform: scale(1.3)
 }
 
 .left-dev {
-    width: 40%;
+    width: 30%;
 }
 
 .right-dev {
-    width: 40%;
+    width: 30%;
 }
 
 

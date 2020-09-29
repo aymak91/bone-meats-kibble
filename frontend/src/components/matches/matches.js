@@ -54,6 +54,7 @@ class Matches extends React.Component {
               <div>
                 <NavBarContainer />
                 <div className="no-matches-container">
+                <BackButton />
                   <h1 className="no-matches-header">{currentDog.name} has no matches</h1>
                   <div className="matches-link-container">
                     <Link
