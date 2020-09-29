@@ -88,18 +88,18 @@ class Matches extends React.Component {
                           <Link
                             to={`/messages/${currentDogId}/${match._id}/`}
                             className="message-button"
-                            class="fas fa-comment"
+                            className="fas fa-comment"
                           ></Link>
-                          <span class="tooltiptext">Message</span>
+                          <span className="tooltiptext">Message</span>
                         </div>
                         <div className="tooltip">
                           <span
                             onClick={() =>
                               this.handleDelete(currentDogId, match._id)
                             }
-                            class="fas fa-times"
+                            className="fas fa-times"
                           ></span>
-                          <span class="tooltiptext">Unmatch</span>
+                          <span className="tooltiptext">Unmatch</span>
                         </div>
                       </div>
                     </div>

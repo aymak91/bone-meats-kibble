@@ -37,22 +37,22 @@ class DogBox extends React.Component {
         <div className="dog-buttons">
           <div className="first-three-dog-buttons">
             <div className="tooltip">
-              <span onClick={this.toggleUpdateModal} class="fas fa-edit"></span>
-              <span class="tooltiptext">Edit Doggo</span>
+              <span onClick={this.toggleUpdateModal} className="fas fa-edit"></span>
+              <span className="tooltiptext">Edit Doggo</span>
             </div>
             <div className="tooltip">
               <span
                 onClick={this.handleDelete}
-                class="fas fa-trash-alt"
+                className="fas fa-trash-alt"
               ></span>
-              <span class="tooltiptext">Delete Doggo</span>
+              <span className="tooltiptext">Delete Doggo</span>
             </div>
             <div className="tooltip">
               <Link
                 to={`/${this.props.dog._id}/matches`}
-                class="fas fa-fire"
+                className="fas fa-fire"
               ></Link>
-              <span class="tooltiptext">View Matches</span>
+              <span className="tooltiptext">View Matches</span>
             </div>
           </div>
           <Link

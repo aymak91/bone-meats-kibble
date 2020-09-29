@@ -9,7 +9,7 @@ class BackButton extends React.Component {
   render() {
     return (
       <button className="back-button" onClick={this.props.history.goBack}>
-        <i class="fas fa-long-arrow-alt-left"></i> Previous Page{" "}
+        <i className="fas fa-long-arrow-alt-left"></i> Previous Page{" "}
       </button>
     );
   }

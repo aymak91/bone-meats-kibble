@@ -336,11 +336,11 @@ class PossibleMatches extends React.Component {
                     <div className="possible-match-buttons">
                       <span
                         onClick={() => this.handleRequest(dog._id)}
-                        class="fas fa-heart"
+                        className="fas fa-heart"
                       ></span>
                       <span
                         onClick={() => this.handleReject(dog._id)}
-                        class="fas fa-times"
+                        className="fas fa-times"
                       ></span>
                     </div>
                   </ul>
