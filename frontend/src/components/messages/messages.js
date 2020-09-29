@@ -113,6 +113,7 @@ class Messages extends React.Component {
       }
 
       ws.send(messageBox.value);
+      this.props.createMessage(messageBox.value, this.props.history);
       showMessage(messageBox.value);
     };
 
