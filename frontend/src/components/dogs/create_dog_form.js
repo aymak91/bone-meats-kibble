@@ -71,11 +71,18 @@ class DogForm extends React.Component {
     await formData.append("file", this.state.photoFile);
 
     await this.props.createDog(formData)
-    await this.props.fetchUserDogs(this.props.currentUser.id)
+      // .then(result => console.log(result))
+      // .catch(err => console.log(err))
 
-    if (this.state.errors.length !== 0) {
 
-    }
+    setTimeout(() => {
+      this.props.fetchUserDogs(this.props.currentUser.id)
+    }, 2000)
+      
+
+    // if (this.state.errors.length !== 0) {
+
+    // }
     // => on success, respond to the user and close the modal
     // => on failure, DONT close the modal
   }
