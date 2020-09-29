@@ -100,7 +100,7 @@ class PendingMatches extends React.Component {
                       <li className="dog-attributes">
                         <h1>Birth Date:</h1>{" "}
                         <p>
-                          {Moment(pendingMatch.birthDate).format("MMM Do YYYY")}
+                          {Moment(pendingMatch.birthDate).utc().format("MMM Do YYYY")}
                         </p>
                       </li>
                       <li className="dog-attributes">

@@ -317,7 +317,7 @@ class PossibleMatches extends React.Component {
                       </li>
                       <li className="dog-attributes">
                         <h1>Birth Date:</h1>{" "}
-                        <p>{Moment(dog.birthDate).format("MMM Do YYYY")}</p>
+                        <p>{Moment(dog.birthDate).utc().format("MMM Do YYYY")}</p>
                       </li>
                       <li className="dog-attributes">
                         <h1>Size:</h1> <p>{dog.size}</p>

@@ -71,7 +71,7 @@ class DogBox extends React.Component {
           </li>
           <li className="dog-attributes">
             <h1>Birth Date:</h1>{" "}
-            <p>{Moment(this.props.dog.birthDate).format("MMM Do YYYY")}</p>
+            <p>{Moment(this.props.dog.birthDate).utc().format("MMM Do YYYY")}</p>
           </li>
           <li className="dog-attributes">
             <h1>Size:</h1> <p>{this.props.dog.size}</p>
