@@ -100,19 +100,24 @@
 }
 
 .first-three-dog-buttons :first-child:hover{
-    color: rgb(82, 82, 121);;
+    color: rgb(82, 82, 121);
+    cursor: pointer;
 }
 .first-three-dog-buttons :nth-child(2):hover{
-    color: rgb(82, 82, 121);;
+    color: rgb(82, 82, 121);
+    cursor: pointer;
 }
 .matches-dog-buttons :first-child:hover{
-    color: rgb(82, 82, 121);;
+    color: rgb(82, 82, 121);
+    cursor: pointer;
 }
 .matches-dog-buttons :nth-child(2):hover{
-    color: rgb(82, 82, 121);;
+    color: rgb(82, 82, 121);
+    cursor: pointer;
 }
 .first-three-dog-buttons :last-child:hover{
     color: red;
+    cursor: pointer;
 }
 .start-matching-button{
     font-family: 'Kalam', cursive;
@@ -121,6 +126,7 @@
 }
 .start-matching-button:hover {
     color: red;
+    cursor: pointer;
 }
 .pending-matches-title {
     display: flex;
@@ -142,6 +148,9 @@
 .tooltip {
   position: relative;
   display: inline-block;
+}
+.tooltip:hover {
+    cursor: pointer;
 }
 .tooltip .tooltiptext{
     visibility: hidden;
@@ -197,7 +206,7 @@
 .profile-header-container{
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
+    
 }
 .profile-header-container :last-child{
     color: silver;

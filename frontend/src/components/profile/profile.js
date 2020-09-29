@@ -3,6 +3,7 @@ import DogBox from "../dogs/dog_box";
 import NavBarContainer from "../nav/navbar_container";
 import Modal from "react-modal";
 import CreateDogFormContainer from "../dogs/dog_create_container";
+import Footer from "../about_page/footer"
 
 class Profile extends React.Component {
   constructor(props) {
@@ -90,6 +91,7 @@ class Profile extends React.Component {
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

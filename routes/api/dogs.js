@@ -135,7 +135,10 @@ router.post('/', upload.single("file"), //middleware
 
     newMatches.save()
 
-    res.json(savedDog)
+    // res.json(savedDog)
+    savedDog.save()
+      .then(dog => res.json(dog))
+      .catch(err => res.status(400).json(err))
   }
 );
 

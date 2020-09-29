@@ -54,9 +54,8 @@ class Matches extends React.Component {
               <div>
                 <NavBarContainer className="navbarcontainer" />
                 <div className="no-matches-container">
-                  <h1 className="no-matches-header">
-                    {currentDog.name} has no matches
-                  </h1>
+                <BackButton />
+                  <h1 className="no-matches-header">{currentDog.name} has no matches</h1>
                   <div className="matches-link-container">
                     <Link
                       to={`/${currentDogId}/possible_matches`}

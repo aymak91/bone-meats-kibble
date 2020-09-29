@@ -1,0 +1,39 @@
+.footer {
+    /* position: fixed; */
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-between;
+    align-items: space-between;
+    background: white;
+    width: 100%;
+    position: sticky;
+    box-shadow: 0px 5px 5px rgb(65, 28, 151), 0px -2px 5px rgb(65, 28, 151);
+
+}
+
+.footer > * {
+    display: flex;
+    margin: 0% 5% 0% 5%;
+    width: 100%;
+    font-family: 'Mukta Vaani', sans-serif;
+    font-weight: 700;
+    color: #272742;
+
+}
+
+.idv-devs {
+    padding: 10px;
+}
+
+.dev-icons > * {
+    transition: transform .2s;
+    font-size: 30px;
+    padding: 0 5px 0 5px;
+}
+
+.dev-icons > *:hover {
+    color: red;
+    transform: scale(1.3);
+}
