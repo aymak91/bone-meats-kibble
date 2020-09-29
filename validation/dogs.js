@@ -39,10 +39,12 @@ module.exports = function validateDogInput(data) {
     errors.breed = "Breed field is required";
   }
 
+  //this is commented out because the data format is including T00:00Z and making it not possible to edit other attributes without updating date.
+  //Since we are not having users manually input date and is instead using a calendar. We do not need this validator.
   //birthDate
-  if (!Validator.isDate(data.birthDate)) {
-    errors.birthDate = "Must be a valid date";
-  }
+  // if (!Validator.isDate(data.birthDate)) {
+  //   errors.birthDate = "Must be a valid date";
+  // }
 
   if (Validator.isEmpty(data.birthDate)) {
     errors.birthDate = "Birth date field is required";
