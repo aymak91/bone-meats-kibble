@@ -80,16 +80,16 @@ class PendingMatches extends React.Component {
                               this.handleAccept(currentDogId, pendingMatch._id)
                             }
                             className="match-heart-button"
-                            class="fas fa-heart"
+                            className="fas fa-heart"
                           ></span>
-                          <span class="tooltiptext">Match Doggo</span>
+                          <span className="tooltiptext">Match Doggo</span>
                         </div>
                         <div className="tooltip">
                           <span
                             onClick={() => this.handleReject(pendingMatch._id)}
-                            class="fas fa-times"
+                            className="fas fa-times"
                           ></span>
-                          <span class="tooltiptext">Not Interested</span>
+                          <span className="tooltiptext">Not Interested</span>
                         </div>
                       </div>
                     </div>
@@ -100,7 +100,7 @@ class PendingMatches extends React.Component {
                       <li className="dog-attributes">
                         <h1>Birth Date:</h1>{" "}
                         <p>
-                          {Moment(pendingMatch.birthDate).format("MMM Do YYYY")}
+                          {Moment(pendingMatch.birthDate).utc().format("MMM Do YYYY")}
                         </p>
                       </li>
                       <li className="dog-attributes">

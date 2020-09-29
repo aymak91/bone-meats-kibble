@@ -31,17 +31,17 @@ class NavBar extends React.Component {
         <div className="navbar-links">
           {/* <Link to={"/dogs"}>All Dogs</Link> */}
           <div className="tooltip">
-            <Link to={"/profile"} className="profile-icon" class="fas fa-user-circle" ></Link>
+            <Link to={"/profile"} className="profile-icon" className="fas fa-user-circle" ></Link>
             <span className="navbartooltiptext">My dogs</span>
           </div>
           <div className="tooltip">
 
-            <span onClick={this.toggleCreateModal} class="fas fa-plus"></span>
+            <span onClick={this.toggleCreateModal} className="fas fa-plus"></span>
             <span className="navbartooltiptext">Create a Doggo</span>
           </div>
           {/* <Link to={"/search"} class="fas fa-search"></Link> */}
           <div className="tooltip">
-            <span onClick={this.logoutUser} class="fas fa-sign-out-alt"></span>
+            <span onClick={this.logoutUser} className="fas fa-sign-out-alt"></span>
             <span className="navbartooltiptext">Logout</span>
           </div>
 
