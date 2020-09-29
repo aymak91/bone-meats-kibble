@@ -19,13 +19,11 @@ Users can create multiple dog profiles and attribute certain character traits to
 
 ![alt text](https://raw.githubusercontent.com/jaronjlee/discord_clone/master/app/assets/images/overview.png)
 ### Matching Logic
-One of the challenges was how to store matching data for each dog. We used four different collections to store do match data, see below. Each document within the collection will have a dog ID that it corresponds to and an array of dog IDs that correspond to the match data. 
+One of the challenges was how to store matching data for each dog. We used three different collections to store dog match data (below). Each document within the collection will have a dog ID that it corresponds to and an array of dog IDs that correspond to the match data. 
   * Possible matches - All other dog profiles
   * Pending matches - Dogs that want to match with your dog
   * Matches - Dogs that are matched with your dog
-For example, a dog would have a pending matches document that contains their dog ID and an array of dog IDs that you requested to match with. 
-
-When a user looks at possible matches for their dog and clicks request match, that requested dog's ID is removed from the possible matches array. The requesting dog's ID is then pushed into the requested dog's pending matches array. If the requested dog views their pending matches and accepts, the dog ID is removed from pending matches and put into their matches array. The requesting
+When a user looks at possible matches for their dog and clicks request match on a dog, that requested dog's ID is removed from the possible matches array. The user's dog's ID is then pushed into the requested dog's pending matches array. If the requested dog views their pending matches and accepts, the dog ID is removed from pending matches and put into their matches array. The ID of the dog who accepts will then be pushed into the requesting dog's matches array. 
 
 
 ### Filter for Dog Traits
