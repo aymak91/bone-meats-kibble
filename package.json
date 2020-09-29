@@ -6,10 +6,11 @@
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
+    "websocket": "node websocketServer.js",
     "server:debug": "node --inspect app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\" \"npm run websocket\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Alexander Mak",
@@ -31,7 +32,8 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "uuid": "^8.3.0",
-    "validator": "^13.1.1"
+    "validator": "^13.1.1",
+    "ws": "^7.3.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"

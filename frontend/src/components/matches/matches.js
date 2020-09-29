@@ -54,6 +54,7 @@ class Matches extends React.Component {
               <div>
                 <NavBarContainer />
                 <div className="no-matches-container">
+                <BackButton />
                   <h1 className="no-matches-header">{currentDog.name} has no matches</h1>
                   <div className="matches-link-container">
                     <Link
@@ -88,18 +89,18 @@ class Matches extends React.Component {
                           <Link
                             to={`/messages/${currentDogId}/${match._id}/`}
                             className="message-button"
-                            class="fas fa-comment"
+                            className="fas fa-comment"
                           ></Link>
-                          <span class="tooltiptext">Message</span>
+                          <span className="tooltiptext">Message</span>
                         </div>
                         <div className="tooltip">
                           <span
                             onClick={() =>
                               this.handleDelete(currentDogId, match._id)
                             }
-                            class="fas fa-times"
+                            className="fas fa-times"
                           ></span>
-                          <span class="tooltiptext">Unmatch</span>
+                          <span className="tooltiptext">Unmatch</span>
                         </div>
                       </div>
                     </div>
@@ -109,7 +110,7 @@ class Matches extends React.Component {
                       </li>
                       <li className="dog-attributes">
                         <h1>Birth Date:</h1>{" "}
-                        <p>{Moment(match.birthDate).format("MMM Do YYYY")}</p>
+                        <p>{Moment(match.birthDate).utc().format("MMM Do YYYY")}</p>
                       </li>
                       <li className="dog-attributes">
                         <h1>Size:</h1> <p>{match.size}</p>

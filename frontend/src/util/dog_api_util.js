@@ -27,5 +27,5 @@ export const updateDog = (data, dogId) => {
 };
 
 export const deleteDog = (dogId) => {
-    return axios.delete(`/api/dogs/${dogId}`)
+  return axios.delete(`/api/dogs/${dogId}`)
 };
