@@ -17,6 +17,7 @@ class Messages extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteMessage = this.deleteMessage.bind(this);
+    // this.websocketChat = this.websocketChat.bind(this);
   }
 
   async componentDidMount() {
@@ -28,6 +29,12 @@ class Messages extends React.Component {
 
     await this.props.fetchReceivingDog();
     await this.setState({ receivingDog: this.props.receivingDog });
+
+    const sendBtn = document.querySelector("#send");
+    const messages = document.querySelector("#messages");
+    const messageBox = document.querySelector("#messageBox");
+
+    this.websocketChat(sendBtn, messages, messageBox);
   }
 
   async componentDidUpdate(prevProps) {
@@ -74,11 +81,7 @@ class Messages extends React.Component {
     this.setState({ messages: this.state.messages });
   }
 
-  websocketChat() {
-    const sendBtn = document.querySelector("#send");
-    const messages = document.querySelector("#messages");
-    const messageBox = document.querySelector("#messageBox");
-
+  websocketChat(sendBtn, messages, messageBox) {
     let ws;
 
     function showMessage(message) {
@@ -157,11 +160,17 @@ class Messages extends React.Component {
           </h2>
           <div className="messages-container">
             {messages.map((message, idx) => {
-            // console.log(receivingDog)
-            // console.log(sendingDog)
-            console.log(message, idx)
-            chatMessage = (message.sendingDog.name !== this.props.currentDog.name) ? "chat-message-left" : "chat-message-right"
-            avatar = (message.sendingDog.name !== this.props.currentDog.name) ? receivingDog : sendingDog
+              // console.log(receivingDog)
+              // console.log(sendingDog)
+              console.log(message, idx);
+              chatMessage =
+                message.sendingDog.name !== this.props.currentDog.name
+                  ? "chat-message-left"
+                  : "chat-message-right";
+              avatar =
+                message.sendingDog.name !== this.props.currentDog.name
+                  ? receivingDog
+                  : sendingDog;
               return (
                 <li className={chatMessage} key={message._id}>
                   <img className="message-avatar" src={`${avatar.imageURL}`} />
@@ -193,6 +202,16 @@ class Messages extends React.Component {
           </form>
         </div>
 
+        <h1>Real Time Messaging</h1>
+        <pre id="messages"></pre>
+        <input
+          type="text"
+          id="messageBox"
+          placeholder="Type your message here"
+        />
+        <button id="send" title="Send Message!">
+          Send Message
+        </button>
       </div>
     );
   }
