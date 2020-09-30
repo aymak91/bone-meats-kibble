@@ -9,7 +9,8 @@
     background: white;
     width: 100%;
     position: sticky;
-    box-shadow: 0px 5px 5px rgb(65, 28, 151), 0px -2px 5px rgb(65, 28, 151);
+    /* box-shadow: 0px 5px 5px rgb(65, 28, 151), 0px -2px 5px rgb(65, 28, 151); */
+    box-shadow: 0px 5px 5px grey, 0px -2px 5px grey;
 
 }
 
