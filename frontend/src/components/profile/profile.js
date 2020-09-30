@@ -41,7 +41,7 @@ class Profile extends React.Component {
 
     return (
       <div>
-        <NavBarContainer />
+        <NavBarContainer className="navbarcontainer" />
         {/* <div>Add a dog profi ldffafafe</div> */}
         <div className="dog-profile-container-container">
           <div className="profile-header-container">
@@ -50,7 +50,7 @@ class Profile extends React.Component {
               <span onClick={this.toggleCreateModal} className="fas fa-plus"></span>
               <span className="profiletooltiptext">Create Dog</span>
             </div>
-            
+
             <Modal
               className=""
               isOpen={this.state.showCreateModal}

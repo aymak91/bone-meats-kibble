@@ -10,9 +10,10 @@
     box-shadow: 5px 5px 5px black;
     margin-left: 50px;
     font-family: 'Mukta Vaani', sans-serif;
+    
 }
 
 .back-button:hover {
     background-color: #64618d;
-
+    cursor: pointer;
 }
