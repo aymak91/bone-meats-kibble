@@ -130,11 +130,13 @@ class PossibleMatches extends React.Component {
 
     return (
       <div>
-        <NavBarContainer />
+        <NavBarContainer className="navbarcontainer" />
         <div className="search-bgd">
-        <BackButton />
+          <BackButton />
           <div className="possible-matches-header">
-          <h1 className="browse-for-matches-header">Browse Matches for {currentDog.name}</h1>
+            <h1 className="browse-for-matches-header">
+              Browse Matches for {currentDog.name}
+            </h1>
             <Link
               to={`/${this.props.currentDogId}/pending_matches`}
               className="pending-matches-link"

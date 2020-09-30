@@ -74,7 +74,7 @@
 }
 
 .dev-icons > *:hover {
-    color: red;
+    color: #64618D;
     transform: scale(1.3)
 }
 
