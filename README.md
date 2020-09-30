@@ -5,7 +5,7 @@
 ## BoneMeatsKibble Overview
 BoneMeetsKibble is an exciting new app where dog owners can find playmates for their dogs. Dog owners can create profiles for their dogs and specify certain traits such as breed, size, gender, activeness, and personality. The owner can then browse possible matches for each dog and filter based off of desired traits. If the owner sees a dog that they think would be a good fit for their dog, they can send a request to match with that dog. If the other owner accepts, they will be able to message each other using Socket.IO for live chat. 
 
-![alt text](https://raw.githubusercontent.com/jaronjlee/discord_clone/master/app/assets/images/overview.png)
+![splash_page](demo_folder/splash_page.png)
 ## Technologies
   * MongoDB
   * Express
@@ -17,7 +17,7 @@ Users can create an account and use the same credentials to login. Database cons
 ### Dog profiles
 Users can create multiple dog profiles and attribute certain character traits to their dogs such as breed, size, gender, activeness, and personality. We utilized AWS S3 to allow users to upload profile images of their dogs. We also incorporated client-side form validations in the form of dropdown menus when creating dog profiles to avoid unnecessary axios requests. 
 
-![alt text](https://raw.githubusercontent.com/jaronjlee/discord_clone/master/app/assets/images/overview.png)
+![create_dog_gif](demo_folder/demo_create_dog.gif)
 ### Matching Logic
 One of the challenges was how to store matching data for each dog. We used three different collections to store dog match data (below). Each document within the collection will have a dog ID that it corresponds to and an array of dog IDs that correspond to the match data. 
   * Possible matches - All other dog profiles
@@ -28,7 +28,7 @@ When a user looks at possible matches for their dog and clicks request match on 
 
 ### Filter for Dog Traits
 
-![alt text](https://raw.githubusercontent.com/jaronjlee/discord_clone/master/app/assets/images/overview.png)
+![filter_dog_gif](demo_folder/demo_dog_filter.gif)
 ### Live Chat
 Users can chat in real-time within each channel. The functionality is integrated using INSERTHERE. WebSockets allow both the server and the client to push messages at any time without any relation to a previous request, resulting in live-chat.
 

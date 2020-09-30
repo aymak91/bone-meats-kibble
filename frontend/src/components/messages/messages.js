@@ -17,7 +17,7 @@ class Messages extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteMessage = this.deleteMessage.bind(this);
-    // this.websocketChat = this.websocketChat.bind(this);
+    this.websocketChat = this.websocketChat.bind(this);
   }
 
   async componentDidMount() {
@@ -47,8 +47,8 @@ class Messages extends React.Component {
     }
 
     // if (await this.props.currentDog === null) return null
-    await this.props.fetchSendingDog();
-    await this.setState({ sendingDog: this.props.currentDog });
+    // await this.props.fetchSendingDog();
+    // await this.setState({ sendingDog: this.props.currentDog });
 
     // await this.props.fetchReceivingDog();
     // await this.setState({ receivingDog: this.props.receivingDog });
@@ -83,6 +83,7 @@ class Messages extends React.Component {
 
   websocketChat(sendBtn, messages, messageBox) {
     let ws;
+    let props = this.props;
 
     function showMessage(message) {
       messages.textContent += `\n\n${message}`;
@@ -106,16 +107,44 @@ class Messages extends React.Component {
       };
     }
 
-    sendBtn.onclick = function () {
+    sendBtn.onclick = function() {
       if (!ws) {
         showMessage("No WebSocket connection :(");
         return;
       }
 
       ws.send(messageBox.value);
-      this.props.createMessage(messageBox.value, this.props.history);
+
+      const message = {
+        body: messageBox.value,
+      };
+
+      props.createMessage(message, props.history);
+
       showMessage(messageBox.value);
     };
+
+    // sendBtn.keypress(function(e) {
+
+    //   if (e.keyCode === 13) {
+    //     if (!ws) {
+    //       showMessage("No WebSocket connection :(");
+    //       return;
+    //     }
+  
+    //     ws.send(messageBox.value);
+  
+    //     const message = {
+    //       body: messageBox.value,
+    //     };
+  
+    //     props.createMessage(message, props.history);
+  
+    //     showMessage(messageBox.value);
+    //   }
+
+    // })
+
 
     init();
   }
@@ -133,6 +162,10 @@ class Messages extends React.Component {
     if (sendingDog === undefined) return null;
     let chatMessage;
     let avatar;
+
+    if (!this.props) {
+      return null;
+    }
 
     return (
       <div className="messages-bgd">
