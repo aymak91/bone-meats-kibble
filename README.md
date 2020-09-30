@@ -5,7 +5,7 @@
 ## BoneMeatsKibble Overview
 BoneMeetsKibble is an exciting new app where dog owners can find playmates for their dogs. Dog owners can create profiles for their dogs and specify certain traits such as breed, size, gender, activeness, and personality. The owner can then browse possible matches for each dog and filter based off of desired traits. If the owner sees a dog that they think would be a good fit for their dog, they can send a request to match with that dog. If the other owner accepts, they will be able to message each other using Socket.IO for live chat. 
 
-![alt text](https://raw.githubusercontent.com/jaronjlee/discord_clone/master/app/assets/images/overview.png)
+![splash_page](demo_folder/add_splash_page)
 ## Technologies
   * MongoDB
   * Express
