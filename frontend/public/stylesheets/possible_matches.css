@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
+    height: 100vh;
 }
 .search-bar-dog-index-container{
     display: flex;
@@ -196,6 +197,9 @@
     margin: 0px 35px 0px 60px;
     font-size: 30px;
     border-bottom: 2px solid silver;
+}
+.pending-matches-link:hover {
+    color: white;
 }
 .possible-matches-header{
     display: flex;
