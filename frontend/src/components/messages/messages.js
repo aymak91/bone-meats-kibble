@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import moment from 'moment'
 import NavBarContainer from "../nav/navbar_container";
 import BackButton from "../back_button/back_button"
+// const db = require('config/keys').mongoURI;
 
 class Messages extends React.Component {
   constructor(props) {
@@ -35,6 +36,13 @@ class Messages extends React.Component {
     const messageBox = document.querySelector("#messageBox");
 
     this.websocketChat(sendBtn, messages, messageBox);
+
+    // const collection = db.collection('messages');
+    // const changeStream = collection.watch();
+    // changeStream.on('change', next => {
+    //   this.props.fetchMessages();
+    // });
+
   }
 
   async componentDidUpdate(prevProps) {
@@ -49,6 +57,7 @@ class Messages extends React.Component {
     // if (await this.props.currentDog === null) return null
     await this.props.fetchSendingDog();
     await this.setState({ sendingDog: this.props.currentDog });
+    await this.props.fetchMessages();
 
     // await this.props.fetchReceivingDog();
     // await this.setState({ receivingDog: this.props.receivingDog });
@@ -108,7 +117,7 @@ class Messages extends React.Component {
       };
     }
 
-    sendBtn.onclick = function () {
+    sendBtn.onclick = async function () {
       if (!ws) {
         showMessage("No WebSocket connection :(");
         return;
@@ -120,7 +129,7 @@ class Messages extends React.Component {
         body: messageBox.value,
       };
 
-      props.createMessage(message, props.history);
+      await props.createMessage(message, props.history);
       props.fetchMessages();
       showMessage(messageBox.value);
 
