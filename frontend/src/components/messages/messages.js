@@ -83,6 +83,8 @@ class Messages extends React.Component {
 
   websocketChat(sendBtn, messages, messageBox) {
     let ws;
+    let props = this.props;
+
 
     function showMessage(message) {
       messages.textContent += `\n\n${message}`;
@@ -113,8 +115,15 @@ class Messages extends React.Component {
       }
 
       ws.send(messageBox.value);
-      this.props.createMessage(messageBox.value, this.props.history);
+
+      const message = {
+        body: messageBox.value,
+      };
+
+      props.createMessage(message, props.history);
+      props.fetchMessages();
       showMessage(messageBox.value);
+
     };
 
     init();
@@ -153,7 +162,7 @@ class Messages extends React.Component {
             <div className="back-to-matches">
               <Link
                 to={`/${sendingDog._id}/matches`}
-                className="fas far fa-arrow-alt-circle-left"
+                class="fas far fa-arrow-alt-circle-left"
               >
                 Back to Matches
               </Link>
