@@ -138,7 +138,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches6 = new MatchesModel({
     dogId: savedDog6._id,
-    matches: [savedDog2._id],
+    matches: [],
   });
   newMatches6.save();
 
@@ -172,7 +172,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches7 = new MatchesModel({
     dogId: savedDog7._id,
-    matches: [savedDog3._id],
+    matches: [],
   });
   newMatches7.save();
 
@@ -206,7 +206,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches8 = new MatchesModel({
     dogId: savedDog8._id,
-    matches: [savedDog3._id, savedDog5._id],
+    matches: [],
   });
   newMatches8.save();
 
@@ -240,7 +240,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches9 = new MatchesModel({
     dogId: savedDog9._id,
-    matches: [savedDog3._id, savedDog5._id],
+    matches: [],
   });
   newMatches9.save();
 
@@ -274,7 +274,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches10 = new MatchesModel({
     dogId: savedDog10._id,
-    matches: [savedDog3._id, savedDog5._id],
+    matches: [],
   });
   newMatches10.save();
 
@@ -307,7 +307,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches11 = new MatchesModel({
     dogId: savedDog11._id,
-    matches: [savedDog5._id],
+    matches: [],
   });
   newMatches11.save();
 
@@ -340,7 +340,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches12 = new MatchesModel({
     dogId: savedDog12._id,
-    matches: [savedDog3._id, savedDog5._id],
+    matches: [],
   });
   newMatches12.save();
 
@@ -473,7 +473,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches16 = new MatchesModel({
     dogId: savedDog16._id,
-    matches: [savedDog2._id, savedDog3._id],
+    matches: [],
   });
   newMatches16.save();
 
@@ -506,7 +506,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches17 = new MatchesModel({
     dogId: savedDog17._id,
-    matches: [savedDog2._id, savedDog4._id],
+    matches: [],
   });
   newMatches17.save();
 
@@ -539,7 +539,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches18 = new MatchesModel({
     dogId: savedDog18._id,
-    matches: [savedDog2._id, savedDog4._id],
+    matches: [],
   });
   newMatches18.save();
 
@@ -572,7 +572,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches19 = new MatchesModel({
     dogId: savedDog19._id,
-    matches: [savedDog2._id, savedDog4._id],
+    matches: [],
   });
   newMatches19.save();
 
@@ -605,7 +605,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches20 = new MatchesModel({
     dogId: savedDog20._id,
-    matches: [savedDog4._id],
+    matches: [],
   });
   newMatches20.save();
 
@@ -638,7 +638,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches21 = new MatchesModel({
     dogId: savedDog21._id,
-    matches: [savedDog1._id, savedDog4._id],
+    matches: [],
   });
   newMatches21.save();
 
@@ -671,7 +671,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches22 = new MatchesModel({
     dogId: savedDog22._id,
-    matches: [savedDog1._id],
+    matches: [],
   });
   newMatches22.save();
 
@@ -704,7 +704,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches23 = new MatchesModel({
     dogId: savedDog23._id,
-    matches: [savedDog1._id],
+    matches: [],
   });
   newMatches23.save();
 
@@ -737,7 +737,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches24 = new MatchesModel({
     dogId: savedDog24._id,
-    matches: [savedDog1._id],
+    matches: [],
   });
   newMatches24.save();
 
@@ -769,7 +769,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches25 = new MatchesModel({
     dogId: savedDog25._id,
-    matches: [savedDog1._id, savedDog2._id],
+    matches: [],
   });
   newMatches25.save();
 
@@ -802,7 +802,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches26 = new MatchesModel({
     dogId: savedDog26._id,
-    matches: [savedDog3._id],
+    matches: [],
   });
   newMatches26.save();
 
@@ -835,7 +835,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches27 = new MatchesModel({
     dogId: savedDog27._id,
-    matches: [savedDog4._id],
+    matches: [],
   });
   newMatches27.save();
 
@@ -868,7 +868,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches28 = new MatchesModel({
     dogId: savedDog28._id,
-    matches: [savedDog5._id],
+    matches: [],
   });
   newMatches28.save();
 
@@ -933,7 +933,7 @@ const seed = async () => {
   //CREATE MATCHES ARRAY
   const newMatches30 = new MatchesModel({
     dogId: savedDog30._id,
-    matches: [savedDog1._id],
+    matches: [],
   });
   newMatches30.save();
 
