@@ -216,6 +216,7 @@
     font-size: 30px;
 }
 .tooltip .profiletooltiptext{
+    font-family: 'Mukta Vaani', sans-serif;
     visibility: hidden;
     width: 120px;
     background-color: #555;
