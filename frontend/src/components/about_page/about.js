@@ -29,9 +29,9 @@ class AboutPage extends React.Component {
                         <h1>Alex Mak</h1>
                         <h1> Fullstack Developer </h1>
                         <div className="dev-icons">
-                        <a href="https://www.linkedin.com/in/alexanderyumak/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/aymak91" class="fab fa-github-square"></a>
-                        <i class="fab fa-angellist"></i>
+                        <a href="https://www.linkedin.com/in/alexanderyumak/" className="fab fa-linkedin"></a>
+                        <a href="https://github.com/aymak91" className="fab fa-github-square"></a>
+                        <i className="fab fa-angellist"></i>
                         </div>
                     </div>
                     </div>
@@ -41,9 +41,9 @@ class AboutPage extends React.Component {
                         <h1>Jordan Phan</h1>
                         <h1> Fullstack Developer </h1>
                         <div className="dev-icons">
-                        <a href="https://www.linkedin.com/in/jordanjphan/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/JJPhan" class="fab fa-github-square"></a>
-                        <i class="fab fa-angellist"></i>
+                        <a href="https://www.linkedin.com/in/jordanjphan/" className="fab fa-linkedin"></a>
+                        <a href="https://github.com/JJPhan" className="fab fa-github-square"></a>
+                        <i className="fab fa-angellist"></i>
                         </div>
                     </div>
                     </div>
@@ -53,9 +53,9 @@ class AboutPage extends React.Component {
                         <h1>Kenneth Guan</h1>
                         <h1> Fullstack Developer </h1>
                         <div className="dev-icons">
-                        <a href="https://www.linkedin.com/in/2702235a/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/kennethguan1" class="fab fa-github-square"></a>
-                        <i class="fab fa-angellist"></i>
+                        <a href="https://www.linkedin.com/in/2702235a/" className="fab fa-linkedin"></a>
+                        <a href="https://github.com/kennethguan1" className="fab fa-github-square"></a>
+                        <i className="fab fa-angellist"></i>
                         </div>
                     </div>
                     </div>
@@ -68,9 +68,9 @@ class AboutPage extends React.Component {
                         <h1>Jaron Lee</h1>
                         <h1> Fullstack Developer </h1>
                         <div className="dev-icons">
-                        <a href="https://www.linkedin.com/in/jaronjlee/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/jaronjlee" class="fab fa-github-square"></a>
-                        <i class="fab fa-angellist"></i>
+                        <a href="https://www.linkedin.com/in/jaronjlee/" className="fab fa-linkedin"></a>
+                        <a href="https://github.com/jaronjlee" className="fab fa-github-square"></a>
+                        <i className="fab fa-angellist"></i>
                         </div>
                     </div>
                     </div>
@@ -80,9 +80,9 @@ class AboutPage extends React.Component {
                         <h1>Daniel Gu</h1>
                         <h1> Fullstack Developer </h1>
                         <div className="dev-icons">
-                        <a href="https://www.linkedin.com/in/danielxgu/" class="fab fa-linkedin"></a>
-                        <a href="https://github.com/DanyoGu" class="fab fa-github-square"></a>
-                        <i class="fab fa-angellist"></i>
+                        <a href="https://www.linkedin.com/in/danielxgu/" className="fab fa-linkedin"></a>
+                        <a href="https://github.com/DanyoGu" className="fab fa-github-square"></a>
+                        <i className="fab fa-angellist"></i>
                         </div>
                     </div>
                     </div>

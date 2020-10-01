@@ -153,7 +153,7 @@ class Messages extends React.Component {
             <div className="back-to-matches">
               <Link
                 to={`/${sendingDog._id}/matches`}
-                class="fas far fa-arrow-alt-circle-left"
+                className="fas far fa-arrow-alt-circle-left"
               >
                 Back to Matches
               </Link>
