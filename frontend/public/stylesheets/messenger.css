@@ -149,11 +149,13 @@
 
 .chat-box {
     width: 100%;
+    position: sticky;
+    bottom: 0;
 }
 
 .messages-container {
     /* position: absolute; */
-    height: 75vh;
+    height: 60vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
