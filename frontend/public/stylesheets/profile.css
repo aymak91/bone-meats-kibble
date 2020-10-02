@@ -100,20 +100,24 @@
 }
 
 .first-three-dog-buttons :first-child:hover{
-    color: rgb(82, 82, 121);
+    /* color: rgb(82, 82, 121); */
     cursor: pointer;
+    color: red;
 }
 .first-three-dog-buttons :nth-child(2):hover{
-    color: rgb(82, 82, 121);
+    /* color: rgb(82, 82, 121); */
     cursor: pointer;
+    color: red;
 }
 .matches-dog-buttons :first-child:hover{
-    color: rgb(82, 82, 121);
+    /* color: rgb(82, 82, 121); */
     cursor: pointer;
+    color: red;
 }
 .matches-dog-buttons :nth-child(2):hover{
-    color: rgb(82, 82, 121);
+    /* color: rgb(82, 82, 121); */
     cursor: pointer;
+    color: red;
 }
 .first-three-dog-buttons :last-child:hover{
     color: red;
@@ -172,6 +176,7 @@
     /* Fade in tooltip */
     opacity: 0;
     transition: opacity 0.3s;
+    
 }
 .tooltip .navbartooltiptext{
     visibility: hidden;
@@ -198,6 +203,7 @@
 .tooltip:hover .navbartooltiptext {
   visibility: visible;
   opacity: 1;
+  
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -228,13 +234,17 @@
     /* Position the tooltip text */
     position: absolute;
     z-index: 1;
-    top: -5px;
+    /* top: -5px;
     left: 435%;
+    margin-left: -67px; */
+    top: 100%;
+    left: 50%;
     margin-left: -67px;
 
     /* Fade in tooltip */
     opacity: 0;
     transition: opacity 0.3s;
+    font-size: 20px;
 }
 
 .tooltip:hover .profiletooltiptext {
@@ -244,3 +254,4 @@
 .message-button{
     margin-left: 50px;
 }
+
