@@ -39,11 +39,13 @@ class PendingMatches extends React.Component {
         await this.props.increaseMatches(currentDogId, acceptedDogId);
         await this.props.increaseMatches(acceptedDogId, currentDogId);
         await this.props.decreasePendingMatches(acceptedDogId);
+        await this.props.decreasePossibleMatches(acceptedDogId);
         this.props.fetchPendingMatches();
     }
 
     async handleReject(rejectedDogId) {
         await this.props.decreasePendingMatches(rejectedDogId);
+        await this.props.decreasePossibleMatches(rejectedDogId);
         //possibly reduce other dog's requested matches later
         this.props.fetchPendingMatches();
     }

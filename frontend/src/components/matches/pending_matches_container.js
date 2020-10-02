@@ -8,6 +8,9 @@ import {
     increaseMatches,
 } from "../../actions/match_actions/matches_actions";
 import { fetchCurrentDog } from "../../actions/dog_actions"
+import {
+  decreasePossibleMatches,
+} from "../../actions/match_actions/possible_matches_actions";
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -29,7 +32,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         ),
       increaseMatches: (currentDogId, newDogId) =>
         dispatch(increaseMatches(currentDogId, newDogId)),
+      decreasePossibleMatches: (rejectedDogId) =>
+        dispatch(
+          decreasePossibleMatches(ownProps.match.params.dog_id, rejectedDogId)
+        ),
     };
+    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PendingMatches);

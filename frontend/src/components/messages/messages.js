@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import moment from 'moment'
 import NavBarContainer from "../nav/navbar_container";
 import BackButton from "../back_button/back_button"
+// const db = require('config/keys').mongoURI;
 
 class Messages extends React.Component {
   constructor(props) {
@@ -34,7 +35,8 @@ class Messages extends React.Component {
     const messages = document.querySelector("#messages");
     const messageBox = document.querySelector("#messageBox");
 
-    this.websocketChat(sendBtn, messages, messageBox);
+    // this.websocketChat(sendBtn, messages, messageBox);
+
   }
 
   async componentDidUpdate(prevProps) {
@@ -81,44 +83,53 @@ class Messages extends React.Component {
     this.setState({ messages: this.state.messages });
   }
 
-  websocketChat(sendBtn, messages, messageBox) {
-    let ws;
+  // websocketChat(sendBtn, messages, messageBox) {
+  //   let ws;
+  //   let props = this.props;
 
-    function showMessage(message) {
-      messages.textContent += `\n\n${message}`;
-      messages.scrollTop = messages.scrollHeight;
-      messageBox.value = "";
-    }
 
-    function init() {
-      if (ws) {
-        ws.onerror = ws.onopen = ws.onclose = null;
-        ws.close();
-      }
+  //   function showMessage(message) {
+  //     messages.textContent += `\n\n${message}`;
+  //     messages.scrollTop = messages.scrollHeight;
+  //     messageBox.value = "";
+  //   }
 
-      ws = new WebSocket("ws://localhost:6969");
-      ws.onopen = () => {
-        console.log("Connection opened!");
-      };
-      ws.onmessage = ({ data }) => showMessage(data);
-      ws.onclose = function () {
-        ws = null;
-      };
-    }
+  //   function init() {
+  //     if (ws) {
+  //       ws.onerror = ws.onopen = ws.onclose = null;
+  //       ws.close();
+  //     }
 
-    sendBtn.onclick = function () {
-      if (!ws) {
-        showMessage("No WebSocket connection :(");
-        return;
-      }
+  //     ws = new WebSocket("ws://localhost:6969");
+  //     ws.onopen = () => {
+  //       console.log("Connection opened!");
+  //     };
+  //     ws.onmessage = ({ data }) => showMessage(data);
+  //     ws.onclose = function () {
+  //       ws = null;
+  //     };
+  //   }
 
-      ws.send(messageBox.value);
-      this.props.createMessage(messageBox.value, this.props.history);
-      showMessage(messageBox.value);
-    };
+  //   sendBtn.onclick = async function () {
+  //     if (!ws) {
+  //       showMessage("No WebSocket connection :(");
+  //       return;
+  //     }
 
-    init();
-  }
+  //     ws.send(messageBox.value);
+
+  //     const message = {
+  //       body: messageBox.value,
+  //     };
+
+  //     await props.createMessage(message, props.history);
+  //     props.fetchMessages();
+  //     showMessage(messageBox.value);
+
+  //   };
+
+  //   init();
+  // }
 
   render() {
     // if (!this.props.messages) return null;
@@ -203,7 +214,7 @@ class Messages extends React.Component {
           </form>
         </div>
 
-        <h1>Real Time Messaging</h1>
+        {/* <h1>Real Time Messaging</h1>
         <pre id="messages"></pre>
         <input
           type="text"
@@ -212,7 +223,7 @@ class Messages extends React.Component {
         />
         <button id="send" title="Send Message!">
           Send Message
-        </button>
+        </button> */}
       </div>
     );
   }
