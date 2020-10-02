@@ -177,9 +177,12 @@
 }
 .possible-match-buttons :first-child:hover {
     color: red;
+    cursor: pointer;
 }
 .possible-match-buttons :last-child:hover {
     color: rgb(54, 54, 54);
+    color: red;
+    cursor: pointer;
 }
 .browse-for-matches-header {
     font-family: 'Mukta Vaani', sans-serif;
@@ -213,3 +216,4 @@
     margin-bottom: 10px;
 
 }
+
