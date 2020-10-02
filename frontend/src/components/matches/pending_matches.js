@@ -55,8 +55,21 @@ class PendingMatches extends React.Component {
         const pendingMatches = this.state.pendingMatches[0].pendingMatches;
         const currentDogId = this.state.currentDogId;
         const currentDog = this.state.currentDog;
-
+        if (pendingMatches.length === 0) {
+          return (
+            <div>
+              <NavBarContainer className="navbarcontainer" />
+              <div className="no-pending-matches-container">
+                <BackButton />
+                <h1 className="pending-matches-title">
+                  No Pending Matches for {currentDog.name}
+                </h1>
+              </div>
+            </div>
+          );
+        }
         return (
+          
           <div>
             <NavBarContainer className="navbarcontainer" />
             <div className="dog-profile-container-container">
