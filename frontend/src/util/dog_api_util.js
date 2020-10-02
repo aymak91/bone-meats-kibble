@@ -17,7 +17,7 @@ export const writeDog = (data) => {
 };
 
 export const updateDog = (data, dogId) => {
-  return axios.put(`/api/dogs/${dogId}`, data,
+  return axios.patch(`/api/dogs/${dogId}`, data,
     {
       headers: {
         "Content-Type": `multipart/form-data`
