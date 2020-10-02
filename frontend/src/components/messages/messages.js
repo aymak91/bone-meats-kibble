@@ -31,9 +31,9 @@ class Messages extends React.Component {
     await this.props.fetchReceivingDog();
     await this.setState({ receivingDog: this.props.receivingDog });
 
-    const sendBtn = document.querySelector("#send");
-    const messages = document.querySelector("#messages");
-    const messageBox = document.querySelector("#messageBox");
+    // const sendBtn = document.querySelector("#send");
+    // const messages = document.querySelector("#messages");
+    // const messageBox = document.querySelector("#messageBox");
 
     // this.websocketChat(sendBtn, messages, messageBox);
 
@@ -150,7 +150,7 @@ class Messages extends React.Component {
         <NavBarContainer />
         <div className="messages-buttons">
           <BackButton />
-          <button className="back-button" onClick={this.props.fetchMessages()}> Check for New Messages! </button>
+          <button className="back-button" onClick={() => this.props.fetchMessages()}> Check for New Messages! </button>
         </div>
         <div className="messages-form">
           <h1 className="message-h1">{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h1>
