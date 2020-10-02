@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import ImageUploader from "react-images-upload"
 import FormData from "form-data"
-
+// import axios from 'axios';
 
 class UpdateDogForm extends React.Component {
   constructor(props) {
@@ -48,7 +48,11 @@ class UpdateDogForm extends React.Component {
 
     // const dog = Object.assign({}, this.state);
     // await this.props.patchDog(dog, this.props.dogId);
+
     this.props.patchDog(formData, this.props.dogId);
+
+    // axios.patch(`/api/dogs/${this.props.dogId}`, formData);
+
     setTimeout(() => {
       this.props.fetchUserDogs(this.props.currentUser.id)
     }, 1000);

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-import { patchDog, fetchUserDogs } from "../../actions/dog_actions";
+import { fetchUserDogs } from "../../actions/dog_actions";
+import { patchDog } from "../../actions/dog_actions";
 import UpdateDogForm from "./update_dog_form";
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    // remove patchdog if using axios instead in update_dog_form
     patchDog: (data, dogId) => dispatch(patchDog(data, dogId)),
     fetchUserDogs: (id) => dispatch(fetchUserDogs(id)),
   };
