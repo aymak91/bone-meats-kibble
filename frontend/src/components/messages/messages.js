@@ -148,9 +148,11 @@ class Messages extends React.Component {
     return (
       <div className="messages-bgd">
         <NavBarContainer />
-
-        <div className="messages-form">
+        <div className="messages-buttons">
           <BackButton />
+          <button className="back-button" onClick={this.props.fetchMessages()}> Check for New Messages! </button>
+        </div>
+        <div className="messages-form">
           <h1 className="message-h1">{`${sendingDog.name}, start chatting with ${receivingDog.name}`}</h1>
           <h2 className="message-h2">
             {" "}
