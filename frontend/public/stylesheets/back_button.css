@@ -1,7 +1,7 @@
 .back-button {
     margin: 10px;
     background-color: #8380B6;
-    height: 50px;
+    height: 75px;
     width: 150px;
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 18px;
@@ -16,4 +16,9 @@
 .back-button:hover {
     background-color: #64618d;
     cursor: pointer;
+}
+
+.messages-buttons {
+    display: flex;
+    flex-direction: row;
 }

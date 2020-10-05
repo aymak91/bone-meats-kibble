@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
+    height: 100vh;
 }
 
 .fas fa-fire {
@@ -26,6 +27,8 @@
 
 .messages-form {
     position: relative;
+    height: 100vh;
+    /* height: 100%; */
 }
 
 .message-avatar {
@@ -149,11 +152,13 @@
 
 .chat-box {
     width: 100%;
+    position: sticky;
+    bottom: 0;
 }
 
 .messages-container {
     /* position: absolute; */
-    height: 75vh;
+    height: 60vh;
     overflow-x: hidden;
     overflow-y: auto;
 }

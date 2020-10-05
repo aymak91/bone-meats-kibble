@@ -177,45 +177,45 @@ router.post('/', upload.single("file"), //middleware
 //   }
 // );
 
-router.patch(
-  "/:id",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    const {
-      name,
-      description,
-      breed,
-      birthDate,
-      size,
-      gender,
-      activeness,
-      personality
-    } = req.body;
+// router.put(
+//   "/:id",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     const {
+//       name,
+//       description,
+//       breed,
+//       birthDate,
+//       size,
+//       gender,
+//       activeness,
+//       personality
+//     } = req.body;
 
-    const user = req.user.id;
+//     const user = req.user.id;
 
-    Dog.findById(req.params.id).then((dog) => {
-      dog.user = user;
-      dog.name = name;
-      dog.description = description;
-      dog.breed = breed;
-      dog.birthDate = birthDate;
-      dog.size = size;
-      dog.gender = gender;
-      dog.activeness = activeness;
-      dog.personality = personality;
+//     Dog.findById(req.params.id).then((dog) => {
+//       dog.user = user;
+//       dog.name = name;
+//       dog.description = description;
+//       dog.breed = breed;
+//       dog.birthDate = birthDate;
+//       dog.size = size;
+//       dog.gender = gender;
+//       dog.activeness = activeness;
+//       dog.personality = personality;
 
-      dog
-        .save()
-        .then((savedDog) => res.json(savedDog))
-        .catch((err) => res.json(err));
-    });
-    return res;
-  }
-);
+//       dog
+//         .save()
+//         .then((savedDog) => res.json(savedDog))
+//         .catch((err) => res.json(err));
+//     });
+//     return res;
+//   }
+// );
 
 //backend route to also edit photo of dog. However, this currently breaks the frontend so this is edited out for now.
-router.put(
+router.patch(
   "/:id", upload.single("file"),
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
@@ -238,30 +238,31 @@ router.put(
     } = req.body;
     
     const user = req.user.id;
+
     if (req.file === undefined) {
-      Dog.findOne(req.params._id)
-        .then((dog) => {
-          dog.user = user;
-          dog.name = name;
-          dog.description = description;
-          dog.breed = breed;
-          dog.birthDate = birthDate;
-          dog.size = size;
-          dog.gender = gender;
-          dog.activeness = activeness;
-          dog.personality = personality;
-          dog.imageURL = req.body.file;
-          dog
-            .save()
-            .then((savedDog) => res.json(savedDog))
-            .catch((err) => res.json(err));
-        })
+      Dog.findById(req.params.id)
+      .then((dog) => {
+        dog.user = user;
+        dog.name = name;
+        dog.description = description;
+        dog.breed = breed;
+        dog.birthDate = birthDate;
+        dog.size = size;
+        dog.gender = gender;
+        dog.activeness = activeness;
+        dog.personality = personality;
+        dog.imageURL = req.body.file;
+        dog
+          .save()
+          .then((savedDog) => res.json(savedDog))
+          .catch((err) => res.json(err));
+      });
     } else {
       uploadImage(req.file)
         .then((data) => {
           const uploadedFileURL = data.Location;
 
-          Dog.findOne(req.params._id)
+          Dog.findById(req.params.id)
             .then((dog) => {
               dog.user = user;
               dog.name = name;
