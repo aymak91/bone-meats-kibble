@@ -4,6 +4,14 @@
     align-items: right;
     padding: 3px;
 }
+.create-form-input-container textarea {
+    font-family: 'Mukta Vaani', sans-serif;
+    margin: 10px 0px;
+    align-items: right;
+    padding: 3px;
+    min-height: 80px;
+    min-width: 350px;
+}
 .create-form-input-container select {
     font-family: 'Mukta Vaani', sans-serif;
     margin: 10px 0px;
@@ -12,25 +20,51 @@
 .create-form-input-container h1 {
     font-family: 'Kalam', cursive;
     font-size: 30px;
-    color: rgb(39, 39, 66);
+    color: white;
+
 }
 .create-form-input-container span {
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 20px;
     font-weight: 500;
 }
-/* .create-dog-submit-button{
-    font-weight: 500;
+.create-form-input-container {
+    padding: 20px;
+}
+.create-dog-submit-button{
+    font-weight: 700;
+    font-family: 'Mukta Vaani', sans-serif;
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
     color: white;
-    background-color: rgb(39, 39, 66)
-} */
+    background-color: rgb(39, 39, 66);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 20px;
+}
+.create-dog-submit-button:hover{
+    background-color: rgb(60, 60, 100);
+}
 .create-dog-form-container{
     overflow-x: hidden;
 }
-
-
+.submit-dog-container{
+    background-color: silver;
+}
+.create-form-header{
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(39, 39, 66);
+    padding: 10px 20px;
+}
 .create-dog-errors {
     font-family: 'Mukta Vaani', sans-serif;
     color: red;
-
 }
+input[type="file"] {
+    font-family: 'Mukta Vaani', sans-serif;
+}
+

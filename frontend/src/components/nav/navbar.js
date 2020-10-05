@@ -60,6 +60,8 @@ class NavBar extends React.Component {
               width: "490px",
               height: "725px",
               background: "rgb(255, 255, 255)",
+              padding: "0px",
+              border: "none",
             },
             overlay: {
               position: "fixed",

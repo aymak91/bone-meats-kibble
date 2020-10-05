@@ -1,6 +1,7 @@
 import React from "react";
 import DogBox from "./dog_box";
 import axios from 'axios';
+import ImageUploader from "react-images-upload"
 
 
 class DogForm extends React.Component {
@@ -20,6 +21,7 @@ class DogForm extends React.Component {
       photoURL: null,
       errors: {},
       newDog: "",
+      imageURL: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +29,7 @@ class DogForm extends React.Component {
     this.switchOptions = this.switchOptions.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onDrop = this.onDrop.bind(this);
   }
   closeModal() {
     if (this.state.errors.length === 0) 
@@ -93,7 +96,11 @@ class DogForm extends React.Component {
         [field]: e.currentTarget.value,
       });
   }
-
+  onDrop(picture) {
+    this.setState({
+      imageURL: picture[picture.length - 1],
+    });
+  }
   handleUpload(e) {
     const fileReader = new FileReader();
     const file = e.currentTarget.files[0];
@@ -111,9 +118,10 @@ class DogForm extends React.Component {
     return (
       <div className="create-dog-form-container">
         <form onSubmit={this.handleSubmit}>
+            <div className="create-form-header">
+              <h1>Create a Dog</h1>
+            </div>
           <div className="create-form-input-container">
-            <h1>Create a Dog</h1>
-            <br />
             <span>Name</span>
             <br />
             <input
@@ -125,11 +133,14 @@ class DogForm extends React.Component {
             <br />
             <span>Description</span>
             <br />
-            <input
+            <textarea
               type="textarea"
               value={this.state.description}
               onChange={this.update("description")}
               placeholder="Write your dog description..."
+              className="create-descritpion-box"
+              rows="2"
+              cols="25"
             />
             <br />
             <span>Breed</span>
@@ -294,20 +305,22 @@ class DogForm extends React.Component {
             <br />
             <span>Picture</span>
             <br />
-            <input type="file" onChange={this.handleUpload} />
-            <br />
-            <input
-              type="submit"
-              value="Submit"
-              className="create-dog-submit-button"
+            <ImageUploader
+              withIcon={true}
+              buttonText="Upload photo"
+              onChange={this.onDrop}
+              imgExtension={[".jpg", ".gif", ".png"]}
+              maxFileSize={5242880}
             />
-            <br />
           </div>
-          <div className="create-dog-errors"> {this.renderErrors()} </div>
+          <div className="submit-dog-container">
+             <div className="create-dog-errors"> {this.renderErrors()} </div>
+             <input type="submit" value="Submit" className="create-dog-submit-button" />
+          </div>
+         
           {this.closeModal()}
           {/* {this.props.fetchUserDogs(this.props.currentUser.id)} */}
         </form>
-        <br /> 
       </div>
     );
   }

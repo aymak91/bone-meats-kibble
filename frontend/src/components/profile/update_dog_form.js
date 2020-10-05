@@ -67,9 +67,10 @@ class UpdateDogForm extends React.Component {
     return (
       <div className="create-dog-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="create-form-input-container">
+          <div className="create-form-header">
             <h1>Update Dog</h1>
-            <br />
+          </div>
+          <div className="create-form-input-container">
             <span>Name</span>
             <br />
             <input
@@ -81,10 +82,13 @@ class UpdateDogForm extends React.Component {
             <br />
             <span>Description</span>
             <br />
-            <input
+            <textarea
               type="textarea"
               value={this.state.description}
               onChange={this.update("description")}
+              className="create-descritpion-box"
+              rows="2"
+              cols="25"
               // placeholder={this.props.dog.description}
             />
             <br />
@@ -253,11 +257,11 @@ class UpdateDogForm extends React.Component {
               imgExtension={[".jpg", ".gif", ".png"]}
               maxFileSize={5242880}
             />
-            <input type="submit" value="Submit" />
-            <br />
+          </div>
+          <div className="submit-dog-container">
+            <input type="submit" value="Submit" className="create-dog-submit-button"/>
           </div>
         </form>
-        <br />
       </div>
     );
   }
