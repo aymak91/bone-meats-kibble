@@ -64,8 +64,10 @@ class Profile extends React.Component {
                   bottom: "0",
                   overflow: "scroll",
                   width: "490px",
-                  height: "725px",
+                  height: "600px",
                   background: "rgb(255, 255, 255)",
+                  padding: "0px",
+                  border: "none",
                 },
                 overlay: {
                   position: "fixed",
